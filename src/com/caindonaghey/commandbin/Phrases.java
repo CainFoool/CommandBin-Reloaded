@@ -2,6 +2,13 @@ package com.caindonaghey.commandbin;
 
 public class Phrases {
 	
+	
+	/*
+	 * Future Languages:
+	 * Spanish, German
+	 * Need translators pls.
+	 */
+	
 	public static String get(String string) {
 		
 		if(CommandBin.language == "english") {
