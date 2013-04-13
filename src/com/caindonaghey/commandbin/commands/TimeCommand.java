@@ -65,6 +65,7 @@ public class TimeCommand implements CommandExecutor {
 			
 			if(args.length < 1) {
 				player.sendMessage(Phrases.get("invalid-arguments"));
+				return false;
 			}
 			
 			if(args[0].equalsIgnoreCase("day")) {
