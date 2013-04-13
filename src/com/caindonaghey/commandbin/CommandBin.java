@@ -149,7 +149,7 @@ public class CommandBin extends JavaPlugin {
 		if(getConfig().getString("language").equalsIgnoreCase("english")) {
 			language = "english";
 		}
-		if(getConfig().getString("language").equalsIgnoreCase("dutch")) {
+		if(getConfig().getString("language").equalsIgnoreCase("dutch") || getConfig().getString("language").equalsIgnoreCase("deutch")) {
 			language = "dutch";
 		}
 	}
