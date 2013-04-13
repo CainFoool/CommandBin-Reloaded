@@ -1,0 +1,127 @@
+package com.caindonaghey.commandbin.commands;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import com.caindonaghey.commandbin.Phrases;
+
+public class TpCommand implements CommandExecutor {
+	
+	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
+		if(l.equalsIgnoreCase("tp")) {
+			if(!(s instanceof Player)) {
+				if(args.length < 2 || args.length == 3) {
+					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					return false;
+				}
+				
+				if(args.length == 2) {
+					Player onePlayer = Bukkit.getServer().getPlayer(args[0]);
+					Player twoPlayer = Bukkit.getServer().getPlayer(args[1]);
+					if(onePlayer == null || twoPlayer == null) {
+						System.out.println("[CommandBin] " + Phrases.get("players-invalid"));
+						return true;
+					}
+					onePlayer.teleport(twoPlayer.getLocation());
+					System.out.println("[CommandBin] " + Phrases.get("tele-1-2"));
+					return true;
+				}
+				
+				if(args.length == 4) {
+					Player player = Bukkit.getServer().getPlayer(args[0]);
+					if(player == null) {
+						System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+						return true;
+					}
+					
+					try {
+						int x = Integer.parseInt(args[1]);
+						int y = Integer.parseInt(args[2]);
+						int z = Integer.parseInt(args[3]);
+						player.teleport(new Location(player.getWorld(), x, y, z));
+						System.out.println("[CommandBin] " + Phrases.get("tele-1-co"));
+					} catch (NumberFormatException e) {
+						System.out.println("[CommandBin] " + Phrases.get("invalid-numbers"));
+					}
+					return true;
+				}
+			}
+			
+			Player player = (Player) s;
+			
+			if(args.length == 0) {
+				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				return false;
+			}
+			if(args.length == 1) {
+				if(!player.hasPermission("CommandBin.tp.self")) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					return true;
+				}
+				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
+				if(otherPlayer == null) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					return true;
+				}
+				player.teleport(otherPlayer.getLocation());
+				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-player"));
+				return true;
+			}
+			
+			if(args.length == 2) {
+				if(!player.hasPermission("CommandBin.tp.others")) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					return true;
+				}
+				
+				Player onePlayer = Bukkit.getServer().getPlayer(args[0]);
+				Player twoPlayer = Bukkit.getServer().getPlayer(args[1]);
+				
+				if(onePlayer == null || twoPlayer == null) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("players-invalid"));
+					return true;
+				}
+				onePlayer.teleport(twoPlayer.getLocation());
+				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-1-2"));
+				return true;
+			}
+			
+			if(args.length == 3) {
+				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				return false;
+			}
+			
+			if(args.length == 4) {
+				
+				if(!player.hasPermission("CommandBin.tp.coords")) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					return true;
+				}
+				
+				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
+				if(otherPlayer == null) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					return true;
+				}
+				
+				try {
+					int x = Integer.parseInt(args[1]);
+					int y = Integer.parseInt(args[2]);
+					int z = Integer.parseInt(args[3]);
+					otherPlayer.teleport(new Location(otherPlayer.getWorld(), x, y, z));
+					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-1-co"));
+				} catch (NumberFormatException e) {
+					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-numbers"));
+				}
+				return true;
+			}
+		}
+		return true;
+	}
+
+}

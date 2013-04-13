@@ -1,0 +1,131 @@
+name: 'CommandBin'
+version: '5.02'
+author: 'Cain Donaghey'
+main: com.caindonaghey.commandbin.CommandBin
+commands:
+   afk:
+       description: 'Set yourself as AFK'
+       usage: /<command>
+   block:
+       description: 'Block a player from using commands'
+       usage: /<command> <player>
+   bolt:
+       description: 'Bolt with lightning, optionally a player'
+       usage: /<command> <player>
+   broadcast:
+       description: 'Broadcast a message to the server'
+       usage: /<command> <message>
+   clear:
+       description: 'Clear you or anothers inventory'
+       usage: /<command> <player>
+   explode:
+       description: 'Explode you or another player'
+       usage: /<command> <player>
+   feed:
+       description: 'Feed yourself or another player'
+       usage: /<command> <player>
+   freeze:
+       description: 'Freeze a player from moving'
+       usage: /<command> <player>
+   fsay:
+       description: 'Force a player to say/type a command'
+       usage: /<command> <player> <chat>
+   gm:
+       description: 'Change you or another players gamemode'
+       usage: /<command> <player> <0/1/2/s/c/a/survival/creative/adventure>
+   god:
+       description: 'Set you or another player to godmode'
+       usage: /<command> <player>
+   heal:
+       description: 'Heal yourself or another player'
+       usage: /<command> <player>
+   kill:
+       description: 'Kill yourself or another player'
+       usage: /<command> <player>
+   mute:
+       description: 'Mute a player to stop them from talking'
+       usage: /<command> <player>
+   time:
+       description: 'Set or lock the world time'
+       usage: /<command> <day/night/lock>
+   tpaccept:
+       description: 'Accept a teleport request'
+       usage: /<command> <player>
+   tpa:
+       description: 'Send a teleport request'
+       usage: /<command> <player>
+   tpdeny:
+       description: 'Deny a teleport request'
+       usage: /<command> <player>
+   setspawn:
+       description: 'Set your current world spawn'
+       usage: /<command>
+   spawn:
+       description: 'Teleport you or another player to world spawn'
+       usage: /<command> <player>
+   starve:
+       description: 'Starve yourself or another player'
+       usage: /<command> <player>
+   tpall:
+       description: 'Teleport all online players to you'
+       usage: /<command>
+   tp:
+       description: 'Teleport yourself to a player or to certain co-ordinates'
+       usage: /<command> <player> <player/x/y/z>
+   vanish:
+       description: 'Make you or another player invisible'
+       usage: /<command> <player>
+   weather:
+       description: 'Change the weather of the world'
+       usage: /<command> <world> <sun/rain/men>
+   openinv:
+       description: 'Open another players inventory'
+       usage: /<command> <player>
+   killmobs:
+       description: 'Kill all mobs in your world'
+       usage: /<command>
+   fly:
+       description: 'Toggle you or someone elses flying'
+       usage: /<command> <player>
+   chunk:
+       description: 'Reload the chunk you are standing in'
+       usage: /<command>
+   commandbin:
+       description: 'Some information about CommandBin'
+       usage: /<command>
+   hat:
+       description: 'Wear as a hat what you are holding'
+       usage: /<command>
+   ip:
+       description: 'Get a players IP address'
+       usage: /<command> <player>
+   tphere:
+       description: 'Teleport a player to you'
+       usage: /<command> <player>
+   explosionbow:
+       description: 'Toggle the explosion bow'
+       usage: /<command> <player>
+   nick:
+       description: 'Change your nickname'
+       usage: /<command> <nick>
+   craft:
+       description: 'Open a workbench portably'
+       usage: /<command>
+   clearchat:
+       description: 'Clear all your chat messages'
+       usage: /<command>
+   sethome:
+       description: 'Set your home'
+       usage: /<command>
+   home:
+       description: 'Teleport to your home'
+       usage: /<command>
+   setwarp:
+       description: 'Create a warp'
+       usage: /<command> <warp-name>
+   warp:
+       description: 'Teleport to a warp'
+       usage: /<command> <warp-name>
+   ptime:
+       description: 'Set your client-side time'
+       usage: /<command> <day/night/reset>
