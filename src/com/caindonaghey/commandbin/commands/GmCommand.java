@@ -55,7 +55,7 @@ public class GmCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.gamemode.survival")) {
 					if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("s") || args[0].equalsIgnoreCase("survival")) {
 						player.setGameMode(GameMode.SURVIVAL);
-						player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("gamemode-switch"));
+						player.sendMessage(Phrases.get("gamemode-switch"));
 						return true;
 					}
 				}
@@ -63,7 +63,7 @@ public class GmCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.gamemode.creative")) {
 					if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("c") || args[0].equalsIgnoreCase("creative")) {
 						player.setGameMode(GameMode.CREATIVE);
-						player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("gamemode-switch"));
+						player.sendMessage(Phrases.get("gamemode-switch"));
 						return true;
 					}
 				}
@@ -71,12 +71,12 @@ public class GmCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.gamemode.adventure")) {
 					if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("a") || args[0].equalsIgnoreCase("adventure")) {
 						player.setGameMode(GameMode.ADVENTURE);
-						player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("gamemode-switch"));
+						player.sendMessage(Phrases.get("gamemode-switch"));
 						return true;
 					}
 				}
 				
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			//
@@ -84,14 +84,14 @@ public class GmCommand implements CommandExecutor {
 				
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(player.hasPermission("CommandBin.gamemode.others.survival")) {
 					if(args[1].equalsIgnoreCase("0") || args[1].equalsIgnoreCase("s") || args[1].equalsIgnoreCase("survival")) {
 						otherPlayer.setGameMode(GameMode.SURVIVAL);
-						player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("gamemode-switch"));
+						player.sendMessage(Phrases.get("gamemode-switch"));
 						return true;
 					}
 				}
@@ -99,7 +99,7 @@ public class GmCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.gamemode.others.creative")) {
 					if(args[1].equalsIgnoreCase("1") || args[1].equalsIgnoreCase("c") || args[1].equalsIgnoreCase("creative")) {
 						otherPlayer.setGameMode(GameMode.CREATIVE);
-						player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("gamemode-switch"));
+						player.sendMessage(Phrases.get("gamemode-switch"));
 						return true;
 					}
 				}
@@ -107,16 +107,16 @@ public class GmCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.gamemode.others.adventure")) {
 					if(args[1].equalsIgnoreCase("2") || args[1].equalsIgnoreCase("a") || args[1].equalsIgnoreCase("adventure")) {
 						otherPlayer.setGameMode(GameMode.ADVENTURE);
-						player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("gamemode-switch"));
+						player.sendMessage(Phrases.get("gamemode-switch"));
 						return true;
 					}
 				}
 				
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-gamemode"));
+			player.sendMessage(Phrases.get("invalid-gamemode"));
 			return false;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 			return false;
 		}
 		return true;

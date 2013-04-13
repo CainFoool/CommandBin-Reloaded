@@ -17,7 +17,7 @@ public class BlockedListener implements Listener {
 		String playerName = player.getName();
 		
 		if(BlockCommand.blockedPlayers.contains(playerName)) {
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("blocked-from-commands"));
+			player.sendMessage(Phrases.get("blocked-from-commands"));
 			e.setCancelled(true);
 		}
 	}

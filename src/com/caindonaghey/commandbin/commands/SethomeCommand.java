@@ -20,11 +20,11 @@ public class SethomeCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.sethome")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 				Home.saveHome(player);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("home-set"));
+				player.sendMessage(Phrases.get("home-set"));
 		}
 		return true;
 	}

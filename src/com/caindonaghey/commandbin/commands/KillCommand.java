@@ -34,33 +34,33 @@ public class KillCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.kill.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
 				player.setHealth(0);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("kill-self"));
+				player.sendMessage(Phrases.get("kill-self"));
 				return true;
 			}
 			
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.kill.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				otherPlayer.setHealth(0);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("kill-player"));
+				player.sendMessage(Phrases.get("kill-player"));
 				return true;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 			return false;
 		}
 		return true;

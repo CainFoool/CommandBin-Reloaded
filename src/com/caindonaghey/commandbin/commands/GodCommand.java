@@ -43,43 +43,43 @@ public class GodCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.god.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				if(!godPlayers.contains(player.getName())) {
 					godPlayers.add(player.getName());
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("god-enabled"));
+					player.sendMessage(Phrases.get("god-enabled"));
 					return true;
 				}
 				godPlayers.remove(player.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("god-disabled"));
+				player.sendMessage(Phrases.get("god-disabled"));
 				return true;
 			}
 			
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.god.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(!godPlayers.contains(otherPlayer.getName())) {
 					godPlayers.add(otherPlayer.getName());
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-godmode"));
+					player.sendMessage(Phrases.get("player-godmode"));
 					return true;
 				}
 				godPlayers.remove(otherPlayer.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-ungod"));
+				player.sendMessage(Phrases.get("player-ungod"));
 				return true;
 			}
 			
 			if(args.length >= 2) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 		}

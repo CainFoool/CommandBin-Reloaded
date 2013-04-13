@@ -20,16 +20,16 @@ public class SetwarpCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.setwarp")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 				Warp.saveWarp(player, args[0].toLowerCase());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("warp-set"));
+				player.sendMessage(Phrases.get("warp-set"));
 		}
 		return true;
 	}

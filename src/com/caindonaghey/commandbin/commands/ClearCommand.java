@@ -36,10 +36,10 @@ public class ClearCommand implements CommandExecutor {
 			if(args.length < 1) {
 				if(player.hasPermission("CommandBin.clear.self")) {
 					player.getInventory().clear();
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("inventory-cleared"));
+					player.sendMessage(Phrases.get("inventory-cleared"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
@@ -47,17 +47,17 @@ public class ClearCommand implements CommandExecutor {
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(player.hasPermission("CommandBin.clear.others")) {
 					if(otherPlayer == null) {
-						player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+						player.sendMessage(Phrases.get("player-invalid"));
 						return true;
 					}
 					otherPlayer.getInventory().clear();
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("inventory-cleared"));
+					player.sendMessage(Phrases.get("inventory-cleared"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 		}
 		return true;
 	}

@@ -35,10 +35,10 @@ public class HealCommand implements CommandExecutor {
 			if(args.length == 0) {
 				if(player.hasPermission("CommandBin.heal.self")) {
 					player.setHealth(20);
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("heal-self"));
+					player.sendMessage(Phrases.get("heal-self"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
@@ -46,18 +46,18 @@ public class HealCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.heal.others")) {
 					Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 					if(otherPlayer == null) {
-						player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+						player.sendMessage(Phrases.get("player-invalid"));
 						return true;
 					}
 					otherPlayer.setHealth(20);
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("heal-other"));
+					player.sendMessage(Phrases.get("heal-other"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 			return true;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 			return false;
 		}
 		return true;

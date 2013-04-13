@@ -36,10 +36,10 @@ public class ExplodeCommand implements CommandExecutor {
 			if(args.length < 1) {
 				if(player.hasPermission("CommandBin.explode.self")) {
 					player.getWorld().createExplosion(player.getLocation(), 5);
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("exploded"));
+					player.sendMessage(Phrases.get("exploded"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
@@ -47,17 +47,17 @@ public class ExplodeCommand implements CommandExecutor {
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(player.hasPermission("CommandBin.explode.others")) {
 					if(otherPlayer == null) {
-						player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+						player.sendMessage(Phrases.get("player-invalid"));
 						return true;
 					}
 					otherPlayer.getWorld().createExplosion(player.getLocation(), 5);
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("exploded"));
+					player.sendMessage(Phrases.get("exploded"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 		}
 		return true;
 	}

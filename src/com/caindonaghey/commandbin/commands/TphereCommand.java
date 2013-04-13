@@ -21,21 +21,21 @@ public class TphereCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.tphere")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 			if(otherPlayer == null) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-player"));
+			player.sendMessage(Phrases.get("tele-player"));
 			otherPlayer.teleport(player.getLocation());
 		}
 		return true;

@@ -42,29 +42,29 @@ public class FreezeCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.freeze")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 			if(otherPlayer == null) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
 			
 			if(!frozenPlayers.contains(otherPlayer.getName())) {
 				frozenPlayers.add(otherPlayer.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("frozen-player"));
+				player.sendMessage(Phrases.get("frozen-player"));
 				return true;
 			}
 			
 			frozenPlayers.remove(otherPlayer.getName());
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("unfrozen-player"));
+			player.sendMessage(Phrases.get("unfrozen-player"));
 			return true;
 		}
 		return true;

@@ -19,15 +19,15 @@ public class HomeCommand implements CommandExecutor {
 			}
 			Player player = (Player) s;
 			if(!player.hasPermission("CommandBin.home")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			if(Home.ifHasHome(player)) {
 				player.teleport(Home.getHome(player));
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("home-teleport"));
+				player.sendMessage(Phrases.get("home-teleport"));
 				return true;
 			}
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-home"));
+			player.sendMessage(Phrases.get("invalid-home"));
 		}
 		return true;
 	}

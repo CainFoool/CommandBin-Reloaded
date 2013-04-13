@@ -21,12 +21,12 @@ public class TpallCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.tpall")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 0) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
@@ -35,7 +35,7 @@ public class TpallCommand implements CommandExecutor {
 					allPlayers.teleport(player.getLocation());
 				}
 			}
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-all"));
+			player.sendMessage(Phrases.get("tele-all"));
 		}
 		return true;
 	}

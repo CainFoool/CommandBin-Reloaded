@@ -18,7 +18,7 @@ public class MuteListener implements Listener {
 		
 		if(MuteCommand.mutedPlayers.contains(playerName)) {
 			e.setCancelled(true);
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("you-are-muted"));
+			player.sendMessage(Phrases.get("you-are-muted"));
 		}
 	}
 

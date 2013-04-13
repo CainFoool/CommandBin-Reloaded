@@ -39,13 +39,13 @@ public class BoltCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.bolt")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length < 1) {
 				player.getWorld().strikeLightning(player.getTargetBlock(null, 0).getLocation());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("bolt-striked"));
+				player.sendMessage(Phrases.get("bolt-striked"));
 				return true;
 			}
 			
@@ -53,16 +53,16 @@ public class BoltCommand implements CommandExecutor {
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				otherPlayer.getWorld().strikeLightning(otherPlayer.getLocation());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("bolt-player"));
+				player.sendMessage(Phrases.get("bolt-player"));
 				return true;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 		}
 		return true;
 	}

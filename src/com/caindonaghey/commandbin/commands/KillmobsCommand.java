@@ -39,7 +39,7 @@ public class KillmobsCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.killmobs")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
@@ -48,7 +48,7 @@ public class KillmobsCommand implements CommandExecutor {
 					entities.remove();
 				}
 			}
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("removed-mobs"));
+			player.sendMessage(Phrases.get("removed-mobs"));
 		}
 		return true;
 	}

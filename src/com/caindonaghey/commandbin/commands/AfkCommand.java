@@ -23,23 +23,23 @@ public class AfkCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.afk")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 0) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return true;
 			}
 			
 			if(!AFKPlayers.contains(player.getName())) {
 				AFKPlayers.add(player.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("now-afk"));
+				player.sendMessage(Phrases.get("now-afk"));
 				return true;
 			}
 			
 			AFKPlayers.remove(player.getName());
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("no-afk"));
+			player.sendMessage(Phrases.get("no-afk"));
 			
 		}
 		return true;

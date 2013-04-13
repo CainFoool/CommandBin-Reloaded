@@ -44,30 +44,30 @@ public class BlockCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.block")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return true;
 			}
 			
 			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 			
 			if(otherPlayer == null) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
 			
 			if(!blockedPlayers.contains(otherPlayer.getName())) {
 				blockedPlayers.add(otherPlayer.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-blocked"));
+				player.sendMessage(Phrases.get("player-blocked"));
 				return true;
 			}
 			
 			blockedPlayers.remove(otherPlayer.getName());
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-unblocked"));
+			player.sendMessage(Phrases.get("player-unblocked"));
 		}
 		return true;
 	}

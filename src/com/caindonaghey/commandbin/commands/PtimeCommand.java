@@ -18,37 +18,37 @@ public class PtimeCommand implements CommandExecutor {
 			}
 			Player player = (Player) s;
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			
 			if(args[0].equalsIgnoreCase("day")) {
 				if(!player.hasPermission("CommandBin.ptime.day")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				player.setPlayerTime(0, false);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-set") + args[0].toLowerCase());
+				player.sendMessage(Phrases.get("time-set") + args[0].toLowerCase());
 				return true;
 			}
 			
 			if(args[0].equalsIgnoreCase("night")) {
 				if(!player.hasPermission("CommandBin.ptime.night")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				player.setPlayerTime(14400, false);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-set") + args[0].toLowerCase());
+				player.sendMessage(Phrases.get("time-set") + args[0].toLowerCase());
 				return true;
 			}
 			if(args[0].equalsIgnoreCase("reset")) {
 				if(!player.hasPermission("CommandBin.ptime.reset")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				player.resetPlayerTime();
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-unlocked"));
+				player.sendMessage(Phrases.get("time-unlocked"));
 			}
 		}
 		return true;

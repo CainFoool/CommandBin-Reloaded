@@ -53,24 +53,24 @@ public class WeatherCommand implements CommandExecutor {
 			
 
 			if(!player.hasPermission("CommandBin.weather")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			if(args.length > 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			if(args[0].equalsIgnoreCase("sun")) {
 				player.getWorld().setStorm(false);
 				player.getWorld().setThundering(false);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("rain-stopped"));
+				player.sendMessage(Phrases.get("rain-stopped"));
 				return true;
 			}
 			
@@ -85,7 +85,7 @@ public class WeatherCommand implements CommandExecutor {
 			if(args[0].equalsIgnoreCase("rain")) {
 				player.getWorld().setStorm(true);
 				player.getWorld().setThundering(true);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("rain-start"));
+				player.sendMessage(Phrases.get("rain-start"));
 				return true;
 			}
 		}

@@ -55,27 +55,27 @@ public class TpCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(args.length == 0) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.tp.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				player.teleport(otherPlayer.getLocation());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-player"));
+				player.sendMessage(Phrases.get("tele-player"));
 				return true;
 			}
 			
 			if(args.length == 2) {
 				if(!player.hasPermission("CommandBin.tp.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
@@ -83,29 +83,29 @@ public class TpCommand implements CommandExecutor {
 				Player twoPlayer = Bukkit.getServer().getPlayer(args[1]);
 				
 				if(onePlayer == null || twoPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("players-invalid"));
+					player.sendMessage(Phrases.get("players-invalid"));
 					return true;
 				}
 				onePlayer.teleport(twoPlayer.getLocation());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-1-2"));
+				player.sendMessage(Phrases.get("tele-1-2"));
 				return true;
 			}
 			
 			if(args.length == 3) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			if(args.length == 4) {
 				
 				if(!player.hasPermission("CommandBin.tp.coords")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
@@ -114,9 +114,9 @@ public class TpCommand implements CommandExecutor {
 					int y = Integer.parseInt(args[2]);
 					int z = Integer.parseInt(args[3]);
 					otherPlayer.teleport(new Location(otherPlayer.getWorld(), x, y, z));
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("tele-1-co"));
+					player.sendMessage(Phrases.get("tele-1-co"));
 				} catch (NumberFormatException e) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-numbers"));
+					player.sendMessage(Phrases.get("invalid-numbers"));
 				}
 				return true;
 			}

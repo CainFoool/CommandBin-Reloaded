@@ -32,7 +32,7 @@ public class NickCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.nick")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
@@ -41,12 +41,12 @@ public class NickCommand implements CommandExecutor {
 			}
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.nick.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				otherPlayer.setDisplayName(args[1]);

@@ -34,30 +34,30 @@ public class SpawnCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.spawn.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				player.teleport(player.getWorld().getSpawnLocation());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-tele-spawn"));
+				player.sendMessage(Phrases.get("player-tele-spawn"));
 				return true;
 			}
 			
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.spawn.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				otherPlayer.teleport(otherPlayer.getWorld().getSpawnLocation());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("spawn-player"));
+				player.sendMessage(Phrases.get("spawn-player"));
 			}
 			
 			if(args.length > 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 		}

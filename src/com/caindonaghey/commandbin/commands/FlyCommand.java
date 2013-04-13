@@ -46,19 +46,19 @@ public class FlyCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.fly.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
 				if(!flyingPlayers.contains(player.getName())) {
 					flyingPlayers.add(player.getName());
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("fly-self"));
+					player.sendMessage(Phrases.get("fly-self"));
 					player.setAllowFlight(true);
 					player.setFlying(true);
 					return true;
 				}
 				flyingPlayers.remove(player.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("nofly-self"));
+				player.sendMessage(Phrases.get("nofly-self"));
 				player.setAllowFlight(false);
 				player.setFlying(false);
 				return true;
@@ -66,18 +66,18 @@ public class FlyCommand implements CommandExecutor {
 			
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.fly.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(!flyingPlayers.contains(otherPlayer.getName())) {
 					flyingPlayers.add(otherPlayer.getName());
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-fly"));
+					player.sendMessage(Phrases.get("player-fly"));
 					otherPlayer.setAllowFlight(true);
 					otherPlayer.setFlying(true);
 					return true;
@@ -85,11 +85,11 @@ public class FlyCommand implements CommandExecutor {
 				flyingPlayers.remove(otherPlayer.getName());
 				otherPlayer.setAllowFlight(false);
 				otherPlayer.setFlying(false);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-nofly"));
+				player.sendMessage(Phrases.get("player-nofly"));
 				return true;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 			return false;
 		}
 		return true;

@@ -21,30 +21,30 @@ public class TpDenyCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.tpdeny")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return true;
 			}
 			
 			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 			
 			if(otherPlayer == null) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
 			
 			if(TpaCommand.tpaPlayers.containsKey(player.getName()) && TpaCommand.tpaPlayers.get(player.getName()) == otherPlayer.getName()) {
 				otherPlayer.sendMessage(ChatColor.GREEN + "[CommandBin]" + Phrases.get("teleport-request-denied"));
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("teleport-request-deny"));
+				player.sendMessage(Phrases.get("teleport-request-deny"));
 				TpaCommand.tpaPlayers.remove(player.getName());
 				return true;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("teleport-request-invalid"));
+			player.sendMessage(Phrases.get("teleport-request-invalid"));
 		}
 		return true;
 	}

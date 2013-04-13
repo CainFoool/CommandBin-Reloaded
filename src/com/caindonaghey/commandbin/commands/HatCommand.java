@@ -22,12 +22,12 @@ public class HatCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.hat")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 0) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
@@ -38,7 +38,7 @@ public class HatCommand implements CommandExecutor {
 			player.getInventory().setHelmet(player.getItemInHand());
 			player.getItemInHand().setType(Material.AIR);
 			player.getInventory().remove(player.getItemInHand());
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("hat"));
+			player.sendMessage(Phrases.get("hat"));
 		}
 		return true;
 	}

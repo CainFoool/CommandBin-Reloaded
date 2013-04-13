@@ -18,13 +18,13 @@ public class ClearChatCommand implements CommandExecutor {
 			}
 			Player player = (Player) s;
 			if(!player.hasPermission("CommandBin.clearchat")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			for(int i = 0; i < 20; i++) {
 				player.sendMessage("");
 			}
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("chat-cleared"));
+			player.sendMessage(Phrases.get("chat-cleared"));
 		}
 		return true;
 	}

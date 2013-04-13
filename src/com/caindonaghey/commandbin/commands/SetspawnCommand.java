@@ -20,16 +20,16 @@ public class SetspawnCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.setspawn")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 0) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			player.getWorld().setSpawnLocation((int) player.getLocation().getX(), (int) player.getLocation().getY(), (int)player.getLocation().getZ());
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("spawn-set"));
+			player.sendMessage(Phrases.get("spawn-set"));
 			return true;
 		}
 		return true;

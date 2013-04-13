@@ -53,7 +53,7 @@ public class VanishCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.vanish.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
@@ -64,7 +64,7 @@ public class VanishCommand implements CommandExecutor {
 							allPlayers.hidePlayer(player);
 						}
 					}
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("self-invisible"));
+					player.sendMessage(Phrases.get("self-invisible"));
 					return true;
 				}
 				vanishedPlayers.remove(player.getName());
@@ -73,17 +73,17 @@ public class VanishCommand implements CommandExecutor {
 						allPlayers.showPlayer(player);
 					}
 				}
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("self-visible"));
+				player.sendMessage(Phrases.get("self-visible"));
 			}
 			
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.vanish.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				
@@ -94,7 +94,7 @@ public class VanishCommand implements CommandExecutor {
 							allPlayers.hidePlayer(otherPlayer);
 						}
 					}
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-vanish"));
+					player.sendMessage(Phrases.get("player-vanish"));
 					return true;
 				}
 				vanishedPlayers.remove(otherPlayer.getName());
@@ -103,7 +103,7 @@ public class VanishCommand implements CommandExecutor {
 						allPlayers.showPlayer(otherPlayer);
 					}
 				}
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-visible"));
+				player.sendMessage(Phrases.get("player-visible"));
 			}
 		}
 		return true;

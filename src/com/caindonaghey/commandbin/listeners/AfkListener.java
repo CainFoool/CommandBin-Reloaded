@@ -18,7 +18,7 @@ public class AfkListener implements Listener {
 		
 		if(AfkCommand.AFKPlayers.contains(playerName)) {
 			AfkCommand.AFKPlayers.remove(playerName);
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("no-afk"));
+			player.sendMessage(Phrases.get("no-afk"));
 		}
 	}
 

@@ -35,10 +35,10 @@ public class StarveCommand implements CommandExecutor {
 			if(args.length == 0) {
 				if(player.hasPermission("CommandBin.starve.self")) {
 					player.setFoodLevel(0);
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("starve-self"));
+					player.sendMessage(Phrases.get("starve-self"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
@@ -46,18 +46,18 @@ public class StarveCommand implements CommandExecutor {
 				if(player.hasPermission("CommandBin.starve.others")) {
 					Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 					if(otherPlayer == null) {
-						player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+						player.sendMessage(Phrases.get("player-invalid"));
 						return true;
 					}
 					otherPlayer.setFoodLevel(0);
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("starve-others"));
+					player.sendMessage(Phrases.get("starve-others"));
 					return true;
 				}
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 			return true;
 			}
 			
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 			return false;
 		}
 		return true;

@@ -42,12 +42,12 @@ public class ExplosionbowCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(!player.hasPermission("CommandBin.explosionbow.self")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				if(!explosionBowPlayers.contains(player.getName())) {
 					explosionBowPlayers.add(player.getName());
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("self-bow"));
+					player.sendMessage(Phrases.get("self-bow"));
 					return true;
 				}
 				explosionBowPlayers.remove(player.getName());
@@ -57,24 +57,24 @@ public class ExplosionbowCommand implements CommandExecutor {
 			
 			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.explosionbow.others")) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+					player.sendMessage(Phrases.get("player-invalid"));
 					return true;
 				}
 				if(!explosionBowPlayers.contains(otherPlayer.getName())) {
 					explosionBowPlayers.add(otherPlayer.getName());
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-bow"));
+					player.sendMessage(Phrases.get("player-bow"));
 					return true;
 				}
 				explosionBowPlayers.remove(otherPlayer.getName());
 				player.sendMessage(ChatColor.GREEN + "[CommandBin]" + Phrases.get("player-nobow"));
 				return true;
 			}
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+			player.sendMessage(Phrases.get("invalid-arguments"));
 			return false;
 		}
 		return true;

@@ -18,7 +18,7 @@ public class CraftCommand implements CommandExecutor {
 			}
 			Player player = (Player) s;
 			if(!player.hasPermission("CommandBin.craft")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			player.openWorkbench(player.getLocation(), true);

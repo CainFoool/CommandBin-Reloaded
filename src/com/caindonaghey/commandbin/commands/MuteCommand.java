@@ -43,27 +43,27 @@ public class MuteCommand implements CommandExecutor {
 			
 			
 			if(!player.hasPermission("CommandBin.mute")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			
 			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 			if(otherPlayer == null) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("player-invalid"));
+				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
 			
 			if(!mutedPlayers.contains(otherPlayer.getName())) {
 				mutedPlayers.add(otherPlayer.getName());
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-muted"));
+				player.sendMessage(Phrases.get("player-muted"));
 				return true;
 			}
 			mutedPlayers.remove(otherPlayer.getName());
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-unmuted"));
+			player.sendMessage(Phrases.get("player-unmuted"));
 			return true;
 		}
 		return true;

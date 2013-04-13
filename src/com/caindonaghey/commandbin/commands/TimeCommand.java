@@ -59,23 +59,23 @@ public class TimeCommand implements CommandExecutor {
 			Player player = (Player) s;
 			
 			if(!player.hasPermission("CommandBin.time")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length < 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 			}
 			
 			if(args[0].equalsIgnoreCase("day")) {
 				player.getWorld().setTime(0);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-set") + args[0].toLowerCase());
+				player.sendMessage(Phrases.get("time-set") + args[0].toLowerCase());
 				return true;
 			}
 			
 			if(args[0].equalsIgnoreCase("night")) {
 				player.getWorld().setTime(14400);
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-set") + args[0].toLowerCase());
+				player.sendMessage(Phrases.get("time-set") + args[0].toLowerCase());
 				return true;
 			}
 			
@@ -84,11 +84,11 @@ public class TimeCommand implements CommandExecutor {
 					isLockRunning = true;
 					worldName = player.getWorld().getName();
 					worldTime = player.getWorld().getTime();
-					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-locked"));
+					player.sendMessage(Phrases.get("time-locked"));
 					return true;
 				}
 				isLockRunning = false;
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("time-unlocked"));
+				player.sendMessage(Phrases.get("time-unlocked"));
 				return true;
 			}
 			return true;

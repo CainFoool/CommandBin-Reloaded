@@ -19,20 +19,20 @@ public class WarpCommand implements CommandExecutor {
 			}
 			Player player = (Player) s;
 			if(!player.hasPermission("CommandBin.warp")) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("no-permission"));
+				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
 			if(args.length != 1) {
-				player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-arguments"));
+				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
 			if(Warp.doesExist(args[0].toLowerCase())) {
 				player.teleport(Warp.getWarp(args[0].toLowerCase()));
-				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("warp-teleport"));
+				player.sendMessage(Phrases.get("warp-teleport"));
 				return true;
 			}
-			player.sendMessage(ChatColor.RED + "[CommandBin] " + Phrases.get("invalid-warp"));
+			player.sendMessage(Phrases.get("invalid-warp"));
 		}
 		return true;
 	}
