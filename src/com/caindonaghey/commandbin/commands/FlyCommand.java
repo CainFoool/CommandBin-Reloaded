@@ -53,11 +53,13 @@ public class FlyCommand implements CommandExecutor {
 				if(!flyingPlayers.contains(player.getName())) {
 					flyingPlayers.add(player.getName());
 					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("fly-self"));
+					player.setAllowFlight(true);
 					player.setFlying(true);
 					return true;
 				}
 				flyingPlayers.remove(player.getName());
 				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("nofly-self"));
+				player.setAllowFlight(false);
 				player.setFlying(false);
 				return true;
 			}
@@ -76,10 +78,13 @@ public class FlyCommand implements CommandExecutor {
 				if(!flyingPlayers.contains(otherPlayer.getName())) {
 					flyingPlayers.add(otherPlayer.getName());
 					player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-fly"));
+					otherPlayer.setAllowFlight(true);
 					otherPlayer.setFlying(true);
 					return true;
 				}
 				flyingPlayers.remove(otherPlayer.getName());
+				otherPlayer.setAllowFlight(false);
+				otherPlayer.setFlying(false);
 				player.sendMessage(ChatColor.GREEN + "[CommandBin] " + Phrases.get("player-nofly"));
 				return true;
 			}
