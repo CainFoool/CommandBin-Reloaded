@@ -18,21 +18,21 @@ public class WeatherCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("weather")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 2) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				World world = Bukkit.getServer().getWorld(args[0]);
 				
 				if(world == null) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-world"));
+					System.out.println(Phrases.get("invalid-world"));
 					return true;
 				}
 				
 				if(args[1].equalsIgnoreCase("sun")) {
 					world.setStorm(false);
 					world.setThundering(false);
-					System.out.println("[CommandBin] " + Phrases.get("rain-stopped"));
+					System.out.println(Phrases.get("rain-stopped"));
 					return true;
 				}
 				
@@ -44,7 +44,7 @@ public class WeatherCommand implements CommandExecutor {
 				if(args[1].equalsIgnoreCase("rain")) {
 					world.setStorm(true);
 					world.setThundering(true);
-					System.out.println("[CommandBin] " + Phrases.get("rain-start"));
+					System.out.println(Phrases.get("rain-start"));
 					return true;
 				}
 			}

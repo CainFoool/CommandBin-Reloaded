@@ -15,24 +15,24 @@ public class BoltCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("bolt")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 1) {
-					System.out.println("[CommandBin] " + Phrases.get("bolt-usage"));
+					System.out.println(Phrases.get("bolt-usage"));
 					return true;
 				}
 				
 				if(args.length > 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return true;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				player.getWorld().strikeLightning(player.getLocation());
-				System.out.println("[CommandBin] " + Phrases.get("bolt-striked"));
+				System.out.println(Phrases.get("bolt-striked"));
 				return true;
 			}
 			

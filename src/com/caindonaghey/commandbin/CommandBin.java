@@ -64,12 +64,12 @@ public class CommandBin extends JavaPlugin {
 		registerTimeLock();
 		setupConfig();
 		setupLanguage();
-		System.out.println("[CommandBin] " + Phrases.get("enabled"));
+		System.out.println(Phrases.get("enabled"));
 		plugin = this;
 	}
 	
 	public void onDisable() {
-		System.out.println("[CommandBin] " + Phrases.get("disabled"));
+		System.out.println(Phrases.get("disabled"));
 	}
 	
 	public void registerEvents() {

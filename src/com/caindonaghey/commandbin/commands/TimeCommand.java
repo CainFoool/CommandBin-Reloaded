@@ -20,25 +20,25 @@ public class TimeCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("time")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 2) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				World world = Bukkit.getServer().getWorld(args[0]);
 				if(world == null) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-world"));
+					System.out.println(Phrases.get("invalid-world"));
 					return true;
 				}
 				
 				if(args[1].equalsIgnoreCase("day")) {
 					world.setTime(0);
-					System.out.println("[CommandBin] " + Phrases.get("time-set") + args[1].toLowerCase());
+					System.out.println(Phrases.get("time-set") + args[1].toLowerCase());
 					return true;
 				}
 				
 				if(args[1].equalsIgnoreCase("night")) {
 					world.setTime(14400);
-					System.out.println("[CommandBin] " + Phrases.get("time-set") + args[1].toLowerCase());
+					System.out.println(Phrases.get("time-set") + args[1].toLowerCase());
 					return true;
 				}
 				
@@ -47,11 +47,11 @@ public class TimeCommand implements CommandExecutor {
 						isLockRunning = true;
 						worldName = world.getName();
 						worldTime = world.getTime();
-						System.out.println("[CommandBin] " + Phrases.get("time-locked"));
+						System.out.println(Phrases.get("time-locked"));
 						return true;
 					}
 					isLockRunning = false;
-					System.out.println("[CommandBin] " + Phrases.get("time-unlocked"));
+					System.out.println(Phrases.get("time-unlocked"));
 					return true;
 				}
 			}

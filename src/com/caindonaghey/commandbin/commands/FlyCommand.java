@@ -19,25 +19,25 @@ public class FlyCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("fly")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(!flyingPlayers.contains(player.getName())) {
 					flyingPlayers.add(player.getName());
-					System.out.println("[CommandBin] " + Phrases.get("player-fly"));
+					System.out.println(Phrases.get("player-fly"));
 					player.setFlying(true);
 					return true;
 				}
 				
 				flyingPlayers.remove(player.getName());
-				System.out.println("[CommandBin] " + Phrases.get("player-nofly"));
+				System.out.println(Phrases.get("player-nofly"));
 				player.setFlying(false);
 				return true;
 			}

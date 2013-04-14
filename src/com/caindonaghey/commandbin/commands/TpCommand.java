@@ -16,7 +16,7 @@ public class TpCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("tp")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 2 || args.length == 3) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
@@ -24,18 +24,18 @@ public class TpCommand implements CommandExecutor {
 					Player onePlayer = Bukkit.getServer().getPlayer(args[0]);
 					Player twoPlayer = Bukkit.getServer().getPlayer(args[1]);
 					if(onePlayer == null || twoPlayer == null) {
-						System.out.println("[CommandBin] " + Phrases.get("players-invalid"));
+						System.out.println(Phrases.get("players-invalid"));
 						return true;
 					}
 					onePlayer.teleport(twoPlayer.getLocation());
-					System.out.println("[CommandBin] " + Phrases.get("tele-1-2"));
+					System.out.println(Phrases.get("tele-1-2"));
 					return true;
 				}
 				
 				if(args.length == 4) {
 					Player player = Bukkit.getServer().getPlayer(args[0]);
 					if(player == null) {
-						System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+						System.out.println(Phrases.get("player-invalid"));
 						return true;
 					}
 					
@@ -44,9 +44,9 @@ public class TpCommand implements CommandExecutor {
 						int y = Integer.parseInt(args[2]);
 						int z = Integer.parseInt(args[3]);
 						player.teleport(new Location(player.getWorld(), x, y, z));
-						System.out.println("[CommandBin] " + Phrases.get("tele-1-co"));
+						System.out.println(Phrases.get("tele-1-co"));
 					} catch (NumberFormatException e) {
-						System.out.println("[CommandBin] " + Phrases.get("invalid-numbers"));
+						System.out.println(Phrases.get("invalid-numbers"));
 					}
 					return true;
 				}

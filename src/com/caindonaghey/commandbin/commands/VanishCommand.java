@@ -19,13 +19,13 @@ public class VanishCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("vanish")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return true;
 				}
 				
 				Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 				if(otherPlayer == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
@@ -36,7 +36,7 @@ public class VanishCommand implements CommandExecutor {
 							allPlayers.hidePlayer(otherPlayer);
 						}
 					}
-					System.out.println("[CommandBin] " + Phrases.get("player-vanish"));
+					System.out.println(Phrases.get("player-vanish"));
 					return true;
 				}
 				vanishedPlayers.remove(otherPlayer.getName());
@@ -45,7 +45,7 @@ public class VanishCommand implements CommandExecutor {
 						allPlayers.showPlayer(otherPlayer);
 					}
 				}
-				System.out.println("[CommandBin] " + Phrases.get("player-visible"));
+				System.out.println(Phrases.get("player-visible"));
 				return true;
 			}
 			

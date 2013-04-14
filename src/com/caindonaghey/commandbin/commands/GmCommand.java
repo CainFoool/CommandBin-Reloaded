@@ -16,36 +16,36 @@ public class GmCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("gm")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 2) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(args[1].equalsIgnoreCase("0") || args[1].equalsIgnoreCase("s") || args[1].equalsIgnoreCase("survival")) {
 					player.setGameMode(GameMode.SURVIVAL);
-					System.out.println("[CommandBin] " + Phrases.get("gamemode-switch"));
+					System.out.println(Phrases.get("gamemode-switch"));
 					return true;
 				}
 				
 				if(args[1].equalsIgnoreCase("1") || args[1].equalsIgnoreCase("c") || args[1].equalsIgnoreCase("creative")) {
 					player.setGameMode(GameMode.CREATIVE);
-					System.out.println("[CommandBin] " + Phrases.get("gamemode-switch"));
+					System.out.println(Phrases.get("gamemode-switch"));
 					return true;
 				}
 				
 				if(args[1].equalsIgnoreCase("2") || args[1].equalsIgnoreCase("a") || args[1].equalsIgnoreCase("adventure")) {
 					player.setGameMode(GameMode.ADVENTURE);
-					System.out.println("[CommandBin] " + Phrases.get("gamemode-switch"));
+					System.out.println(Phrases.get("gamemode-switch"));
 					return true;
 				}
 				
-				System.out.println("[CommandBin] " + Phrases.get("invalid-gamemode"));
+				System.out.println(Phrases.get("invalid-gamemode"));
 				return true;
 			}
 			

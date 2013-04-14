@@ -18,7 +18,7 @@ public class TpaCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		if(l.equalsIgnoreCase("tpa")) {
 			if(!(s instanceof Player)) {
-				System.out.println("[CommandBin] " + Phrases.get("no-console"));
+				System.out.println(Phrases.get("no-console"));
 				return true;
 			}
 			

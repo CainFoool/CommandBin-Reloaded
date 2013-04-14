@@ -19,25 +19,25 @@ public class BlockCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("block")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return true;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(!blockedPlayers.contains(player.getName())) {
 					blockedPlayers.add(player.getName());
-					System.out.println("[CommandBin] " + Phrases.get("player-blocked"));
+					System.out.println(Phrases.get("player-blocked"));
 					return true;
 				}
 				
 				blockedPlayers.remove(player.getName());
-				System.out.println("[CommandBin] " + Phrases.get("player-unblocked"));
+				System.out.println(Phrases.get("player-unblocked"));
 				return true;
 			}
 			

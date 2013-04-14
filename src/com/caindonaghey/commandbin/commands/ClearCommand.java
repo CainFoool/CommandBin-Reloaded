@@ -15,19 +15,19 @@ public class ClearCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("clear")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				player.getInventory().clear();
-				System.out.println("[CommandBin] " + Phrases.get("inventory-cleared"));
+				System.out.println(Phrases.get("inventory-cleared"));
 				return true;
 			}
 			

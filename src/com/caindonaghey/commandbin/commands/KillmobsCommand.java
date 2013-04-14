@@ -18,13 +18,13 @@ public class KillmobsCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("killmobs")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				World world = Bukkit.getServer().getWorld(args[0]);
 				if(world == null) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-world"));
+					System.out.println(Phrases.get("invalid-world"));
 					return true;
 				}
 				
@@ -33,7 +33,7 @@ public class KillmobsCommand implements CommandExecutor {
 						entities.remove();
 					}
 				}
-				System.out.println("[CommandBin] " + Phrases.get("removed-mobs"));
+				System.out.println(Phrases.get("removed-mobs"));
 			}
 			
 			Player player = (Player) s;

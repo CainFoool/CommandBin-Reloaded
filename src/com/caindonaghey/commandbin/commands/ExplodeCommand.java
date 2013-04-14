@@ -15,19 +15,19 @@ public class ExplodeCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("explode")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				player.getWorld().createExplosion(player.getLocation(), 5);
-				System.out.println("[CommandBin] " + Phrases.get("exploded"));
+				System.out.println(Phrases.get("exploded"));
 				return true;
 			}
 			

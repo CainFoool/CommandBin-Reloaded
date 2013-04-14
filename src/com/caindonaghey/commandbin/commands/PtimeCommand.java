@@ -13,7 +13,7 @@ public class PtimeCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		if(l.equalsIgnoreCase("ptime")) {
 			if(!(s instanceof Player)) {
-				System.out.println("[CommandBin] " + Phrases.get("no-console"));
+				System.out.println(Phrases.get("no-console"));
 				return true;
 			}
 			Player player = (Player) s;

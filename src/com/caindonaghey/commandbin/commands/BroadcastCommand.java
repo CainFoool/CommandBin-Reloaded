@@ -15,7 +15,7 @@ public class BroadcastCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("broadcast")) {
 			if(!(s instanceof Player)) {
 				if(args.length < 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				

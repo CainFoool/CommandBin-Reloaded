@@ -19,23 +19,23 @@ public class MuteCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("mute")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				if(!mutedPlayers.contains(player.getName())) {
 					mutedPlayers.add(player.getName());
-					System.out.println("[CommandBin] " + Phrases.get("player-muted"));
+					System.out.println(Phrases.get("player-muted"));
 					return true;
 				}
 				mutedPlayers.remove(player.getName());
-				System.out.println("[CommandBin] " + Phrases.get("player-unmuted"));
+				System.out.println(Phrases.get("player-unmuted"));
 				return true;
 			}
 			

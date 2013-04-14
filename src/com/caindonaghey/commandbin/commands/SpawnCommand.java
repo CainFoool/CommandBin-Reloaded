@@ -15,18 +15,18 @@ public class SpawnCommand implements CommandExecutor {
 		if(l.equalsIgnoreCase("spawn")) {
 			if(!(s instanceof Player)) {
 				if(args.length != 1) {
-					System.out.println("[CommandBin] " + Phrases.get("invalid-arguments"));
+					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				if(player == null) {
-					System.out.println("[CommandBin] " + Phrases.get("player-invalid"));
+					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
 				
 				player.teleport(player.getWorld().getSpawnLocation());
-				System.out.println("[CommandBin] " + Phrases.get("spawn-player"));
+				System.out.println(Phrases.get("spawn-player"));
 				return true;
 			}
 			
