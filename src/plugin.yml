@@ -135,3 +135,6 @@ commands:
    itemdesc:
        description: 'Change the description of any item'
        usage: /<command> <name>
+   smoke:
+       description: 'Set you or another player to have smoke where you walk'
+       usage: /<command> <player>

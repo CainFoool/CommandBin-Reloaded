@@ -35,6 +35,7 @@ import com.caindonaghey.commandbin.commands.PtimeCommand;
 import com.caindonaghey.commandbin.commands.SethomeCommand;
 import com.caindonaghey.commandbin.commands.SetspawnCommand;
 import com.caindonaghey.commandbin.commands.SetwarpCommand;
+import com.caindonaghey.commandbin.commands.SmokeCommand;
 import com.caindonaghey.commandbin.commands.SpawnCommand;
 import com.caindonaghey.commandbin.commands.StarveCommand;
 import com.caindonaghey.commandbin.commands.TimeCommand;
@@ -53,6 +54,7 @@ import com.caindonaghey.commandbin.listeners.BowListener;
 import com.caindonaghey.commandbin.listeners.FreezeListener;
 import com.caindonaghey.commandbin.listeners.GodListener;
 import com.caindonaghey.commandbin.listeners.MuteListener;
+import com.caindonaghey.commandbin.listeners.SmokeListener;
 import com.caindonaghey.commandbin.listeners.VanishListener;
 
 public class CommandBin extends JavaPlugin {
@@ -82,6 +84,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new MuteListener(), this);
 		getServer().getPluginManager().registerEvents(new VanishListener(), this);
 		getServer().getPluginManager().registerEvents(new BowListener(), this);
+		getServer().getPluginManager().registerEvents(new SmokeListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -129,6 +132,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("ptime").setExecutor(new PtimeCommand());
 		getServer().getPluginCommand("itemname").setExecutor(new ItemnameCommand());
 		getServer().getPluginCommand("itemdesc").setExecutor(new ItemdescCommand());
+		getServer().getPluginCommand("smoke").setExecutor(new SmokeCommand());
 	}
 	
 	public void registerTimeLock() {

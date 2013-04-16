@@ -11,7 +11,7 @@ public class Phrases {
 	 * Need translators pls.
 	 */
 	
-	public static String prefix = ChatColor.GREEN + "[CommandBin] ";
+	public static String prefix = ChatColor.BLUE + "[" + ChatColor.GREEN + "CMDBin" + ChatColor.BLUE + "] " + ChatColor.GREEN;
 	public static String badPrefix = ChatColor.RED + "[CommandBin] ";
 	public static String get(String string) {
 		
@@ -100,6 +100,10 @@ public class Phrases {
 			if(string == "invalid-warp") return badPrefix + "Warp non-existant. Use /setwarp to create one!";
 			if(string == "itemname-set")  return prefix + "Item name has been set!";
 			if(string == "itemdesc-set")  return prefix + "Item description has been set!";
+			if(string == "player-smoke-on") return prefix + "Player will now have smoke whereever they walk.";
+			if(string == "player-smoke-off") return prefix + "Player will no longer have smoke.";
+			if(string == "self-smoke-on") return prefix + "You will now have smoke where you walk.";
+			if(string == "self-smoke-off") return prefix + "You will no longer have smoke.";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -187,6 +191,10 @@ public class Phrases {
 			if(string == "invalid-warp") return badPrefix + "Warp non-existant. Use /setwarp to create one!";
 			if(string == "itemname-set")  return prefix + "Item name has been set!";
 			if(string == "itemdesc-set")  return prefix + "Item description has been set!";
+			if(string == "player-smoke-on") return prefix + "Player will now have smoke whereever they walk.";
+			if(string == "player-smoke-off") return prefix + "Player will no longer have smoke.";
+			if(string == "self-smoke-on") return prefix + "You will now have smoke where you walk.";
+			if(string == "self-smoke-off") return prefix + "You will no longer have smoke.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
