@@ -28,6 +28,10 @@ public class SetwarpCommand implements CommandExecutor {
 				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
+			
+			if(args[0].equalsIgnoreCase("list")) {
+				return false;
+			}
 				Warp.saveWarp(player, args[0].toLowerCase());
 				player.sendMessage(Phrases.get("warp-set"));
 		}

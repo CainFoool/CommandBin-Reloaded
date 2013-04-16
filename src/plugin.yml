@@ -138,3 +138,6 @@ commands:
    smoke:
        description: 'Set you or another player to have smoke where you walk'
        usage: /<command> <player>
+   delwarp:
+       description: 'Delete a warp'
+       usage: /<command> <warp-name>

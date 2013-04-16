@@ -12,6 +12,7 @@ import com.caindonaghey.commandbin.commands.ClearChatCommand;
 import com.caindonaghey.commandbin.commands.ClearCommand;
 import com.caindonaghey.commandbin.commands.CommandBinCommand;
 import com.caindonaghey.commandbin.commands.CraftCommand;
+import com.caindonaghey.commandbin.commands.DelwarpCommand;
 import com.caindonaghey.commandbin.commands.ExplodeCommand;
 import com.caindonaghey.commandbin.commands.ExplosionbowCommand;
 import com.caindonaghey.commandbin.commands.FeedCommand;
@@ -133,6 +134,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("itemname").setExecutor(new ItemnameCommand());
 		getServer().getPluginCommand("itemdesc").setExecutor(new ItemdescCommand());
 		getServer().getPluginCommand("smoke").setExecutor(new SmokeCommand());
+		getServer().getPluginCommand("delwarp").setExecutor(new DelwarpCommand());
 	}
 	
 	public void registerTimeLock() {

@@ -104,6 +104,9 @@ public class Phrases {
 			if(string == "player-smoke-off") return prefix + "Player will no longer have smoke.";
 			if(string == "self-smoke-on") return prefix + "You will now have smoke where you walk.";
 			if(string == "self-smoke-off") return prefix + "You will no longer have smoke.";
+			if(string == "warp-list") return prefix + "Warps: {WARPS}";
+			if(string == "warp-deleted") return prefix + "Warp has been deleted.";
+			if(string == "warp-invalid") return badPrefix + "This warp does not exist.";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -195,6 +198,9 @@ public class Phrases {
 			if(string == "player-smoke-off") return prefix + "Player will no longer have smoke.";
 			if(string == "self-smoke-on") return prefix + "You will now have smoke where you walk.";
 			if(string == "self-smoke-off") return prefix + "You will no longer have smoke.";
+			if(string == "warp-list") return prefix + "Warps: {WARPS}";
+			if(string == "warp-deleted") return prefix + "Warp has been deleted.";
+			if(string == "warp-invalid") return badPrefix + "This warp does not exist.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}

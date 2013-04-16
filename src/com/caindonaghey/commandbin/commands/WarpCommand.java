@@ -1,11 +1,13 @@
 package com.caindonaghey.commandbin.commands;
 
-import org.bukkit.ChatColor;
+import java.util.Set;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.caindonaghey.commandbin.CommandBin;
 import com.caindonaghey.commandbin.Phrases;
 import com.caindonaghey.commandbin.Warp;
 
@@ -27,6 +29,17 @@ public class WarpCommand implements CommandExecutor {
 				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
+			
+			if(args[0].equalsIgnoreCase("list")) {
+				Set<String> warpList = CommandBin.plugin.getConfig().getConfigurationSection("warp").getKeys(false);
+				StringBuilder x = new StringBuilder();
+				for(String warpNames : warpList) {
+					x.append(warpNames + ", ");
+				}
+				player.sendMessage(Phrases.get("warp-list").replace("{WARPS}", x.toString()));
+				return true;
+			}
+			
 			if(Warp.doesExist(args[0].toLowerCase())) {
 				player.teleport(Warp.getWarp(args[0].toLowerCase()));
 				player.sendMessage(Phrases.get("warp-teleport"));
