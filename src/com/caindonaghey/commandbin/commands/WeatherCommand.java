@@ -9,7 +9,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
+import com.caindonaghey.commandbin.Inventory;
 import com.caindonaghey.commandbin.Phrases;
 
 public class WeatherCommand implements CommandExecutor {
@@ -78,6 +80,7 @@ public class WeatherCommand implements CommandExecutor {
 				player.sendMessage(ChatColor.GREEN + "[CommandBin] Hallelujah! (Look up)");
 				for(int i = 0; i <= 800; i++) {
 					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() + Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() - Math.random() * 20), EntityType.VILLAGER);
+					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() - Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() + Math.random() * 20), EntityType.VILLAGER);
 				}
 				return true;
 			}

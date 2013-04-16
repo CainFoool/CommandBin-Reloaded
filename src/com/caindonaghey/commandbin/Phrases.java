@@ -98,6 +98,8 @@ public class Phrases {
 			if(string == "warp-set") return prefix + "Warp has been set!";
 			if(string == "warp-teleport") return prefix + "You have teleported to this warp.";
 			if(string == "invalid-warp") return badPrefix + "Warp non-existant. Use /setwarp to create one!";
+			if(string == "itemname-set")  return prefix + "Item name has been set!";
+			if(string == "itemdesc-set")  return prefix + "Item description has been set!";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -183,6 +185,8 @@ public class Phrases {
 			if(string == "warp-set") return prefix + "Warp has been set!";
 			if(string == "warp-teleport") return prefix + "You have teleported to this warp.";
 			if(string == "invalid-warp") return badPrefix + "Warp non-existant. Use /setwarp to create one!";
+			if(string == "itemname-set")  return prefix + "Item name has been set!";
+			if(string == "itemdesc-set")  return prefix + "Item description has been set!";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}

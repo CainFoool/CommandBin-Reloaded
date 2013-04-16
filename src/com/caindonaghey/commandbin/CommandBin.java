@@ -24,6 +24,8 @@ import com.caindonaghey.commandbin.commands.HatCommand;
 import com.caindonaghey.commandbin.commands.HealCommand;
 import com.caindonaghey.commandbin.commands.HomeCommand;
 import com.caindonaghey.commandbin.commands.IPCommand;
+import com.caindonaghey.commandbin.commands.ItemdescCommand;
+import com.caindonaghey.commandbin.commands.ItemnameCommand;
 import com.caindonaghey.commandbin.commands.KillCommand;
 import com.caindonaghey.commandbin.commands.KillmobsCommand;
 import com.caindonaghey.commandbin.commands.MuteCommand;
@@ -125,6 +127,8 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("setwarp").setExecutor(new SetwarpCommand());
 		getServer().getPluginCommand("warp").setExecutor(new WarpCommand());
 		getServer().getPluginCommand("ptime").setExecutor(new PtimeCommand());
+		getServer().getPluginCommand("itemname").setExecutor(new ItemnameCommand());
+		getServer().getPluginCommand("itemdesc").setExecutor(new ItemdescCommand());
 	}
 	
 	public void registerTimeLock() {

@@ -129,3 +129,9 @@ commands:
    ptime:
        description: 'Set your client-side time'
        usage: /<command> <day/night/reset>
+   itemname:
+       description: 'Change the name of any item'
+       usage: /<command> <name>
+   itemdesc:
+       description: 'Change the description of any item'
+       usage: /<command> <name>
