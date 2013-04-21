@@ -1,5 +1,7 @@
 package com.caindonaghey.commandbin;
 
+import java.util.Random;
+
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.FireworkEffect;
@@ -23,6 +25,32 @@ public class Fireworks {
 	
     public static Color getColorFrom(Player player, String sub) {
         Color color = null;
+        
+    	if(sub.equalsIgnoreCase("r")) {
+    		Random rand = new Random();
+    		if(rand.nextInt(5)+1 == 1) {
+    			return Color.RED;
+    		}
+    		if(rand.nextInt(5)+1 == 2) {
+    			return Color.BLUE;
+    		}
+    		if(rand.nextInt(5)+1 == 3) {
+    			return Color.YELLOW;
+    		}
+    		if(rand.nextInt(5)+1 == 4) {
+    			return Color.PURPLE;
+    		}
+    		if(rand.nextInt(5)+1 == 5) {
+    			return Color.AQUA;
+    		}
+    		if(rand.nextInt(5)+1 == 6) {
+    			return Color.LIME;
+    		}
+    		if(rand.nextInt(5)+1 == 7) {
+    			return Color.ORANGE;
+    		}
+    	}
+    	
         if (sub.matches("(?i)#[0-9A-F]{6}")) {
             sub = sub.substring(1);
 
@@ -54,7 +82,7 @@ public class Fireworks {
             color = DyeColor.valueOf(sub.toUpperCase()).getColor();
         	} catch (IllegalArgumentException e) {
         		color = Color.RED;
-        		player.sendMessage(Phrases.get("invalid-color"));
+        		// player.sendMessage(Phrases.get("invalid-color"));
         	}
         }
         return color;
@@ -63,11 +91,36 @@ public class Fireworks {
     public static Type getTypeFrom(Player player, String sub) {
     	Type type = null;
     	
+    	if(sub.equalsIgnoreCase("r")) {
+    		Random rand = new Random();
+    		if(rand.nextInt(5)+1 == 1) {
+    			return Type.BALL;
+    		}
+    		if(rand.nextInt(5)+1 == 2) {
+    			return Type.BALL_LARGE;
+    		}
+    		if(rand.nextInt(5)+1 == 3) {
+    			return Type.BURST;
+    		}
+    		if(rand.nextInt(5)+1 == 4) {
+    			return Type.CREEPER;
+    		}
+    		if(rand.nextInt(5)+1 == 5) {
+    			return Type.STAR;
+    		}
+    		if(rand.nextInt(5)+1 == 6) {
+    			return Type.BURST;
+    		}
+    		if(rand.nextInt(5)+1 == 7) {
+    			return Type.BALL;
+    		}
+    	}
+    	
     	try {
     		type = Type.valueOf(sub.toUpperCase());
     	} catch (IllegalArgumentException e) {
     		type = Type.CREEPER;
-    		player.sendMessage(Phrases.get("invalid-type"));
+    		// player.sendMessage(Phrases.get("invalid-type"));
     	}
     	return type;
     }

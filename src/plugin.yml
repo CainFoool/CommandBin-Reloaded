@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.03'
+version: '5.04'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
@@ -146,7 +146,7 @@ commands:
        usage: /<command> <mob-name> <amount>
    firework:
        description: 'Spawn fireworks where you are looking'
-       usage: /<command> <firework/type> <color> <length>
+       usage: /<command> <firework/type/r (random)> <color/r (random)> <length>
    bindstick:
        description: 'Bind a command / message to a stick'
        usage: /<command> <message/command>
