@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.caindonaghey.commandbin.commands.AfkCommand;
+import com.caindonaghey.commandbin.commands.BindstickCommand;
 import com.caindonaghey.commandbin.commands.BlockCommand;
 import com.caindonaghey.commandbin.commands.BoltCommand;
 import com.caindonaghey.commandbin.commands.BroadcastCommand;
@@ -52,6 +53,7 @@ import com.caindonaghey.commandbin.commands.VanishCommand;
 import com.caindonaghey.commandbin.commands.WarpCommand;
 import com.caindonaghey.commandbin.commands.WeatherCommand;
 import com.caindonaghey.commandbin.listeners.AfkListener;
+import com.caindonaghey.commandbin.listeners.BindListener;
 import com.caindonaghey.commandbin.listeners.BlockedListener;
 import com.caindonaghey.commandbin.listeners.BowListener;
 import com.caindonaghey.commandbin.listeners.FreezeListener;
@@ -88,6 +90,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new VanishListener(), this);
 		getServer().getPluginManager().registerEvents(new BowListener(), this);
 		getServer().getPluginManager().registerEvents(new SmokeListener(), this);
+		getServer().getPluginManager().registerEvents(new BindListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -139,6 +142,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("delwarp").setExecutor(new DelwarpCommand());
 		getServer().getPluginCommand("spawnmob").setExecutor(new SpawnmobCommand());
 		getServer().getPluginCommand("firework").setExecutor(new FireworkCommand());
+		getServer().getPluginCommand("bindstick").setExecutor(new BindstickCommand());
 	}
 	
 	public void registerTimeLock() {

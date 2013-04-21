@@ -147,3 +147,6 @@ commands:
    firework:
        description: 'Spawn fireworks where you are looking'
        usage: /<command> <firework/type> <color> <length>
+   bindstick:
+       description: 'Bind a command / message to a stick'
+       usage: /<command> <message/command>

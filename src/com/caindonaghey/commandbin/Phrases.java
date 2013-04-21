@@ -113,6 +113,8 @@ public class Phrases {
 			if(string == "invalid-color") return badPrefix + "Bad colour, defaulted to red.";
 			if(string == "invalid-type") return badPrefix + "Bad type, defaulted to creeper.";
 			if(string == "firework-spawned") return prefix + "Firework spawned!";
+			if(string == "bind-stick") return prefix + "Stick has been binded!";
+			if(string == "unbind-stick") return prefix + "Stick has been unbinded!";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -213,6 +215,8 @@ public class Phrases {
 			if(string == "invalid-color") return badPrefix + "Bad colour, defaulted to red.";
 			if(string == "invalid-type") return badPrefix + "Bad type, defaulted to creeper.";
 			if(string == "firework-spawned") return prefix + "Firework spawned!";
+			if(string == "bind-stick") return prefix + "Stick has been binded!";
+			if(string == "unbind-stick") return prefix + "Stick has been unbinded!";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
