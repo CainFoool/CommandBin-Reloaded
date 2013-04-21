@@ -107,6 +107,12 @@ public class Phrases {
 			if(string == "warp-list") return prefix + "Warps: {WARPS}";
 			if(string == "warp-deleted") return prefix + "Warp has been deleted.";
 			if(string == "warp-invalid") return badPrefix + "This warp does not exist.";
+			if(string == "mob-spawned") return prefix + "Mob has been spawned!";
+			if(string == "invalid-mob") return badPrefix + "The mob you selected does not exist.";
+			if(string == "invalid-number") return badPrefix + "Bad number. Try again.";
+			if(string == "invalid-color") return badPrefix + "Bad colour, defaulted to red.";
+			if(string == "invalid-type") return badPrefix + "Bad type, defaulted to creeper.";
+			if(string == "firework-spawned") return prefix + "Firework spawned!";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -201,6 +207,12 @@ public class Phrases {
 			if(string == "warp-list") return prefix + "Warps: {WARPS}";
 			if(string == "warp-deleted") return prefix + "Warp has been deleted.";
 			if(string == "warp-invalid") return badPrefix + "This warp does not exist.";
+			if(string == "mob-spawned") return prefix + "Mob has been spawned!";
+			if(string == "invalid-mob") return badPrefix + "The mob you selected does not exist.";
+			if(string == "invalid-number") return badPrefix + "Bad number. Try again.";
+			if(string == "invalid-color") return badPrefix + "Bad colour, defaulted to red.";
+			if(string == "invalid-type") return badPrefix + "Bad type, defaulted to creeper.";
+			if(string == "firework-spawned") return prefix + "Firework spawned!";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}

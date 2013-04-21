@@ -1,13 +1,13 @@
 package com.caindonaghey.commandbin.commands;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 
 import com.caindonaghey.commandbin.Phrases;
@@ -29,7 +29,7 @@ public class KillmobsCommand implements CommandExecutor {
 				}
 				
 				for(Entity entities : world.getEntities()) {
-					if(entities instanceof Creature) {
+					if(entities instanceof Creature || entities instanceof Monster) {
 						entities.remove();
 					}
 				}
@@ -44,7 +44,7 @@ public class KillmobsCommand implements CommandExecutor {
 			}
 			
 			for(Entity entities : player.getWorld().getEntities()) {
-				if(entities instanceof Creature) {
+				if(entities instanceof Creature || entities instanceof Monster) {
 					entities.remove();
 				}
 			}

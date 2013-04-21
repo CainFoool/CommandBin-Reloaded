@@ -16,6 +16,7 @@ import com.caindonaghey.commandbin.commands.DelwarpCommand;
 import com.caindonaghey.commandbin.commands.ExplodeCommand;
 import com.caindonaghey.commandbin.commands.ExplosionbowCommand;
 import com.caindonaghey.commandbin.commands.FeedCommand;
+import com.caindonaghey.commandbin.commands.FireworkCommand;
 import com.caindonaghey.commandbin.commands.FlyCommand;
 import com.caindonaghey.commandbin.commands.FreezeCommand;
 import com.caindonaghey.commandbin.commands.FsayCommand;
@@ -38,6 +39,7 @@ import com.caindonaghey.commandbin.commands.SetspawnCommand;
 import com.caindonaghey.commandbin.commands.SetwarpCommand;
 import com.caindonaghey.commandbin.commands.SmokeCommand;
 import com.caindonaghey.commandbin.commands.SpawnCommand;
+import com.caindonaghey.commandbin.commands.SpawnmobCommand;
 import com.caindonaghey.commandbin.commands.StarveCommand;
 import com.caindonaghey.commandbin.commands.TimeCommand;
 import com.caindonaghey.commandbin.commands.TpAcceptCommand;
@@ -135,6 +137,8 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("itemdesc").setExecutor(new ItemdescCommand());
 		getServer().getPluginCommand("smoke").setExecutor(new SmokeCommand());
 		getServer().getPluginCommand("delwarp").setExecutor(new DelwarpCommand());
+		getServer().getPluginCommand("spawnmob").setExecutor(new SpawnmobCommand());
+		getServer().getPluginCommand("firework").setExecutor(new FireworkCommand());
 	}
 	
 	public void registerTimeLock() {

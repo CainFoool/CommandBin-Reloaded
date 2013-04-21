@@ -141,3 +141,9 @@ commands:
    delwarp:
        description: 'Delete a warp'
        usage: /<command> <warp-name>
+   spawnmob:
+       description: 'Spawn a mob/certain amount of mobs'
+       usage: /<command> <mob-name> <amount>
+   firework:
+       description: 'Spawn fireworks where you are looking'
+       usage: /<command> <firework/type> <color> <length>
