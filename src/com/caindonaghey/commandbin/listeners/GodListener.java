@@ -1,6 +1,5 @@
 package com.caindonaghey.commandbin.listeners;
 
-import org.bukkit.Effect;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +15,8 @@ public class GodListener implements Listener {
 			Player player = (Player) e.getEntity();
 			
 			if(GodCommand.godPlayers.contains(player.getName())) {
-				player.getWorld().playEffect(player.getLocation(), Effect.SMOKE, 5);
+				// player.getWorld().playEffect(player.getLocation(), Effect.SMOKE, 5);
+				// nejcevoeie (Whatever his name was) didn't like this effect.
 				e.setCancelled(true);
 			}
 		}

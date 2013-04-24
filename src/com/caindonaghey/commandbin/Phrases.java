@@ -115,6 +115,9 @@ public class Phrases {
 			if(string == "firework-spawned") return prefix + "Firework spawned!";
 			if(string == "bind-stick") return prefix + "Stick has been binded!";
 			if(string == "unbind-stick") return prefix + "Stick has been unbinded!";
+			if(string == "teleported") return prefix + "Teleported.";
+			if(string == "lag-fixed") return prefix + "All entities have been removed in all worlds.";
+			if(string == "speed-set") return prefix + "Speed set to {SPEED}";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -193,30 +196,33 @@ public class Phrases {
             if(string == "self-bow") return prefix + "Je mag nu de explosieve boog gebruiken, wees voorzichtig.";
             if(string == "self-nobow") return prefix + "Je mag de explosieve boog niet meer gebruiken.";
             if(string == "name-changed") return prefix + "Speler's naam is veranderd!";
-			if(string == "chat-cleared") return prefix + "Your chat has been cleared!";
-			if(string == "home-set") return prefix + "Your home has been set!";
-			if(string == "home-teleport") return prefix + "You have teleported to your home.";
-			if(string == "invalid-home") return badPrefix + "You do not have a home! Use /sethome to set one!";
-			if(string == "warp-set") return prefix + "Warp has been set!";
-			if(string == "warp-teleport") return prefix + "You have teleported to this warp.";
-			if(string == "invalid-warp") return badPrefix + "Warp non-existant. Use /setwarp to create one!";
-			if(string == "itemname-set")  return prefix + "Item name has been set!";
-			if(string == "itemdesc-set")  return prefix + "Item description has been set!";
-			if(string == "player-smoke-on") return prefix + "Player will now have smoke whereever they walk.";
-			if(string == "player-smoke-off") return prefix + "Player will no longer have smoke.";
-			if(string == "self-smoke-on") return prefix + "You will now have smoke where you walk.";
-			if(string == "self-smoke-off") return prefix + "You will no longer have smoke.";
+			if(string == "chat-cleared") return prefix + "Je chat is gewist!";
+			if(string == "home-set") return prefix + "Je huis is ingesteld!";
+			if(string == "home-teleport") return prefix + "Je hebt naar je huis geteleporteerd.";
+			if(string == "invalid-home") return badPrefix + "Je hebt geen huis! Gebruik /sethome om er één in te stellen!";
+			if(string == "warp-set") return prefix + "Warp is ingesteld!";
+			if(string == "warp-teleport") return prefix + "Je bent naar deze warp geteleporteerd.";
+			if(string == "invalid-warp") return badPrefix + "Onbekende warp. Gebruik /setwarp om er één in te stellen!";
+			if(string == "itemname-set")  return prefix + "Voorwerp naam is ingesteld!";
+			if(string == "itemdesc-set")  return prefix + "Voorwerp omschrijving is ingesteld!";
+			if(string == "player-smoke-on") return prefix + "Speler zal nu rook hebben overal waar hij gaat.";
+			if(string == "player-smoke-off") return prefix + "Speler zal niet langer rook hebben.";
+			if(string == "self-smoke-on") return prefix + "Je zal nu rook hebben overal waar je gaat.";
+			if(string == "self-smoke-off") return prefix + "Je hebt geen rook meer.";
 			if(string == "warp-list") return prefix + "Warps: {WARPS}";
-			if(string == "warp-deleted") return prefix + "Warp has been deleted.";
-			if(string == "warp-invalid") return badPrefix + "This warp does not exist.";
-			if(string == "mob-spawned") return prefix + "Mob has been spawned!";
-			if(string == "invalid-mob") return badPrefix + "The mob you selected does not exist.";
-			if(string == "invalid-number") return badPrefix + "Bad number. Try again.";
-			if(string == "invalid-color") return badPrefix + "Bad colour, defaulted to red.";
-			if(string == "invalid-type") return badPrefix + "Bad type, defaulted to creeper.";
-			if(string == "firework-spawned") return prefix + "Firework spawned!";
-			if(string == "bind-stick") return prefix + "Stick has been binded!";
-			if(string == "unbind-stick") return prefix + "Stick has been unbinded!";
+			if(string == "warp-deleted") return prefix + "Warp is verwijderd.";
+			if(string == "warp-invalid") return badPrefix + "Deze warp bestaat niet.";
+			if(string == "mob-spawned") return prefix + "Mob is gespawnd!";
+			if(string == "invalid-mob") return badPrefix + "De mob die je koos, bestaat niet.";
+			if(string == "invalid-number") return badPrefix + "Verkeerd nummer. Probeer opnieuw.";
+			if(string == "invalid-color") return badPrefix + "Verkeerd kleur, standaard op rood.";
+			if(string == "invalid-type") return badPrefix + "Verkeerde soort, standaard op creeper.";
+			if(string == "firework-spawned") return prefix + "Vuurwerk gespawnd!";
+			if(string == "bind-stick") return prefix + "Stok is gebonden!";
+			if(string == "unbind-stick") return prefix + "Stok is ontbonden!";
+			if(string == "teleported") return prefix +"Geteleporteerd.";
+			if(string == "lag-fixed") return prefix + "All entities have been removed in all worlds.";
+			if(string == "speed-set") return prefix + "Speed set to {SPEED}";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}

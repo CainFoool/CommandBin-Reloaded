@@ -18,6 +18,7 @@ import com.caindonaghey.commandbin.commands.ExplodeCommand;
 import com.caindonaghey.commandbin.commands.ExplosionbowCommand;
 import com.caindonaghey.commandbin.commands.FeedCommand;
 import com.caindonaghey.commandbin.commands.FireworkCommand;
+import com.caindonaghey.commandbin.commands.FixlagCommand;
 import com.caindonaghey.commandbin.commands.FlyCommand;
 import com.caindonaghey.commandbin.commands.FreezeCommand;
 import com.caindonaghey.commandbin.commands.FsayCommand;
@@ -35,6 +36,8 @@ import com.caindonaghey.commandbin.commands.MuteCommand;
 import com.caindonaghey.commandbin.commands.NickCommand;
 import com.caindonaghey.commandbin.commands.OpeninvCommand;
 import com.caindonaghey.commandbin.commands.PtimeCommand;
+import com.caindonaghey.commandbin.commands.PutCommand;
+import com.caindonaghey.commandbin.commands.SetflyCommand;
 import com.caindonaghey.commandbin.commands.SethomeCommand;
 import com.caindonaghey.commandbin.commands.SetspawnCommand;
 import com.caindonaghey.commandbin.commands.SetwarpCommand;
@@ -143,6 +146,9 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("spawnmob").setExecutor(new SpawnmobCommand());
 		getServer().getPluginCommand("firework").setExecutor(new FireworkCommand());
 		getServer().getPluginCommand("bindstick").setExecutor(new BindstickCommand());
+		getServer().getPluginCommand("put").setExecutor (new PutCommand());
+		getServer().getPluginCommand("fixlag").setExecutor (new FixlagCommand());
+		// getServer().getPluginCommand("setfly").setExecutor(new SetflyCommand()); ( Y u no work ? )
 	}
 	
 	public void registerTimeLock() {

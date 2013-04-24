@@ -150,3 +150,9 @@ commands:
    bindstick:
        description: 'Bind a command / message to a stick'
        usage: /<command> <message/command>
+   put:
+       description: 'Put you or a player to the block your looking at'
+       usage: /<command> <player>
+   fixlag:
+       description: 'Removes all entities from the server (excluding item frames)'
+       usage: /<command>
