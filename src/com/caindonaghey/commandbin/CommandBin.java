@@ -77,6 +77,7 @@ public class CommandBin extends JavaPlugin {
 		setupConfig();
 		setupLanguage();
 		System.out.println(Phrases.get("enabled"));
+		System.out.println("CommandBin is sponsored by VPSCraft.net!");
 		plugin = this;
 	}
 	
