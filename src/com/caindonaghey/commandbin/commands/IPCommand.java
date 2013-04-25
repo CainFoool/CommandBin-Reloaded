@@ -23,7 +23,7 @@ public class IPCommand implements CommandExecutor {
 					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
-				System.out.println("[CommandBin] IP: " + player.getAddress().getHostName());
+				System.out.println(Phrases.get("ip").replace("{IP}", player.getAddress().getHostName()));
 				return true;
 			}
 			
@@ -44,7 +44,7 @@ public class IPCommand implements CommandExecutor {
 				return true;
 			}
 			
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] IP: " + otherPlayer.getAddress().getHostName());
+			player.sendMessage(Phrases.get("ip").replace("{IP}", player.getAddress().getHostName()));
 		}
 		return true;
 	}
