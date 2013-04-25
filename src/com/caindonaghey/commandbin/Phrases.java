@@ -11,7 +11,7 @@ public class Phrases {
 	 * Need translators pls.
 	 */
 	
-	public static String prefix = ChatColor.BLUE + "[" + ChatColor.GREEN + "CMDBin" + ChatColor.BLUE + "] " + ChatColor.GREEN;
+	public static String prefix = ChatColor.RESET + "[" + ChatColor.GREEN + "CMD" + ChatColor.DARK_GREEN + "Bin" + ChatColor.WHITE + "] " + ChatColor.DARK_AQUA + ChatColor.ITALIC;
 	public static String badPrefix = ChatColor.RED + "[CommandBin] ";
 	public static String get(String string) {
 		
