@@ -156,3 +156,6 @@ commands:
    fixlag:
        description: 'Removes all entities from the server (excluding item frames)'
        usage: /<command>
+   creeper:
+       description: 'Spawns a creeper at a player, useful for scaring'
+       usage: /<command> <player>

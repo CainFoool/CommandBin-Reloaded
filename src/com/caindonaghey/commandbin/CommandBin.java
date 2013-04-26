@@ -13,6 +13,7 @@ import com.caindonaghey.commandbin.commands.ClearChatCommand;
 import com.caindonaghey.commandbin.commands.ClearCommand;
 import com.caindonaghey.commandbin.commands.CommandBinCommand;
 import com.caindonaghey.commandbin.commands.CraftCommand;
+import com.caindonaghey.commandbin.commands.CreeperCommand;
 import com.caindonaghey.commandbin.commands.DelwarpCommand;
 import com.caindonaghey.commandbin.commands.ExplodeCommand;
 import com.caindonaghey.commandbin.commands.ExplosionbowCommand;
@@ -37,7 +38,6 @@ import com.caindonaghey.commandbin.commands.NickCommand;
 import com.caindonaghey.commandbin.commands.OpeninvCommand;
 import com.caindonaghey.commandbin.commands.PtimeCommand;
 import com.caindonaghey.commandbin.commands.PutCommand;
-import com.caindonaghey.commandbin.commands.SetflyCommand;
 import com.caindonaghey.commandbin.commands.SethomeCommand;
 import com.caindonaghey.commandbin.commands.SetspawnCommand;
 import com.caindonaghey.commandbin.commands.SetwarpCommand;
@@ -149,7 +149,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("bindstick").setExecutor(new BindstickCommand());
 		getServer().getPluginCommand("put").setExecutor (new PutCommand());
 		getServer().getPluginCommand("fixlag").setExecutor (new FixlagCommand());
-		// getServer().getPluginCommand("setfly").setExecutor(new SetflyCommand()); ( Y u no work ? )
+		getServer().getPluginCommand("creeper").setExecutor(new CreeperCommand());
 	}
 	
 	public void registerTimeLock() {
