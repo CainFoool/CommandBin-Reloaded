@@ -63,6 +63,7 @@ import com.caindonaghey.commandbin.listeners.FreezeListener;
 import com.caindonaghey.commandbin.listeners.GodListener;
 import com.caindonaghey.commandbin.listeners.MuteListener;
 import com.caindonaghey.commandbin.listeners.SmokeListener;
+import com.caindonaghey.commandbin.listeners.TargetListener;
 import com.caindonaghey.commandbin.listeners.VanishListener;
 
 public class CommandBin extends JavaPlugin {
@@ -95,6 +96,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new BowListener(), this);
 		getServer().getPluginManager().registerEvents(new SmokeListener(), this);
 		getServer().getPluginManager().registerEvents(new BindListener(), this);
+		getServer().getPluginManager().registerEvents(new TargetListener(), this);
 	}
 	
 	public void registerCommands() {
