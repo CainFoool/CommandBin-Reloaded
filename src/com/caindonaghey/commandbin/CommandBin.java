@@ -61,9 +61,9 @@ import com.caindonaghey.commandbin.listeners.BlockedListener;
 import com.caindonaghey.commandbin.listeners.BowListener;
 import com.caindonaghey.commandbin.listeners.FreezeListener;
 import com.caindonaghey.commandbin.listeners.GodListener;
+import com.caindonaghey.commandbin.listeners.HealthListener;
 import com.caindonaghey.commandbin.listeners.MuteListener;
 import com.caindonaghey.commandbin.listeners.SmokeListener;
-import com.caindonaghey.commandbin.listeners.TargetListener;
 import com.caindonaghey.commandbin.listeners.VanishListener;
 
 public class CommandBin extends JavaPlugin {
@@ -79,6 +79,8 @@ public class CommandBin extends JavaPlugin {
 		setupLanguage();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
+		System.out.println("Language currently set to: " + getConfig().get("language"));
+		System.out.println("Health Tags currently set to: " + getConfig().get("healthtags"));
 		plugin = this;
 	}
 	
@@ -96,7 +98,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new BowListener(), this);
 		getServer().getPluginManager().registerEvents(new SmokeListener(), this);
 		getServer().getPluginManager().registerEvents(new BindListener(), this);
-		getServer().getPluginManager().registerEvents(new TargetListener(), this);
+		getServer().getPluginManager().registerEvents(new HealthListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -168,6 +170,10 @@ public class CommandBin extends JavaPlugin {
 	public void setupConfig() {
 		if(getConfig().get("language") == null) {
 			getConfig().set("language", "english");
+			saveConfig();
+		}
+		if(getConfig().get("healthtags") == null) {
+			getConfig().set("healthtags", true);
 			saveConfig();
 		}
 	}
