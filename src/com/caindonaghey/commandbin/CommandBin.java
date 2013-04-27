@@ -88,6 +88,10 @@ public class CommandBin extends JavaPlugin {
 		System.out.println(Phrases.get("disabled"));
 	}
 	
+	// v5.06 features
+	// Added /creeper command
+	// Added healthtags to some mobs.
+	
 	public void registerEvents() {
 		getServer().getPluginManager().registerEvents(new BlockedListener(), this);
 		getServer().getPluginManager().registerEvents(new AfkListener(), this);

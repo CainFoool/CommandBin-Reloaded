@@ -22,7 +22,7 @@ public class CommandBinCommand implements CommandExecutor {
 		
 			player.sendMessage(ChatColor.GREEN + "[CommandBin] CommandBin Version: v" + CommandBin.plugin.getDescription().getVersion());
 			player.sendMessage(ChatColor.GREEN + "[CommandBin] Created by CainFool of http://dev.caindonaghey.com");
-			player.sendMessage(ChatColor.GREEN + "[CommandBin] Translator(s): arnii5 (Deutch)");
+			player.sendMessage(ChatColor.GREEN + "[CommandBin] Translator(s): arnii5 (Dutch)");
 		}
 		return true;
 	}

@@ -25,7 +25,7 @@ public class Phrases {
 			if(string == "no-afk") return prefix + "You are no longer marked as AFK.";
 			if(string == "player-invalid") return badPrefix + "That player is not online.";
 			if(string == "teleport-request-sent") return prefix + "Teleportation request has been sent.";
-			if(string == "teleport-request-receive") return prefix + "wants to teleport to you.";
+			if(string == "teleport-request-receive") return prefix + "{PLAYER} wants to teleport to you.";
 			if(string == "teleport-request-receive-2") return prefix + "/tpaccept <player> or /tpdeny <player>";
 			if(string == "teleport-request-already") return badPrefix + "You have already sent a teleport request to this player.";
 			if(string == "teleport-request-accepted") return prefix + "Your teleportation request has been accepted. Teleporting..";
@@ -132,7 +132,7 @@ public class Phrases {
             if(string == "no-afk") return prefix + "Je bent niet langer AFK.";
             if(string == "player-invalid") return badPrefix + "Deze speler is niet online.";
             if(string == "teleport-request-sent") return prefix + "Teleportatie-verzoek is verzonden.";
-            if(string == "teleport-request-receive") return prefix + "wil naar je teleporteren.";
+            if(string == "teleport-request-receive") return prefix + "{PLAYER} wil naar je teleporteren.";
             if(string == "teleport-request-receive-2") return prefix + "/tpaccept <speler> of /tpdeny <speler>";
             if(string == "teleport-request-already") return badPrefix + "Je hebt al een teleportatie-verzoek gestuurd naar deze speler.";
             if(string == "teleport-request-accepted") return prefix + "Je teleportatie-verzoek is geaccepteerd. Teleporteren..";
@@ -223,10 +223,10 @@ public class Phrases {
 			if(string == "bind-stick") return prefix + "Stok is gebonden!";
 			if(string == "unbind-stick") return prefix + "Stok is ontbonden!";
 			if(string == "teleported") return prefix +"Geteleporteerd.";
-			if(string == "lag-fixed") return prefix + "All entities have been removed in all worlds.";
-			if(string == "speed-set") return prefix + "Speed set to {SPEED}";
-			if(string == "ip") return prefix + "IP Address: {IP}";
-			if(string == "creepered") return prefix + "Player was creepered.";
+			if(string == "lag-fixed") return prefix + "Alle entiteiten zijn verwijderd in alle werelden.";
+			if(string == "speed-set") return prefix + "Snelheid ingesteld op {SPEED}";
+			if(string == "ip") return prefix + "IP Adres: {IP}";
+			if(string == "creepered") return prefix + "Speler is gecreeperd.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
