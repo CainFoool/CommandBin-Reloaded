@@ -226,6 +226,7 @@ public class Phrases {
 			if(string == "lag-fixed") return prefix + "All entities have been removed in all worlds.";
 			if(string == "speed-set") return prefix + "Speed set to {SPEED}";
 			if(string == "ip") return prefix + "IP Address: {IP}";
+			if(string == "creepered") return prefix + "Player was creepered.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}

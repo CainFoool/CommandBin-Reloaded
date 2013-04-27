@@ -44,7 +44,7 @@ public class TpaCommand implements CommandExecutor {
 			if(!tpaPlayers.containsKey(otherPlayer.getName()) && !(tpaPlayers.get(otherPlayer.getName()) == player.getName())) {
 				tpaPlayers.put(otherPlayer.getName(), player.getName());
 				player.sendMessage(Phrases.get("teleport-request-sent"));
-				otherPlayer.sendMessage(player.getName() + " " + Phrases.get("teleport-request-receive"));
+				otherPlayer.sendMessage(Phrases.get("teleport-request-receive"));
 				otherPlayer.sendMessage(Phrases.get("teleport-request-receive-2"));
 				return true;
 			}
