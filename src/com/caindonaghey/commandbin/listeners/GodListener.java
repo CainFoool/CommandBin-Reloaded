@@ -18,6 +18,7 @@ public class GodListener implements Listener {
 				// player.getWorld().playEffect(player.getLocation(), Effect.SMOKE, 5);
 				// nejcevoeie (Whatever his name was) didn't like this effect.
 				e.setCancelled(true);
+				player.setHealth(20);
 			}
 		}
 	}

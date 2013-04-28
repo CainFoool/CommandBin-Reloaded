@@ -1,8 +1,13 @@
 package com.caindonaghey.commandbin.listeners;
 
+import java.util.Random;
+
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.DyeColor;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Sheep;
 import org.bukkit.entity.Skeleton;
 import org.bukkit.entity.Spider;
 import org.bukkit.entity.Zombie;
@@ -32,6 +37,7 @@ public class HealthListener implements Listener {
 			registerSpider(e.getEntity());
 			registerSkeleton(e.getEntity());
 			registerCreeper(e.getEntity());
+			simonTheSheep(e.getEntity());
 		}
 	}
 	
@@ -58,6 +64,17 @@ public class HealthListener implements Listener {
 		if(entity instanceof Creeper) {
 			Creeper creeper = (Creeper) entity;
 			creeper.setCustomName(ChatColor.RED + "Health: " + creeper.getHealth());
+		}
+	}
+	
+	public void simonTheSheep(Entity entity) {
+		Random random = new Random();
+		if(entity instanceof Sheep) {
+			if(random.nextInt(10000) == 20) {
+				Sheep sheep = (Sheep) entity;
+				sheep.setCustomName("Simon The Sheep");
+				sheep.setColor(DyeColor.PINK);
+			}
 		}
 	}
 	

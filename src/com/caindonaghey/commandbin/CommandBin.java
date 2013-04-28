@@ -62,6 +62,7 @@ import com.caindonaghey.commandbin.listeners.BowListener;
 import com.caindonaghey.commandbin.listeners.FreezeListener;
 import com.caindonaghey.commandbin.listeners.GodListener;
 import com.caindonaghey.commandbin.listeners.HealthListener;
+import com.caindonaghey.commandbin.listeners.LapisListener;
 import com.caindonaghey.commandbin.listeners.MuteListener;
 import com.caindonaghey.commandbin.listeners.SmokeListener;
 import com.caindonaghey.commandbin.listeners.VanishListener;
@@ -70,6 +71,7 @@ public class CommandBin extends JavaPlugin {
 	
 	public static CommandBin plugin;
 	public static String language;
+	public static boolean lapisTrampoline = false;
 	
 	public void onEnable() {
 		registerCommands();
@@ -77,6 +79,7 @@ public class CommandBin extends JavaPlugin {
 		registerTimeLock();
 		setupConfig();
 		setupLanguage();
+		setupLapis();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
 		System.out.println("Language currently set to: " + getConfig().get("language"));
@@ -103,6 +106,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new SmokeListener(), this);
 		getServer().getPluginManager().registerEvents(new BindListener(), this);
 		getServer().getPluginManager().registerEvents(new HealthListener(), this);
+		getServer().getPluginManager().registerEvents(new LapisListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -180,6 +184,10 @@ public class CommandBin extends JavaPlugin {
 			getConfig().set("healthtags", true);
 			saveConfig();
 		}
+		if(getConfig().get("lapis-trampoline") == null) {
+			getConfig().set("lapis-trampoline", true);
+			saveConfig();
+		}
 	}
 	
 	public void setupLanguage() {
@@ -188,6 +196,12 @@ public class CommandBin extends JavaPlugin {
 		}
 		if(getConfig().getString("language").equalsIgnoreCase("dutch") || getConfig().getString("language").equalsIgnoreCase("deutch")) {
 			language = "dutch";
+		}
+	}
+	
+	public void setupLapis() {
+		if(getConfig().getBoolean("lapis-trampoline")) {
+			lapisTrampoline = true;
 		}
 	}
 
