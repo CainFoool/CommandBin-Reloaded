@@ -129,6 +129,10 @@ public class Phrases {
 			if(string == "player-tp-coord") return prefix + "{PLAYER} teleported you to {X}, {Y}, {Z}";
 			if(string == "chunk-kept") return "[CommandBin] The chunk has been kept loaded.";
 			if(string == "player-shot") return prefix + "Player has been shot into the air!";
+			if(string == "afk-announce") return prefix + "{PLAYER} is now afk.";
+			if(string == "afk-announce-off") return prefix + "{PLAYER} is no longer afk.";
+			if(string == "self-fly-disabled") return prefix + "Your flying capabilities were disabled.";
+			if(string == "self-fly-enabled") return prefix + "Your flying capabilities were enabled.";
 		}
 		
 		if(CommandBin.language == "dutch") {

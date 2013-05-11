@@ -32,11 +32,13 @@ public class FlyCommand implements CommandExecutor {
 				if(!flyingPlayers.contains(player.getName())) {
 					flyingPlayers.add(player.getName());
 					System.out.println(Phrases.get("player-fly"));
+					player.sendMessage(Phrases.get("self-fly-enabled"));
 					player.setFlying(true);
 					return true;
 				}
 				
 				flyingPlayers.remove(player.getName());
+				player.sendMessage(Phrases.get("self-fly-disabled"));
 				System.out.println(Phrases.get("player-nofly"));
 				player.setFlying(false);
 				return true;
@@ -77,11 +79,13 @@ public class FlyCommand implements CommandExecutor {
 				
 				if(!flyingPlayers.contains(otherPlayer.getName())) {
 					flyingPlayers.add(otherPlayer.getName());
+					otherPlayer.sendMessage(Phrases.get("self-fly-enabled"));
 					player.sendMessage(Phrases.get("player-fly"));
 					otherPlayer.setAllowFlight(true);
 					otherPlayer.setFlying(true);
 					return true;
 				}
+				otherPlayer.sendMessage(Phrases.get("self-fly-disabled"));
 				flyingPlayers.remove(otherPlayer.getName());
 				otherPlayer.setAllowFlight(false);
 				otherPlayer.setFlying(false);

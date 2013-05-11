@@ -30,7 +30,9 @@ public class TpCommand implements CommandExecutor {
 					onePlayer.teleport(twoPlayer.getLocation());
 					System.out.println(Phrases.get("tele-1-2"));
 					onePlayer.sendMessage(Phrases.get("console-tp-1").replace("{PLAYER}", twoPlayer.getName()));
-					twoPlayer.sendMessage(Phrases.get("console-tp-2").replace("{PLAYER}", onePlayer.getName()));
+					if(!VanishCommand.vanishedPlayers.contains(onePlayer.getName())) {
+						twoPlayer.sendMessage(Phrases.get("console-tp-2").replace("{PLAYER}", onePlayer.getName()));
+					}
 					return true;
 				}
 				
@@ -72,7 +74,9 @@ public class TpCommand implements CommandExecutor {
 					return true;
 				}
 				player.teleport(otherPlayer.getLocation());
-				otherPlayer.sendMessage(Phrases.get("player-tped").replace("{PLAYER}", player.getName()));
+				if(!VanishCommand.vanishedPlayers.contains(player.getName())) {
+					otherPlayer.sendMessage(Phrases.get("player-tped").replace("{PLAYER}", player.getName()));
+				}
 				player.sendMessage(Phrases.get("tele-player"));
 				return true;
 			}
@@ -93,7 +97,9 @@ public class TpCommand implements CommandExecutor {
 				onePlayer.teleport(twoPlayer.getLocation());
 				onePlayer.sendMessage(Phrases.get("player-tp-1").replace("{PLAYER}", player.getName()).replace("{PLAYER2}", twoPlayer.getName()));
 				player.sendMessage(Phrases.get("tele-1-2"));
-				twoPlayer.sendMessage(Phrases.get("player-tp-2").replace("{PLAYER}", player.getName()).replace("{PLAYER2}", onePlayer.getName()));
+				if(!VanishCommand.vanishedPlayers.contains(onePlayer.getName())) {
+					twoPlayer.sendMessage(Phrases.get("player-tp-2").replace("{PLAYER}", player.getName()).replace("{PLAYER2}", onePlayer.getName()));
+				}
 				return true;
 			}
 			
@@ -120,7 +126,9 @@ public class TpCommand implements CommandExecutor {
 					int y = Integer.parseInt(args[2]);
 					int z = Integer.parseInt(args[3]);
 					otherPlayer.teleport(new Location(otherPlayer.getWorld(), x, y, z));
-					otherPlayer.sendMessage(Phrases.get("player-tp-coord").replace("{PLAYER}", player.getName()).replace("{X}", x + "").replace("{Y}", y + "").replace("{Z}", z + ""));
+					if(!VanishCommand.vanishedPlayers.contains(player.getName())) {
+						otherPlayer.sendMessage(Phrases.get("player-tp-coord").replace("{PLAYER}", player.getName()).replace("{X}", x + "").replace("{Y}", y + "").replace("{Z}", z + ""));
+					}
 					player.sendMessage(Phrases.get("tele-1-co"));
 				} catch (NumberFormatException e) {
 					player.sendMessage(Phrases.get("invalid-numbers"));

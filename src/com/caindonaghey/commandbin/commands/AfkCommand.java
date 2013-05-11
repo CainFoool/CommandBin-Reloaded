@@ -2,6 +2,7 @@ package com.caindonaghey.commandbin.commands;
 
 import java.util.HashSet;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -35,10 +36,12 @@ public class AfkCommand implements CommandExecutor {
 			if(!AFKPlayers.contains(player.getName())) {
 				AFKPlayers.add(player.getName());
 				player.sendMessage(Phrases.get("now-afk"));
+				Bukkit.getServer().broadcastMessage(Phrases.get("afk-announce").replace("{PLAYER}", player.getName()));
 				return true;
 			}
 			
 			AFKPlayers.remove(player.getName());
+			Bukkit.getServer().broadcastMessage(Phrases.get("afk-announce-off").replace("{PLAYER}", player.getName()));
 			player.sendMessage(Phrases.get("no-afk"));
 			
 		}
