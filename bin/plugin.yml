@@ -159,3 +159,6 @@ commands:
    creeper:
        description: 'Spawns a creeper at a player, useful for scaring'
        usage: /<command> <player>
+   msg:
+       description: 'Send a private message to a player'
+       usage: /<command> <player> <message>

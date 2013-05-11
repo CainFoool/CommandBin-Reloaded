@@ -32,7 +32,7 @@ public class VanishCommand implements CommandExecutor {
 				if(!vanishedPlayers.contains(otherPlayer.getName())) {
 					vanishedPlayers.add(otherPlayer.getName());
 					for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-						if(allPlayers.getName() != otherPlayer.getName()) {
+						if(allPlayers.getName() != otherPlayer.getName() && !allPlayers.isOp()) {
 							allPlayers.hidePlayer(otherPlayer);
 						}
 					}
@@ -41,7 +41,7 @@ public class VanishCommand implements CommandExecutor {
 				}
 				vanishedPlayers.remove(otherPlayer.getName());
 				for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-					if(allPlayers.getName() != otherPlayer.getName()) {
+					if(allPlayers.getName() != otherPlayer.getName() && !allPlayers.isOp()) {
 						allPlayers.showPlayer(otherPlayer);
 					}
 				}
@@ -60,7 +60,7 @@ public class VanishCommand implements CommandExecutor {
 				if(!vanishedPlayers.contains(player.getName())) {
 					vanishedPlayers.add(player.getName());
 					for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-						if(allPlayers.getName() != player.getName()) {
+						if(allPlayers.getName() != player.getName() && !allPlayers.isOp()) {
 							allPlayers.hidePlayer(player);
 						}
 					}
@@ -69,7 +69,7 @@ public class VanishCommand implements CommandExecutor {
 				}
 				vanishedPlayers.remove(player.getName());
 				for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-					if(allPlayers.getName() != player.getName()) {
+					if(allPlayers.getName() != player.getName() && !allPlayers.isOp()) {
 						allPlayers.showPlayer(player);
 					}
 				}
@@ -90,7 +90,7 @@ public class VanishCommand implements CommandExecutor {
 				if(!vanishedPlayers.contains(otherPlayer.getName())) {
 					vanishedPlayers.add(otherPlayer.getName());
 					for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-						if(allPlayers.getName() != otherPlayer.getName()) {
+						if(allPlayers.getName() != otherPlayer.getName() && !allPlayers.isOp()) {
 							allPlayers.hidePlayer(otherPlayer);
 						}
 					}
@@ -99,7 +99,7 @@ public class VanishCommand implements CommandExecutor {
 				}
 				vanishedPlayers.remove(otherPlayer.getName());
 				for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-					if(allPlayers.getName() != otherPlayer.getName()) {
+					if(allPlayers.getName() != otherPlayer.getName() && !allPlayers.isOp()) {
 						allPlayers.showPlayer(otherPlayer);
 					}
 				}

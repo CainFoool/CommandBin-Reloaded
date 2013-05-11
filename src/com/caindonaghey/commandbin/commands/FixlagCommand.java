@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
 
@@ -18,7 +19,7 @@ public class FixlagCommand implements CommandExecutor {
 			if(!(s instanceof Player)) {
 				for(World world : Bukkit.getServer().getWorlds()) {
 					for(Entity entity : world.getEntities()) {
-						if(!(entity instanceof ItemFrame) && (!(entity instanceof Player))) {
+						if(entity instanceof Item) {
 							entity.remove();
 						}
 					}
@@ -36,7 +37,7 @@ public class FixlagCommand implements CommandExecutor {
 			
 			for(World world : Bukkit.getServer().getWorlds()) {
 				for(Entity entity : world.getEntities()) {
-					if(!(entity instanceof ItemFrame) && (!(entity instanceof Player))) {
+					if(entity instanceof Item) {
 						entity.remove();
 					}
 				}

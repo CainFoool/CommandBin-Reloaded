@@ -120,6 +120,14 @@ public class Phrases {
 			if(string == "speed-set") return prefix + "Speed set to {SPEED}";
 			if(string == "ip") return prefix + "IP Address: {IP}";
 			if(string == "creepered") return prefix + "Player was creepered.";
+			if(string == "console-tp-1") return prefix + "Console teleported you to {PLAYER}.";
+			if(string == "console-tp-2") return prefix + "Console teleported {PLAYER} to you.";
+			if(string == "console-tp-coord") return prefix + "Console teleported you to {X}, {Y}, {Z}";
+			if(string == "player-tped") return prefix + "{PLAYER} teleported to you.";
+			if(string == "player-tp-1") return prefix + "{PLAYER} teleported you to {PLAYER2}";
+			if(string == "player-tp-2") return prefix + "{PLAYER} teleported {PLAYER2} to you.";
+			if(string == "player-tp-coord") return prefix + "{PLAYER} teleported you to {X}, {Y}, {Z}";
+			if(string == "chunk-kept") return "The chunk has been kept loaded.";
 		}
 		
 		if(CommandBin.language == "dutch") {

@@ -33,6 +33,7 @@ import com.caindonaghey.commandbin.commands.ItemdescCommand;
 import com.caindonaghey.commandbin.commands.ItemnameCommand;
 import com.caindonaghey.commandbin.commands.KillCommand;
 import com.caindonaghey.commandbin.commands.KillmobsCommand;
+import com.caindonaghey.commandbin.commands.MsgCommand;
 import com.caindonaghey.commandbin.commands.MuteCommand;
 import com.caindonaghey.commandbin.commands.NickCommand;
 import com.caindonaghey.commandbin.commands.OpeninvCommand;
@@ -91,9 +92,6 @@ public class CommandBin extends JavaPlugin {
 		System.out.println(Phrases.get("disabled"));
 	}
 	
-	// v5.06 features
-	// Added /creeper command
-	// Added healthtags to some mobs.
 	
 	public void registerEvents() {
 		getServer().getPluginManager().registerEvents(new BlockedListener(), this);
@@ -107,6 +105,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new BindListener(), this);
 		getServer().getPluginManager().registerEvents(new HealthListener(), this);
 		getServer().getPluginManager().registerEvents(new LapisListener(), this);
+		getServer().getPluginManager().registerEvents(new ChunkLoaderListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -162,6 +161,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("put").setExecutor (new PutCommand());
 		getServer().getPluginCommand("fixlag").setExecutor (new FixlagCommand());
 		getServer().getPluginCommand("creeper").setExecutor(new CreeperCommand());
+		getServer().getPluginCommand("msg").setExecutor(new MsgCommand());
 	}
 	
 	public void registerTimeLock() {

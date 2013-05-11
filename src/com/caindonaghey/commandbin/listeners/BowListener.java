@@ -37,7 +37,7 @@ public class BowListener implements Listener {
 		}
 	}
 		 catch (NullPointerException error) {
-				// No!
+				// Noes!
 			}
 	}
 

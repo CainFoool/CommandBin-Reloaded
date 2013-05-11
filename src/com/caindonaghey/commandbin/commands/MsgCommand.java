@@ -9,12 +9,12 @@ import org.bukkit.entity.Player;
 
 import com.caindonaghey.commandbin.Phrases;
 
-public class IPCommand implements CommandExecutor {
+public class MsgCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
-		if(l.equalsIgnoreCase("ip")) {
+		if(l.equalsIgnoreCase("msg")) {
 			if(!(s instanceof Player)) {
-				if(args.length != 1) {
+				if(args.length < 2) {
 					System.out.println(Phrases.get("invalid-arguments"));
 					return false;
 				}
@@ -23,28 +23,37 @@ public class IPCommand implements CommandExecutor {
 					System.out.println(Phrases.get("player-invalid"));
 					return true;
 				}
-				System.out.println(Phrases.get("ip").replace("{IP}", player.getAddress().getHostName()));
+				StringBuilder x = new StringBuilder();
+				for(int i = 1; i < args.length; i++) {
+					x.append(args[i] + " ");
+				}
+				System.out.println("Console > " + x.toString().trim());
+				player.sendMessage(ChatColor.DARK_AQUA + "Console > " + ChatColor.DARK_GRAY + x.toString().trim());
 				return true;
 			}
 			
 			Player player = (Player) s;
-			if(!player.hasPermission("CommandBin.ip")) {
+			
+			if(!player.hasPermission("CommandBin.msg")) {
 				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
 			
-			if(args.length != 1) {
+			if(args.length < 2) {
 				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
-			
 			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
 			if(otherPlayer == null) {
 				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
-			
-			player.sendMessage(Phrases.get("ip").replace("{IP}", otherPlayer.getAddress().getHostName()));
+			StringBuilder x = new StringBuilder();
+			for(int i = 1; i < args.length; i++) {
+				x.append(args[i] + " ");
+			}
+			player.sendMessage(ChatColor.AQUA + player.getName() + " > " + ChatColor.DARK_GRAY + x.toString().trim());
+			otherPlayer.sendMessage(ChatColor.DARK_AQUA + player.getName() + " < " + ChatColor.DARK_GRAY + x.toString().trim());
 		}
 		return true;
 	}

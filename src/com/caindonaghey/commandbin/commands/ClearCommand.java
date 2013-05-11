@@ -1,11 +1,12 @@
 package com.caindonaghey.commandbin.commands;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import com.caindonaghey.commandbin.Phrases;
 
@@ -27,6 +28,7 @@ public class ClearCommand implements CommandExecutor {
 				}
 				
 				player.getInventory().clear();
+				player.getInventory().setArmorContents(null);
 				System.out.println(Phrases.get("inventory-cleared"));
 				return true;
 			}
@@ -36,6 +38,7 @@ public class ClearCommand implements CommandExecutor {
 			if(args.length < 1) {
 				if(player.hasPermission("CommandBin.clear.self")) {
 					player.getInventory().clear();
+					player.getInventory().setArmorContents(null);
 					player.sendMessage(Phrases.get("inventory-cleared"));
 					return true;
 				}
@@ -51,6 +54,7 @@ public class ClearCommand implements CommandExecutor {
 						return true;
 					}
 					otherPlayer.getInventory().clear();
+					otherPlayer.getInventory().setArmorContents(null);
 					player.sendMessage(Phrases.get("inventory-cleared"));
 					return true;
 				}

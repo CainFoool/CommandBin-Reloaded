@@ -13,8 +13,10 @@ public class VanishListener implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		for(Player allPlayers : Bukkit.getServer().getOnlinePlayers()) {
-			if(VanishCommand.vanishedPlayers.contains(allPlayers.getName())) {
-				e.getPlayer().hidePlayer(allPlayers);
+			if(!allPlayers.isOp()) {
+				if(VanishCommand.vanishedPlayers.contains(allPlayers.getName())) {
+					e.getPlayer().hidePlayer(allPlayers);
+				}
 			}
 		}
 	}

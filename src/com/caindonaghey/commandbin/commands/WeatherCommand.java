@@ -78,7 +78,7 @@ public class WeatherCommand implements CommandExecutor {
 			
 			if(args[0].equalsIgnoreCase("men")) {
 				player.sendMessage(ChatColor.GREEN + "[CommandBin] Hallelujah! (Look up)");
-				for(int i = 0; i <= 800; i++) {
+				for(int i = 0; i <= 400; i++) {
 					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() + Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() - Math.random() * 20), EntityType.VILLAGER);
 					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() - Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() + Math.random() * 20), EntityType.VILLAGER);
 				}
