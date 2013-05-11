@@ -9,7 +9,7 @@ import org.bukkit.util.Vector;
 
 import com.caindonaghey.commandbin.Phrases;
 
-public abstract class ShootListener implements CommandExecutor {
+public class ShootCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		if(l.equalsIgnoreCase("shoot")) {
@@ -26,8 +26,31 @@ public abstract class ShootListener implements CommandExecutor {
 				}
 				
 				player.setVelocity(new Vector(0, 1, 0));
-				
+				System.out.println(Phrases.get("player-shot"));
+				return true;
 			}
+			
+			Player player = (Player) s;
+			
+			if(!player.hasPermission("CommandBin.shoot")) {
+				player.sendMessage(Phrases.get("no-permission"));
+				return true;
+			}
+			
+			if(args.length < 1) {
+				player.sendMessage(Phrases.get("invalid-arguments"));
+				return false;
+			}
+			
+			Player otherPlayer = Bukkit.getServer().getPlayer(args[0]);
+			
+			if(otherPlayer == null) {
+				player.sendMessage(Phrases.get("player-invalid"));
+				return true;
+			}
+			
+			otherPlayer.setVelocity(new Vector(0, 1, 0));
+			player.sendMessage(Phrases.get("player-shot"));
 		}
 		return true;
 	}

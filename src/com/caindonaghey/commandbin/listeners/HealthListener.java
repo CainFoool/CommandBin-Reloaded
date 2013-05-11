@@ -22,7 +22,7 @@ public class HealthListener implements Listener {
 	
 	@EventHandler
 	public void onEntityDamage(EntityDamageEvent e) {
-		if(CommandBin.plugin.getConfig().getBoolean("healthtags")) {
+		if(CommandBin.plugin.getConfig().getBoolean("settings.healthtags")) {
 			registerZombie(e.getEntity(), e.getDamage());
 			registerSpider(e.getEntity(), e.getDamage());
 			registerSkeleton(e.getEntity(), e.getDamage());
@@ -32,7 +32,7 @@ public class HealthListener implements Listener {
 	
 	@EventHandler
 	public void onCreatureSpawn(CreatureSpawnEvent e) {
-		if(CommandBin.plugin.getConfig().getBoolean("healthtags")) {
+		if(CommandBin.plugin.getConfig().getBoolean("settings.healthtags")) {
 			registerZombie(e.getEntity());
 			registerSpider(e.getEntity());
 			registerSkeleton(e.getEntity());

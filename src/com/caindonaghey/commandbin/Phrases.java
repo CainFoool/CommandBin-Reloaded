@@ -127,7 +127,8 @@ public class Phrases {
 			if(string == "player-tp-1") return prefix + "{PLAYER} teleported you to {PLAYER2}";
 			if(string == "player-tp-2") return prefix + "{PLAYER} teleported {PLAYER2} to you.";
 			if(string == "player-tp-coord") return prefix + "{PLAYER} teleported you to {X}, {Y}, {Z}";
-			if(string == "chunk-kept") return "The chunk has been kept loaded.";
+			if(string == "chunk-kept") return "[CommandBin] The chunk has been kept loaded.";
+			if(string == "player-shot") return prefix + "Player has been shot into the air!";
 		}
 		
 		if(CommandBin.language == "dutch") {

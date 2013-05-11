@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.06 Development'
+version: '5.06'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
@@ -154,7 +154,7 @@ commands:
        description: 'Put you or a player to the block your looking at'
        usage: /<command> <player>
    fixlag:
-       description: 'Removes all entities from the server (excluding item frames)'
+       description: 'Removes all entities from the server'
        usage: /<command>
    creeper:
        description: 'Spawns a creeper at a player, useful for scaring'
@@ -162,3 +162,6 @@ commands:
    msg:
        description: 'Send a private message to a player'
        usage: /<command> <player> <message>
+   shoot:
+       description: 'Shoot a player into the sky'
+       usage: /<command> <player>

@@ -3,76 +3,15 @@ package com.caindonaghey.commandbin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.caindonaghey.commandbin.commands.AfkCommand;
-import com.caindonaghey.commandbin.commands.BindstickCommand;
-import com.caindonaghey.commandbin.commands.BlockCommand;
-import com.caindonaghey.commandbin.commands.BoltCommand;
-import com.caindonaghey.commandbin.commands.BroadcastCommand;
-import com.caindonaghey.commandbin.commands.ChunkCommand;
-import com.caindonaghey.commandbin.commands.ClearChatCommand;
-import com.caindonaghey.commandbin.commands.ClearCommand;
-import com.caindonaghey.commandbin.commands.CommandBinCommand;
-import com.caindonaghey.commandbin.commands.CraftCommand;
-import com.caindonaghey.commandbin.commands.CreeperCommand;
-import com.caindonaghey.commandbin.commands.DelwarpCommand;
-import com.caindonaghey.commandbin.commands.ExplodeCommand;
-import com.caindonaghey.commandbin.commands.ExplosionbowCommand;
-import com.caindonaghey.commandbin.commands.FeedCommand;
-import com.caindonaghey.commandbin.commands.FireworkCommand;
-import com.caindonaghey.commandbin.commands.FixlagCommand;
-import com.caindonaghey.commandbin.commands.FlyCommand;
-import com.caindonaghey.commandbin.commands.FreezeCommand;
-import com.caindonaghey.commandbin.commands.FsayCommand;
-import com.caindonaghey.commandbin.commands.GmCommand;
-import com.caindonaghey.commandbin.commands.GodCommand;
-import com.caindonaghey.commandbin.commands.HatCommand;
-import com.caindonaghey.commandbin.commands.HealCommand;
-import com.caindonaghey.commandbin.commands.HomeCommand;
-import com.caindonaghey.commandbin.commands.IPCommand;
-import com.caindonaghey.commandbin.commands.ItemdescCommand;
-import com.caindonaghey.commandbin.commands.ItemnameCommand;
-import com.caindonaghey.commandbin.commands.KillCommand;
-import com.caindonaghey.commandbin.commands.KillmobsCommand;
-import com.caindonaghey.commandbin.commands.MsgCommand;
-import com.caindonaghey.commandbin.commands.MuteCommand;
-import com.caindonaghey.commandbin.commands.NickCommand;
-import com.caindonaghey.commandbin.commands.OpeninvCommand;
-import com.caindonaghey.commandbin.commands.PtimeCommand;
-import com.caindonaghey.commandbin.commands.PutCommand;
-import com.caindonaghey.commandbin.commands.SethomeCommand;
-import com.caindonaghey.commandbin.commands.SetspawnCommand;
-import com.caindonaghey.commandbin.commands.SetwarpCommand;
-import com.caindonaghey.commandbin.commands.SmokeCommand;
-import com.caindonaghey.commandbin.commands.SpawnCommand;
-import com.caindonaghey.commandbin.commands.SpawnmobCommand;
-import com.caindonaghey.commandbin.commands.StarveCommand;
-import com.caindonaghey.commandbin.commands.TimeCommand;
-import com.caindonaghey.commandbin.commands.TpAcceptCommand;
-import com.caindonaghey.commandbin.commands.TpCommand;
-import com.caindonaghey.commandbin.commands.TpDenyCommand;
-import com.caindonaghey.commandbin.commands.TpaCommand;
-import com.caindonaghey.commandbin.commands.TpallCommand;
-import com.caindonaghey.commandbin.commands.TphereCommand;
-import com.caindonaghey.commandbin.commands.VanishCommand;
-import com.caindonaghey.commandbin.commands.WarpCommand;
-import com.caindonaghey.commandbin.commands.WeatherCommand;
-import com.caindonaghey.commandbin.listeners.AfkListener;
-import com.caindonaghey.commandbin.listeners.BindListener;
-import com.caindonaghey.commandbin.listeners.BlockedListener;
-import com.caindonaghey.commandbin.listeners.BowListener;
-import com.caindonaghey.commandbin.listeners.FreezeListener;
-import com.caindonaghey.commandbin.listeners.GodListener;
-import com.caindonaghey.commandbin.listeners.HealthListener;
-import com.caindonaghey.commandbin.listeners.LapisListener;
-import com.caindonaghey.commandbin.listeners.MuteListener;
-import com.caindonaghey.commandbin.listeners.SmokeListener;
-import com.caindonaghey.commandbin.listeners.VanishListener;
+import com.caindonaghey.commandbin.commands.*;
+import com.caindonaghey.commandbin.listeners.*;
 
 public class CommandBin extends JavaPlugin {
 	
 	public static CommandBin plugin;
 	public static String language;
 	public static boolean lapisTrampoline = false;
+	public static boolean chunkLoader = false;
 	
 	public void onEnable() {
 		registerCommands();
@@ -162,6 +101,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("fixlag").setExecutor (new FixlagCommand());
 		getServer().getPluginCommand("creeper").setExecutor(new CreeperCommand());
 		getServer().getPluginCommand("msg").setExecutor(new MsgCommand());
+		getServer().getPluginCommand("shoot").setExecutor(new ShootCommand());
 	}
 	
 	public void registerTimeLock() {
@@ -176,32 +116,42 @@ public class CommandBin extends JavaPlugin {
 	}
 	
 	public void setupConfig() {
-		if(getConfig().get("language") == null) {
-			getConfig().set("language", "english");
+		if(getConfig().get("settings.language") == null) {
+			getConfig().set("settings.language", "english");
 			saveConfig();
 		}
-		if(getConfig().get("healthtags") == null) {
-			getConfig().set("healthtags", true);
+		if(getConfig().get("settings.healthtags") == null) {
+			getConfig().set("settings.healthtags", true);
 			saveConfig();
 		}
-		if(getConfig().get("lapis-trampoline") == null) {
-			getConfig().set("lapis-trampoline", true);
+		if(getConfig().get("settings.lapis-trampoline") == null) {
+			getConfig().set("settings.lapis-trampoline", true);
+			saveConfig();
+		}
+		if(getConfig().get("settings.chunk-loader") == null) {
+			getConfig().set("settings.chunk-loader", true);
 			saveConfig();
 		}
 	}
 	
 	public void setupLanguage() {
-		if(getConfig().getString("language").equalsIgnoreCase("english")) {
+		if(getConfig().getString("settings.language").equalsIgnoreCase("english")) {
 			language = "english";
 		}
-		if(getConfig().getString("language").equalsIgnoreCase("dutch") || getConfig().getString("language").equalsIgnoreCase("deutch")) {
+		if(getConfig().getString("settings.language").equalsIgnoreCase("dutch") || getConfig().getString("settings.language").equalsIgnoreCase("deutch")) {
 			language = "dutch";
 		}
 	}
 	
 	public void setupLapis() {
-		if(getConfig().getBoolean("lapis-trampoline")) {
+		if(getConfig().getBoolean("settings.lapis-trampoline")) {
 			lapisTrampoline = true;
+		}
+	}
+	
+	public void setupLoader() {
+		if(getConfig().getBoolean("settings.chunk-loader")) {
+			chunkLoader = true;
 		}
 	}
 
