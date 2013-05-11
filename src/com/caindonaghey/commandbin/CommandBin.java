@@ -20,6 +20,7 @@ public class CommandBin extends JavaPlugin {
 		setupConfig();
 		setupLanguage();
 		setupLapis();
+		setupLoader();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
 		System.out.println("Language currently set to: " + getConfig().get("language"));
@@ -102,6 +103,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("creeper").setExecutor(new CreeperCommand());
 		getServer().getPluginCommand("msg").setExecutor(new MsgCommand());
 		getServer().getPluginCommand("shoot").setExecutor(new ShootCommand());
+		getServer().getPluginCommand("openenc").setExecutor(new OpenEncCommand());
 	}
 	
 	public void registerTimeLock() {

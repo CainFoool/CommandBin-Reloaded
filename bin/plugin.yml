@@ -165,3 +165,6 @@ commands:
    shoot:
        description: 'Shoot a player into the sky'
        usage: /<command> <player>
+   openenc:
+       description: 'Open a Enchanting Table instantly'
+       usage: /<command>

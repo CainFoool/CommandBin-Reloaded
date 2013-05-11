@@ -26,7 +26,7 @@ public class Fireworks {
     public static Color getColorFrom(Player player, String sub) {
         Color color = null;
         
-    	if(sub.equalsIgnoreCase("r")) {
+    	if(sub.equalsIgnoreCase("r") || sub.equalsIgnoreCase("random")) {
     		Random rand = new Random();
     		if(rand.nextInt(5)+1 == 1) {
     			return Color.RED;
@@ -91,7 +91,7 @@ public class Fireworks {
     public static Type getTypeFrom(Player player, String sub) {
     	Type type = null;
     	
-    	if(sub.equalsIgnoreCase("r")) {
+    	if(sub.equalsIgnoreCase("r") || sub.equalsIgnoreCase("random")) {
     		Random rand = new Random();
     		if(rand.nextInt(5)+1 == 1) {
     			return Type.BALL;

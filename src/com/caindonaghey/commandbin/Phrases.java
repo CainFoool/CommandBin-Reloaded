@@ -240,6 +240,19 @@ public class Phrases {
 			if(string == "speed-set") return prefix + "Snelheid ingesteld op {SPEED}";
 			if(string == "ip") return prefix + "IP Adres: {IP}";
 			if(string == "creepered") return prefix + "Speler is gecreeperd.";
+			if(string == "console-tp-1") return prefix + "Console teleported you to {PLAYER}.";
+			if(string == "console-tp-2") return prefix + "Console teleported {PLAYER} to you.";
+			if(string == "console-tp-coord") return prefix + "Console teleported you to {X}, {Y}, {Z}";
+			if(string == "player-tped") return prefix + "{PLAYER} teleported to you.";
+			if(string == "player-tp-1") return prefix + "{PLAYER} teleported you to {PLAYER2}";
+			if(string == "player-tp-2") return prefix + "{PLAYER} teleported {PLAYER2} to you.";
+			if(string == "player-tp-coord") return prefix + "{PLAYER} teleported you to {X}, {Y}, {Z}";
+			if(string == "chunk-kept") return "[CommandBin] The chunk has been kept loaded.";
+			if(string == "player-shot") return prefix + "Player has been shot into the air!";
+			if(string == "afk-announce") return prefix + "{PLAYER} is now afk.";
+			if(string == "afk-announce-off") return prefix + "{PLAYER} is no longer afk.";
+			if(string == "self-fly-disabled") return prefix + "Your flying capabilities were disabled.";
+			if(string == "self-fly-enabled") return prefix + "Your flying capabilities were enabled.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
