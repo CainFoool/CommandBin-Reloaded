@@ -46,6 +46,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new HealthListener(), this);
 		getServer().getPluginManager().registerEvents(new LapisListener(), this);
 		getServer().getPluginManager().registerEvents(new ChunkLoaderListener(), this);
+		getServer().getPluginManager().registerEvents(new BlockplaceListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -104,6 +105,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("msg").setExecutor(new MsgCommand());
 		getServer().getPluginCommand("shoot").setExecutor(new ShootCommand());
 		getServer().getPluginCommand("openenc").setExecutor(new OpenEncCommand());
+		getServer().getPluginCommand("blockplace").setExecutor(new BlockplaceCommand());
 	}
 	
 	public void registerTimeLock() {

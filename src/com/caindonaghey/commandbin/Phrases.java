@@ -129,10 +129,15 @@ public class Phrases {
 			if(string == "player-tp-coord") return prefix + "{PLAYER} teleported you to {X}, {Y}, {Z}";
 			if(string == "chunk-kept") return "[CommandBin] The chunk has been kept loaded.";
 			if(string == "player-shot") return prefix + "Player has been shot into the air!";
-			if(string == "afk-announce") return prefix + "{PLAYER} is now afk.";
-			if(string == "afk-announce-off") return prefix + "{PLAYER} is no longer afk.";
+			if(string == "afk-announce") return ChatColor.YELLOW + "{PLAYER} is now afk.";
+			if(string == "afk-announce-off") return ChatColor.YELLOW + "{PLAYER} is no longer afk.";
 			if(string == "self-fly-disabled") return prefix + "Your flying capabilities were disabled.";
 			if(string == "self-fly-enabled") return prefix + "Your flying capabilities were enabled.";
+			if(string == "player-blocks") return prefix + "{PLAYER} may no longer place blocks.";
+			if(string == "player-blocks-off") return prefix + "{PLAYER} may now place blocks.";
+			if(string == "self-blocks") return prefix + "You may no longer place blocks.";
+			if(string == "self-blocks-off") return prefix + "You may place blocks.";
+			if(string == "no-blocks") return ChatColor.RED + "Stop, you can't place blocks.";
 		}
 		
 		if(CommandBin.language == "dutch") {

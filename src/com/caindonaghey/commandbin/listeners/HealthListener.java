@@ -51,7 +51,7 @@ public class HealthListener implements Listener {
 		if(entity instanceof Spider) {
 			Spider spider = (Spider) entity;
 			spider.setCustomName(ChatColor.RED + "Health: " + spider.getHealth());
-		}
+			}
 	}
 	public void registerSkeleton(Entity entity) {
 		if(entity instanceof Skeleton) {
