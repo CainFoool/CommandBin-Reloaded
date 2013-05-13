@@ -32,9 +32,11 @@ public class MuteCommand implements CommandExecutor {
 				if(!mutedPlayers.contains(player.getName())) {
 					mutedPlayers.add(player.getName());
 					System.out.println(Phrases.get("player-muted"));
+					player.sendMessage(Phrases.get("player-muted").replace("Player", "You").replace("They", "You").replace("has", "have"));
 					return true;
 				}
 				mutedPlayers.remove(player.getName());
+				player.sendMessage(Phrases.get("player-unmuted").replace("Player", "You").replace("They", "You").replace("has", "have"));
 				System.out.println(Phrases.get("player-unmuted"));
 				return true;
 			}
@@ -60,9 +62,11 @@ public class MuteCommand implements CommandExecutor {
 			if(!mutedPlayers.contains(otherPlayer.getName())) {
 				mutedPlayers.add(otherPlayer.getName());
 				player.sendMessage(Phrases.get("player-muted"));
+				otherPlayer.sendMessage(Phrases.get("player-muted").replace("Player", "You").replace("They", "You").replace("has", "have"));
 				return true;
 			}
 			mutedPlayers.remove(otherPlayer.getName());
+			otherPlayer.sendMessage(Phrases.get("player-muted").replace("Player", "You").replace("They", "You").replace("has", "have"));
 			player.sendMessage(Phrases.get("player-unmuted"));
 			return true;
 		}

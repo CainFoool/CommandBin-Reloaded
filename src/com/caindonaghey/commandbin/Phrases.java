@@ -91,7 +91,6 @@ public class Phrases {
 			if(string == "self-bow") return prefix + "You may now use the explosion bow, be careful.";
 			if(string == "self-nobow") return prefix + "You may no longer use the explosion bow.";
 			if(string == "name-changed") return prefix + "Player's name has been changed!";
-			if(string == "chat-cleared") return prefix + "Your chat has been cleared!";
 			if(string == "home-set") return prefix + "Your home has been set!";
 			if(string == "home-teleport") return prefix + "You have teleported to your home.";
 			if(string == "invalid-home") return badPrefix + "You do not have a home! Use /sethome to set one!";
@@ -216,7 +215,6 @@ public class Phrases {
             if(string == "self-bow") return prefix + "Je mag nu de explosieve boog gebruiken, wees voorzichtig.";
             if(string == "self-nobow") return prefix + "Je mag de explosieve boog niet meer gebruiken.";
             if(string == "name-changed") return prefix + "Speler's naam is veranderd!";
-			if(string == "chat-cleared") return prefix + "Je chat is gewist!";
 			if(string == "home-set") return prefix + "Je huis is ingesteld!";
 			if(string == "home-teleport") return prefix + "Je hebt naar je huis geteleporteerd.";
 			if(string == "invalid-home") return badPrefix + "Je hebt geen huis! Gebruik /sethome om er één in te stellen!";

@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.06'
+version: '5.07'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
@@ -168,3 +168,6 @@ commands:
    openenc:
        description: 'Open a Enchanting Table instantly'
        usage: /<command>
+   blockplace:
+       description: 'Blocks a player from placing blocks'
+       usage: /<command> <player>

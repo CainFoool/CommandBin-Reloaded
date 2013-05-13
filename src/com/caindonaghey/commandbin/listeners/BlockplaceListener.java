@@ -14,7 +14,7 @@ public class BlockplaceListener implements Listener {
 	public void onBlockPlace(BlockPlaceEvent e) {
 		Player player = e.getPlayer();
 		
-		if(BlockplaceCommand.placePlayers.contains(player)) {
+		if(BlockplaceCommand.placePlayers.contains(player.getName())) {
 			e.setCancelled(true);
 			player.sendMessage(Phrases.get("no-blocks"));
 		}

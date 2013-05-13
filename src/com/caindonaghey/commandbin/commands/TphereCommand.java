@@ -37,6 +37,7 @@ public class TphereCommand implements CommandExecutor {
 			}
 			player.sendMessage(Phrases.get("tele-player"));
 			otherPlayer.teleport(player.getLocation());
+			otherPlayer.sendMessage(Phrases.get("player-tp-1").replace("{PLAYER}", player.getName()).replace("{PLAYER}", "them"));
 		}
 		return true;
 	}

@@ -24,7 +24,7 @@ public class ClearChatCommand implements CommandExecutor {
 			for(int i = 0; i < 20; i++) {
 				player.sendMessage("");
 			}
-			player.sendMessage(Phrases.get("chat-cleared"));
+			// player.sendMessage(Phrases.get("chat-cleared"));
 		}
 		return true;
 	}

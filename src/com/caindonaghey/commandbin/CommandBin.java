@@ -12,6 +12,7 @@ public class CommandBin extends JavaPlugin {
 	public static String language;
 	public static boolean lapisTrampoline = false;
 	public static boolean chunkLoader = false;
+	public static boolean debugOnce = false;
 	
 	public void onEnable() {
 		registerCommands();
@@ -47,6 +48,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new LapisListener(), this);
 		getServer().getPluginManager().registerEvents(new ChunkLoaderListener(), this);
 		getServer().getPluginManager().registerEvents(new BlockplaceListener(), this);
+		getServer().getPluginManager().registerEvents(new DebugListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -136,6 +138,10 @@ public class CommandBin extends JavaPlugin {
 			getConfig().set("settings.chunk-loader", true);
 			saveConfig();
 		}
+		if(getConfig().get("settings.debugonce") == null) {
+			getConfig().set("settings.debugonce", true);
+			saveConfig();
+		}
 	}
 	
 	public void setupLanguage() {
@@ -156,6 +162,12 @@ public class CommandBin extends JavaPlugin {
 	public void setupLoader() {
 		if(getConfig().getBoolean("settings.chunk-loader")) {
 			chunkLoader = true;
+		}
+	}
+	
+	public void setupDebug() {
+		if(getConfig().getBoolean("settings.debugonce")) {
+			debugOnce = true;
 		}
 	}
 

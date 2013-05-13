@@ -59,13 +59,13 @@ public class BlockplaceCommand implements CommandExecutor {
 			
 			if(!placePlayers.contains(otherPlayer.getName())) {
 				placePlayers.add(otherPlayer.getName());
-				player.sendMessage(Phrases.get("self-blocks"));
-				otherPlayer.sendMessage(Phrases.get("player-blocks"));
+				otherPlayer.sendMessage(Phrases.get("self-blocks"));
+				player.sendMessage(Phrases.get("player-blocks").replace("{PLAYER}", otherPlayer.getName()));
 				return true;
 			}
 			placePlayers.remove(otherPlayer.getName());
-			otherPlayer.sendMessage(Phrases.get("player-blocks-off"));
-			player.sendMessage(Phrases.get("self-blocks-off"));
+			player.sendMessage(Phrases.get("player-blocks-off").replace("{PLAYER}", otherPlayer.getName()));
+			otherPlayer.sendMessage(Phrases.get("self-blocks-off"));
 		}
 		return true;
 	}
