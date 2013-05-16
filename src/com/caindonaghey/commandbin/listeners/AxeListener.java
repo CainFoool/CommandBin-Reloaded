@@ -22,12 +22,14 @@ public class AxeListener implements Listener {
 		if(CommandBin.woodCutter) {
 			if(player.hasPermission("CommandBin.axe")) {
 				if(player.getItemInHand().getType() == Material.IRON_AXE) {
-					if(type == Material.LOG) {
-						for (int i = 0; i < 30; i++) {
-							if(block.getRelative(0, i, 0).getType() == Material.LOG) {
-								block.getRelative(0, i, 0).getWorld().playEffect(block.getRelative(0, i, 0).getLocation(), Effect.SMOKE, 5);
-								block.getRelative(0, i, 0).getWorld().playEffect(block.getRelative(0, i, 0).getLocation(), Effect.MOBSPAWNER_FLAMES, 5);
-								block.getRelative(0, i, 0).breakNaturally(new ItemStack(Material.LOG, 1));
+					if(block.getRelative(0, -1, 0).getType() == Material.DIRT || block.getRelative(0, -1, 0).getType() == Material.GRASS) {
+						if(type == Material.LOG) {
+							for (int i = 0; i < 30; i++) {
+								if(block.getRelative(0, i, 0).getType() == Material.LOG) {
+									block.getRelative(0, i, 0).getWorld().playEffect(block.getRelative(0, i, 0).getLocation(), Effect.SMOKE, 5);
+									block.getRelative(0, i, 0).getWorld().playEffect(block.getRelative(0, i, 0).getLocation(), Effect.MOBSPAWNER_FLAMES, 5);
+									block.getRelative(0, i, 0).breakNaturally(new ItemStack(Material.LOG, 1));
+								}
 							}
 						}
 					}

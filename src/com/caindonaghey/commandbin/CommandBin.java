@@ -26,8 +26,8 @@ public class CommandBin extends JavaPlugin {
 		setupAxe();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
-		System.out.println("Language currently set to: " + getConfig().get("language"));
-		System.out.println("Health Tags currently set to: " + getConfig().get("healthtags"));
+		System.out.println("Language currently set to: " + getConfig().get("settings.language"));
+		System.out.println("Health Tags currently set to: " + getConfig().get("settings.healthtags"));
 		plugin = this;
 	}
 	
@@ -149,6 +149,18 @@ public class CommandBin extends JavaPlugin {
 			getConfig().set("settings.woodcutter", true);
 			saveConfig();
 		}
+		
+		getConfig().options().header(
+				"+-----------------------------\n" +
+				"+ COMMANDBIN CONFIGURATION\n" +
+				"+\n" +
+				"+ Here is the CommandBin Configuration. The settings in here are fully configurable\n" +
+				"+ and will reset if something has gone wrong.\n" +
+				"+ Good luck and have fun with CommandBin!\n" +
+				"+ As a reminder, the latest version is: v" + this.getDescription().getVersion().toString() + "\n" + 
+				"+ ~ Cain\n" +
+				"+-----------------------------");
+		saveConfig();
 	}
 	
 	public void setupLanguage() {
