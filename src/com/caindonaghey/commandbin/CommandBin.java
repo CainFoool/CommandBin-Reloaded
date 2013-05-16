@@ -13,6 +13,7 @@ public class CommandBin extends JavaPlugin {
 	public static boolean lapisTrampoline = false;
 	public static boolean chunkLoader = false;
 	public static boolean debugOnce = false;
+	public static boolean woodCutter = false;
 	
 	public void onEnable() {
 		registerCommands();
@@ -22,6 +23,7 @@ public class CommandBin extends JavaPlugin {
 		setupLanguage();
 		setupLapis();
 		setupLoader();
+		setupAxe();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
 		System.out.println("Language currently set to: " + getConfig().get("language"));
@@ -49,6 +51,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new ChunkLoaderListener(), this);
 		getServer().getPluginManager().registerEvents(new BlockplaceListener(), this);
 		getServer().getPluginManager().registerEvents(new DebugListener(), this);
+		getServer().getPluginManager().registerEvents(new AxeListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -142,6 +145,10 @@ public class CommandBin extends JavaPlugin {
 			getConfig().set("settings.debugonce", true);
 			saveConfig();
 		}
+		if(getConfig().get("settings.woodcutter") == null) {
+			getConfig().set("settings.woodcutter", true);
+			saveConfig();
+		}
 	}
 	
 	public void setupLanguage() {
@@ -168,6 +175,12 @@ public class CommandBin extends JavaPlugin {
 	public void setupDebug() {
 		if(getConfig().getBoolean("settings.debugonce")) {
 			debugOnce = true;
+		}
+	}
+	
+	public void setupAxe() {
+		if(getConfig().getBoolean("settings.woodcutter")) {
+			woodCutter = true;
 		}
 	}
 

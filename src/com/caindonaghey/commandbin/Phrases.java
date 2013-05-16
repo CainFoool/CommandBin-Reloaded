@@ -243,19 +243,19 @@ public class Phrases {
 			if(string == "speed-set") return prefix + "Snelheid ingesteld op {SPEED}";
 			if(string == "ip") return prefix + "IP Adres: {IP}";
 			if(string == "creepered") return prefix + "Speler is gecreeperd.";
-			if(string == "console-tp-1") return prefix + "Console teleported you to {PLAYER}.";
-			if(string == "console-tp-2") return prefix + "Console teleported {PLAYER} to you.";
-			if(string == "console-tp-coord") return prefix + "Console teleported you to {X}, {Y}, {Z}";
-			if(string == "player-tped") return prefix + "{PLAYER} teleported to you.";
-			if(string == "player-tp-1") return prefix + "{PLAYER} teleported you to {PLAYER2}";
-			if(string == "player-tp-2") return prefix + "{PLAYER} teleported {PLAYER2} to you.";
-			if(string == "player-tp-coord") return prefix + "{PLAYER} teleported you to {X}, {Y}, {Z}";
-			if(string == "chunk-kept") return "[CommandBin] The chunk has been kept loaded.";
-			if(string == "player-shot") return prefix + "Player has been shot into the air!";
-			if(string == "afk-announce") return prefix + "{PLAYER} is now afk.";
-			if(string == "afk-announce-off") return prefix + "{PLAYER} is no longer afk.";
-			if(string == "self-fly-disabled") return prefix + "Your flying capabilities were disabled.";
-			if(string == "self-fly-enabled") return prefix + "Your flying capabilities were enabled.";
+			if(string == "console-tp-1") return prefix + "Console teleporteerde je naar {PLAYER}.";
+			if(string == "console-tp-2") return prefix + "Console teleporteerde {PLAYER} naar je.";
+			if(string == "console-tp-coord") return prefix + "Console teleporteerde je naar {X}, {Y}, {Z}";
+			if(string == "player-tped") return prefix + "{PLAYER} teleporteerde naar jou.";
+			if(string == "player-tp-1") return prefix + "{PLAYER} teleporteerde je naar {PLAYER2}";
+			if(string == "player-tp-2") return prefix + "{PLAYER} teleporteerde {PLAYER2} naar je.";
+			if(string == "player-tp-coord") return prefix + "{PLAYER} teleporteerde je naar {X}, {Y}, {Z}";
+			if(string == "chunk-kept") return "[CommandBin] De chunk blijft geladen.";
+			if(string == "player-shot") return prefix + "Speler is in de lucht geschoten!";
+			if(string == "afk-announce") return prefix + "{PLAYER} is nu afk.";
+			if(string == "afk-announce-off") return prefix + "{PLAYER} is niet meer afk.";
+			if(string == "self-fly-disabled") return prefix + "Je vliegcapaciteiten zijn uitgeschakeld.";
+			if(string == "self-fly-enabled") return prefix + "Je vliegcapaciteiten zijn ingeschakeld.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
