@@ -171,3 +171,15 @@ commands:
    blockplace:
        description: 'Blocks a player from placing blocks'
        usage: /<command> <player>
+   spy:
+       description: 'Spy on players messages'
+       usage: /<command>
+   vote:
+       description: 'Start a vote'
+       usage: /<command> <stop> <vote text>
+   voteyes:
+       description: 'Vote yes'
+       usage: /<command>
+   voteno:
+       description: 'Vote no'
+       usage: /<command>

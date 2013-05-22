@@ -136,7 +136,21 @@ public class Phrases {
 			if(string == "player-blocks-off") return prefix + "{PLAYER} may now place blocks.";
 			if(string == "self-blocks") return prefix + "You may no longer place blocks.";
 			if(string == "self-blocks-off") return prefix + "You may place blocks.";
-			if(string == "no-blocks") return ChatColor.RED + "Stop, you can't place blocks.";
+			if(string == "no-blocks") return badPrefix + "Stop, you can't place blocks.";
+			if(string == "spy-on") return prefix + "You are now spying on player's messages.";
+			if(string == "spy-off") return prefix + "You are no longer spying on player's messages.";
+			if(string == "vote-cancelled") return badPrefix + ChatColor.YELLOW + "The vote has been cancelled!";
+			if(string == "vote-not-running") return badPrefix + "A vote is not currently running.";
+			if(string == "vote-started-1") return prefix + ChatColor.YELLOW + "A new vote has been started!";
+			if(string == "vote-started-2") return prefix + ChatColor.YELLOW + "\" {VOTE} \"";
+			if(string == "vote-started-3") return prefix + ChatColor.YELLOW + "/voteyes or /voteno";
+			if(string == "already-voted") return badPrefix + "You have already voted.";
+			if(string == "vote-bro") return prefix + ChatColor.YELLOW + "{PLAYER} has voted {VOTE} ({1}/{2})";
+			if(string == "thanks-voting") return prefix + "Thank you for voting!";
+			if(string == "vote-yes") return prefix + ChatColor.YELLOW + "Yes won!";
+			if(string == "vote-no") return prefix + ChatColor.YELLOW + "No won!";
+			if(string == "vote-elegible") return prefix + "You are not elegible to vote.";
+			if(string == "vote-running") return prefix + "A vote is already running!";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -256,6 +270,8 @@ public class Phrases {
 			if(string == "afk-announce-off") return prefix + "{PLAYER} is niet meer afk.";
 			if(string == "self-fly-disabled") return prefix + "Je vliegcapaciteiten zijn uitgeschakeld.";
 			if(string == "self-fly-enabled") return prefix + "Je vliegcapaciteiten zijn ingeschakeld.";
+			if(string == "spy-on") return prefix + "You are now spying on player's messages.";
+			if(string == "spy-off") return prefix + "You are no longer spying on player's messages.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}

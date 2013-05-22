@@ -111,6 +111,10 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("shoot").setExecutor(new ShootCommand());
 		getServer().getPluginCommand("openenc").setExecutor(new OpenEncCommand());
 		getServer().getPluginCommand("blockplace").setExecutor(new BlockplaceCommand());
+		getServer().getPluginCommand("spy").setExecutor(new SpyCommand());
+		getServer().getPluginCommand("vote").setExecutor(new VoteCommand());
+		getServer().getPluginCommand("voteyes").setExecutor(new VoteYesCommand());
+		getServer().getPluginCommand("voteno").setExecutor(new VoteNoCommand());
 	}
 	
 	public void registerTimeLock() {

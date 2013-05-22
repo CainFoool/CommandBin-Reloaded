@@ -54,6 +54,12 @@ public class MsgCommand implements CommandExecutor {
 			}
 			player.sendMessage(ChatColor.AQUA + player.getName() + " > " + ChatColor.DARK_GRAY + x.toString().trim());
 			otherPlayer.sendMessage(ChatColor.DARK_AQUA + player.getName() + " < " + ChatColor.DARK_GRAY + x.toString().trim());
+			System.out.println("[CommandBin] " + player.getName() + " to " + otherPlayer.getName() + " > " + x.toString().trim());
+			for(Player onlinePlayers : Bukkit.getServer().getOnlinePlayers()) {
+				if(SpyCommand.spyPlayers.contains(onlinePlayers.getName())) {
+					onlinePlayers.sendMessage(ChatColor.DARK_AQUA + player.getName() + " to " + otherPlayer.getName() + " > " + ChatColor.DARK_GRAY + x.toString().trim());
+				}
+			}
 		}
 		return true;
 	}
