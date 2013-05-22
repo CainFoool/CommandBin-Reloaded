@@ -151,6 +151,7 @@ public class Phrases {
 			if(string == "vote-no") return prefix + ChatColor.YELLOW + "No won!";
 			if(string == "vote-elegible") return prefix + "You are not elegible to vote.";
 			if(string == "vote-running") return prefix + "A vote is already running!";
+			if(string == "vote-tied") return prefix + ChatColor.YELLOW + "The vote tied!";
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -272,6 +273,19 @@ public class Phrases {
 			if(string == "self-fly-enabled") return prefix + "Je vliegcapaciteiten zijn ingeschakeld.";
 			if(string == "spy-on") return prefix + "You are now spying on player's messages.";
 			if(string == "spy-off") return prefix + "You are no longer spying on player's messages.";
+			if(string == "vote-cancelled") return badPrefix + ChatColor.YELLOW + "The vote has been cancelled!";
+			if(string == "vote-not-running") return badPrefix + "A vote is not currently running.";
+			if(string == "vote-started-1") return prefix + ChatColor.YELLOW + "A new vote has been started!";
+			if(string == "vote-started-2") return prefix + ChatColor.YELLOW + "\" {VOTE} \"";
+			if(string == "vote-started-3") return prefix + ChatColor.YELLOW + "/voteyes or /voteno";
+			if(string == "already-voted") return badPrefix + "You have already voted.";
+			if(string == "vote-bro") return prefix + ChatColor.YELLOW + "{PLAYER} has voted {VOTE} ({1}/{2})";
+			if(string == "thanks-voting") return prefix + "Thank you for voting!";
+			if(string == "vote-yes") return prefix + ChatColor.YELLOW + "Yes won!";
+			if(string == "vote-no") return prefix + ChatColor.YELLOW + "No won!";
+			if(string == "vote-elegible") return prefix + "You are not elegible to vote.";
+			if(string == "vote-running") return prefix + "A vote is already running!";
+			if(string == "vote-tied") return prefix + ChatColor.YELLOW + "The vote tied!";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
