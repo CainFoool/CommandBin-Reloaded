@@ -183,3 +183,6 @@ commands:
    voteno:
        description: 'Vote no'
        usage: /<command>
+   carpet:
+       description: 'A glass block underneath your feet that disappears in 20 seconds.'
+       usage: /<command>

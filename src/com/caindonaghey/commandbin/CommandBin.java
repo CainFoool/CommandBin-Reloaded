@@ -52,6 +52,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new BlockplaceListener(), this);
 		getServer().getPluginManager().registerEvents(new DebugListener(), this);
 		getServer().getPluginManager().registerEvents(new AxeListener(), this);
+		getServer().getPluginManager().registerEvents(new CarpetListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -115,6 +116,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("vote").setExecutor(new VoteCommand());
 		getServer().getPluginCommand("voteyes").setExecutor(new VoteYesCommand());
 		getServer().getPluginCommand("voteno").setExecutor(new VoteNoCommand());
+		getServer().getPluginCommand("carpet").setExecutor(new CarpetCommand());
 	}
 	
 	public void registerTimeLock() {

@@ -152,6 +152,9 @@ public class Phrases {
 			if(string == "vote-elegible") return prefix + "You are not elegible to vote.";
 			if(string == "vote-running") return prefix + "A vote is already running!";
 			if(string == "vote-tied") return prefix + ChatColor.YELLOW + "The vote tied!";
+			if(string == "carpet-on") return prefix + "Carpet Mode now enabled.";
+			if(string == "carpet-off") return prefix + "Carpet Mode now disabled.";
+			
 		}
 		
 		if(CommandBin.language == "dutch") {
@@ -286,6 +289,8 @@ public class Phrases {
 			if(string == "vote-elegible") return prefix + "You are not elegible to vote.";
 			if(string == "vote-running") return prefix + "A vote is already running!";
 			if(string == "vote-tied") return prefix + ChatColor.YELLOW + "The vote tied!";
+			if(string == "carpet-on") return prefix + "Carpet Mode now enabled.";
+			if(string == "carpet-off") return prefix + "Carpet Mode now disabled.";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
