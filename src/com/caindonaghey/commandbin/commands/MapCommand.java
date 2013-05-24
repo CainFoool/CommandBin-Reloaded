@@ -57,7 +57,7 @@ public class MapCommand implements CommandExecutor {
 		}
 		newID = newMap.getId();
 		newMap.addRenderer(new MapText(x.toString().trim()));
-		player.sendMessage("New Map ID: " + String.valueOf(newMap.getId()));
+		player.sendMessage(Phrases.prefix + "New Map ID: " + String.valueOf(newMap.getId()));
 		map.setDurability(newMap.getId());
 		ItemMeta m = map.getItemMeta();
 		m.setDisplayName("Written Map");
