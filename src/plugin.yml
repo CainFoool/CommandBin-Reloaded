@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.07'
+version: '5.08'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
@@ -185,4 +185,7 @@ commands:
        usage: /<command>
    carpet:
        description: 'A glass block underneath your feet that disappears in 20 seconds.'
+       usage: /<command>
+   map:
+       description: 'Write text on a map'
        usage: /<command>

@@ -31,13 +31,16 @@ public class WarpCommand implements CommandExecutor {
 			}
 			
 			if(args[0].equalsIgnoreCase("list")) {
-				Set<String> warpList = CommandBin.plugin.getConfig().getConfigurationSection("warp").getKeys(false);
-				StringBuilder x = new StringBuilder();
-				for(String warpNames : warpList) {
-					x.append(warpNames + ", ");
+				if(!player.hasPermission("CommandBin.warp.list")) {
+					Set<String> warpList = CommandBin.plugin.getConfig().getConfigurationSection("warp").getKeys(false);
+					StringBuilder x = new StringBuilder();
+					for(String warpNames : warpList) {
+						x.append(warpNames + ", ");
+					}
+					player.sendMessage(Phrases.get("warp-list").replace("{WARPS}", x.toString()));
+					return true;
 				}
-				player.sendMessage(Phrases.get("warp-list").replace("{WARPS}", x.toString()));
-				return true;
+				player.sendMessage(Phrases.get("no-permission"));
 			}
 			
 			if(Warp.doesExist(args[0].toLowerCase())) {

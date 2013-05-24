@@ -39,6 +39,16 @@ public class VoteNoCommand implements CommandExecutor {
 					VoteCommand.votePlayers.add(player.getName());
 					
 					if(VoteCommand.playerList.isEmpty()) {
+						
+						if(VoteCommand.yes == VoteCommand.no) {
+							Bukkit.getServer().broadcastMessage(Phrases.get("vote-tied"));
+							VoteCommand.voteRunning = false;
+							VoteCommand.no = 0;
+							VoteCommand.yes = 0;
+							VoteCommand.votePlayers.clear();
+							return true;
+						}
+						
 						if(VoteCommand.yes > VoteCommand.no) {
 							Bukkit.getServer().broadcastMessage(Phrases.get("vote-yes"));
 							VoteCommand.voteRunning = false;
