@@ -1,5 +1,7 @@
 package com.caindonaghey.commandbin;
 
+import java.io.File;
+
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -48,6 +50,7 @@ import com.caindonaghey.commandbin.commands.SetspawnCommand;
 import com.caindonaghey.commandbin.commands.SetwarpCommand;
 import com.caindonaghey.commandbin.commands.ShootCommand;
 import com.caindonaghey.commandbin.commands.SmokeCommand;
+import com.caindonaghey.commandbin.commands.SpartaCommand;
 import com.caindonaghey.commandbin.commands.SpawnCommand;
 import com.caindonaghey.commandbin.commands.SpawnmobCommand;
 import com.caindonaghey.commandbin.commands.SpyCommand;
@@ -90,6 +93,8 @@ public class CommandBin extends JavaPlugin {
 	public static boolean chunkLoader = false;
 	public static boolean debugOnce = false;
 	public static boolean woodCutter = false;
+	
+	public File homes;
 	
 	public void onEnable() {
 		registerCommands();
@@ -194,6 +199,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("voteno").setExecutor(new VoteNoCommand());
 		getServer().getPluginCommand("carpet").setExecutor(new CarpetCommand());
 		getServer().getPluginCommand("map").setExecutor(new MapCommand());
+		getServer().getPluginCommand("sparta").setExecutor(new SpartaCommand());
 	}
 	
 	public void registerTimeLock() {

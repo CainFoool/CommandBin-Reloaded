@@ -154,6 +154,7 @@ public class Phrases {
 			if(string == "vote-tied") return prefix + ChatColor.YELLOW + "The vote tied!";
 			if(string == "carpet-on") return prefix + "Carpet Mode now enabled.";
 			if(string == "carpet-off") return prefix + "Carpet Mode now disabled.";
+			if(string == "sparta") return prefix + "THIS.. IS.. SPARTA!";
 			
 		}
 		

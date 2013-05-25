@@ -21,6 +21,7 @@ public class MapText extends MapRenderer {
 	public void render(MapView arg0, MapCanvas arg1, Player arg2) {
 		if(arg0.getId() == MapCommand.newID) {
 			String finalText = currentText.replace("\\n","\n");
+
 			arg1.drawText(0, 0, MinecraftFont.Font, finalText);
 			//arg2.sendMap(arg0);
 		}

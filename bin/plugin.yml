@@ -187,5 +187,8 @@ commands:
        description: 'A glass block underneath your feet that disappears in 20 seconds.'
        usage: /<command>
    map:
-       description: 'Write text on a map'
+       description: 'Write text on a map, use \n for a new line'
+       usage: /<command> <text>
+   sparta:
+       description: 'Set all mobs near you on fire and thrown into the air'
        usage: /<command>
