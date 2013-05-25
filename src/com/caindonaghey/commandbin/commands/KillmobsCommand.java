@@ -45,6 +45,11 @@ public class KillmobsCommand implements CommandExecutor {
 			
 			for(Entity entities : player.getWorld().getEntities()) {
 				if(entities instanceof Creature || entities instanceof Monster) {
+					if(args.length == 1) {
+						if(args[0].equalsIgnoreCase("-l")) {
+							entities.getWorld().strikeLightning(entities.getLocation());
+						}
+					}
 					entities.remove();
 				}
 			}

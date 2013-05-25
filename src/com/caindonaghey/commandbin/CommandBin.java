@@ -41,6 +41,7 @@ import com.caindonaghey.commandbin.commands.MapCommand;
 import com.caindonaghey.commandbin.commands.MsgCommand;
 import com.caindonaghey.commandbin.commands.MuteCommand;
 import com.caindonaghey.commandbin.commands.NickCommand;
+import com.caindonaghey.commandbin.commands.NotargetCommand;
 import com.caindonaghey.commandbin.commands.OpenEncCommand;
 import com.caindonaghey.commandbin.commands.OpeninvCommand;
 import com.caindonaghey.commandbin.commands.PtimeCommand;
@@ -82,6 +83,7 @@ import com.caindonaghey.commandbin.listeners.GodListener;
 import com.caindonaghey.commandbin.listeners.HealthListener;
 import com.caindonaghey.commandbin.listeners.LapisListener;
 import com.caindonaghey.commandbin.listeners.MuteListener;
+import com.caindonaghey.commandbin.listeners.PlayerTargetListener;
 import com.caindonaghey.commandbin.listeners.SmokeListener;
 import com.caindonaghey.commandbin.listeners.VanishListener;
 
@@ -134,6 +136,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new DebugListener(), this);
 		getServer().getPluginManager().registerEvents(new AxeListener(), this);
 		getServer().getPluginManager().registerEvents(new CarpetListener(), this);
+		getServer().getPluginManager().registerEvents(new PlayerTargetListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -200,6 +203,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("carpet").setExecutor(new CarpetCommand());
 		getServer().getPluginCommand("map").setExecutor(new MapCommand());
 		getServer().getPluginCommand("sparta").setExecutor(new SpartaCommand());
+		getServer().getPluginCommand("notarget").setExecutor(new NotargetCommand());
 	}
 	
 	public void registerTimeLock() {
@@ -284,5 +288,11 @@ public class CommandBin extends JavaPlugin {
 			woodCutter = true;
 		}
 	}
+	
+	// v5.09
+	// /map now works in console
+	// Added -l argument to /killmobs, will kill with lightning
+	// Added /sparta command (Shoots entities near you in the air and sets on fire)
+	// Added /notarget command (Stops entities from targeting you)
 
 }

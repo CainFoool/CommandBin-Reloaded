@@ -192,3 +192,6 @@ commands:
    sparta:
        description: 'Set all mobs near you on fire and thrown into the air'
        usage: /<command>
+   notarget:
+       description: 'Enable/Disable mobs targeting you'
+       usage: /<command>

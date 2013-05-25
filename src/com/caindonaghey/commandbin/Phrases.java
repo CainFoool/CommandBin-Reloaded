@@ -155,6 +155,8 @@ public class Phrases {
 			if(string == "carpet-on") return prefix + "Carpet Mode now enabled.";
 			if(string == "carpet-off") return prefix + "Carpet Mode now disabled.";
 			if(string == "sparta") return prefix + "THIS.. IS.. SPARTA!";
+			if(string == "target-on") return prefix + "Mobs will no longer target you.";
+			if(string == "target-off") return prefix  + "Mobs will target you.";
 			
 		}
 		
