@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.caindonaghey.commandbin.Phrases;
+import com.caindonaghey.commandbin.Spawn;
 
 public class SetspawnCommand implements CommandExecutor {
 	
@@ -28,7 +29,7 @@ public class SetspawnCommand implements CommandExecutor {
 				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
-			player.getWorld().setSpawnLocation((int) player.getLocation().getX(), (int) player.getLocation().getY(), (int)player.getLocation().getZ());
+			Spawn.setSpawnLocation(player);
 			player.sendMessage(Phrases.get("spawn-set"));
 			return true;
 		}

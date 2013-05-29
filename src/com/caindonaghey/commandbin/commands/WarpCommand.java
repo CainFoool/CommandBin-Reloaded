@@ -2,6 +2,7 @@ package com.caindonaghey.commandbin.commands;
 
 import java.util.Set;
 
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,9 +30,9 @@ public class WarpCommand implements CommandExecutor {
 				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
-			
+
 			if(args[0].equalsIgnoreCase("list")) {
-				if(!player.hasPermission("CommandBin.warp.list")) {
+				if(player.hasPermission("CommandBin.warp.list")) {
 					Set<String> warpList = CommandBin.plugin.getConfig().getConfigurationSection("warp").getKeys(false);
 					StringBuilder x = new StringBuilder();
 					for(String warpNames : warpList) {

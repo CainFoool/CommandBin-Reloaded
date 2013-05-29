@@ -96,8 +96,6 @@ public class CommandBin extends JavaPlugin {
 	public static boolean debugOnce = false;
 	public static boolean woodCutter = false;
 	
-	public File homes;
-	
 	public void onEnable() {
 		registerCommands();
 		registerEvents();
@@ -294,5 +292,10 @@ public class CommandBin extends JavaPlugin {
 	// Added -l argument to /killmobs, will kill with lightning
 	// Added /sparta command (Shoots entities near you in the air and sets on fire)
 	// Added /notarget command (Stops entities from targeting you)
+	// Added pitch and yaw support to warps and homes
+	// Fixed /warp list returning bad permission errors.
+	// Added non-buggy in-built /spawn command from Bukkit, now relys on CommandBin and has pitch * yaw support.
+	// ^ Please note, if you do not have a spawn set already then it will default to the world, so be sure to set your spawns.
+	
 
 }
