@@ -20,7 +20,7 @@ public class ChunkLoaderListener implements Listener {
 	               for (int y = 0; y < 128; y++) {
 	                   if (event.getWorld().getBlockAt(X+x, y, Z+z).getType() == Material.LAPIS_BLOCK) {
 	                      	event.setCancelled(true);
-	                      	System.out.println(Phrases.get("chunk-kept"));
+	                      	// System.out.println(Phrases.get("chunk-kept"));
 	                   }
 	               }
 	           }

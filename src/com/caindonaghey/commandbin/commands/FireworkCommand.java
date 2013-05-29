@@ -1,9 +1,11 @@
 package com.caindonaghey.commandbin.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.FireworkEffect.Type;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,9 +19,28 @@ public class FireworkCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		if(l.equalsIgnoreCase("firework")) {
 			if(!(s instanceof Player)) {
-				System.out.println(Phrases.get("no-console"));
+				if(args.length < 7) {
+					System.out.println(Phrases.get("invalid-arguments"));
+					return false;
+				}
+				
+				if(args.length == 7) {
+					
+					World world = Bukkit.getServer().getWorld(args[0]);
+					int x = Integer.parseInt(args[1]);
+					int y = Integer.parseInt(args[2]);
+					int z = Integer.parseInt(args[3]);
+					try {
+					Fireworks.spawnConsoleFirework(x, y, z, world, Fireworks.getColorFrom(args[4]), Fireworks.getTypeFrom(args[5]), Integer.parseInt(args[6]));
+						System.out.println(Phrases.get("firework-spawned"));
+					} catch (NumberFormatException e) {
+						System.out.println(Phrases.get("invalid-number"));
+						return false;
+					}
+				}
 				return true;
 			}
+			
 			Player player = (Player) s;
 			if(!player.hasPermission("CommandBin.firework")) {
 				player.sendMessage(Phrases.get("no-permission"));
@@ -60,7 +81,7 @@ public class FireworkCommand implements CommandExecutor {
 			
 			if(args.length == 3) {
 				try {
-				Fireworks.spawnFirework(player, Fireworks.getColorFrom(player, args[1]), Fireworks.getTypeFrom(player, args[0]), Integer.parseInt(args[2]));
+				Fireworks.spawnFirework(player, Fireworks.getColorFrom(args[1]), Fireworks.getTypeFrom(args[0]), Integer.parseInt(args[2]));
 				player.sendMessage(Phrases.get("firework-spawned"));
 				} catch (NumberFormatException e) {
 					player.sendMessage(Phrases.get("invalid-number"));

@@ -81,6 +81,8 @@ public class WeatherCommand implements CommandExecutor {
 				for(int i = 0; i <= 400; i++) {
 					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() + Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() - Math.random() * 20), EntityType.VILLAGER);
 					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() - Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() + Math.random() * 20), EntityType.VILLAGER);
+					player.getWorld().spawnEntity(new Location(player.getWorld(), player.getLocation().getX() - Math.random() * 20, player.getLocation().getY() + 40 + i,  -player.getLocation().getZ() + Math.random() * 20), EntityType.VILLAGER);
+					player.getWorld().spawnEntity(new Location(player.getWorld(), -player.getLocation().getX() - Math.random() * 20, player.getLocation().getY() + 40 + i,  player.getLocation().getZ() + Math.random() * 20), EntityType.VILLAGER);
 				}
 				return true;
 			}

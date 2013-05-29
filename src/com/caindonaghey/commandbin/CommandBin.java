@@ -296,6 +296,7 @@ public class CommandBin extends JavaPlugin {
 	// Fixed /warp list returning bad permission errors.
 	// Added non-buggy in-built /spawn command from Bukkit, now relys on CommandBin and has pitch * yaw support.
 	// ^ Please note, if you do not have a spawn set already then it will default to the world, so be sure to set your spawns.
+	// Disabled chunk loaded messages
 	
 
 }
