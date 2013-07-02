@@ -3,7 +3,7 @@ package com.caindonaghey.commandbin.commands;
 import java.util.HashSet;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,6 +25,7 @@ public class BlockCommand implements CommandExecutor {
 				
 				Player player = Bukkit.getServer().getPlayer(args[0]);
 				
+
 				if(player == null) {
 					System.out.println(Phrases.get("player-invalid"));
 					return true;

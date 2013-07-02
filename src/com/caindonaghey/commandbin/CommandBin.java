@@ -1,7 +1,5 @@
 package com.caindonaghey.commandbin;
 
-import java.io.File;
-
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +17,8 @@ import com.caindonaghey.commandbin.commands.CommandBinCommand;
 import com.caindonaghey.commandbin.commands.CraftCommand;
 import com.caindonaghey.commandbin.commands.CreeperCommand;
 import com.caindonaghey.commandbin.commands.DelwarpCommand;
+import com.caindonaghey.commandbin.commands.EffectCommand;
+import com.caindonaghey.commandbin.commands.EnderCommand;
 import com.caindonaghey.commandbin.commands.ExplodeCommand;
 import com.caindonaghey.commandbin.commands.ExplosionbowCommand;
 import com.caindonaghey.commandbin.commands.FeedCommand;
@@ -56,6 +56,7 @@ import com.caindonaghey.commandbin.commands.SpawnCommand;
 import com.caindonaghey.commandbin.commands.SpawnmobCommand;
 import com.caindonaghey.commandbin.commands.SpyCommand;
 import com.caindonaghey.commandbin.commands.StarveCommand;
+import com.caindonaghey.commandbin.commands.TextpackCommand;
 import com.caindonaghey.commandbin.commands.TimeCommand;
 import com.caindonaghey.commandbin.commands.TpAcceptCommand;
 import com.caindonaghey.commandbin.commands.TpCommand;
@@ -84,6 +85,7 @@ import com.caindonaghey.commandbin.listeners.HealthListener;
 import com.caindonaghey.commandbin.listeners.LapisListener;
 import com.caindonaghey.commandbin.listeners.MuteListener;
 import com.caindonaghey.commandbin.listeners.PlayerTargetListener;
+import com.caindonaghey.commandbin.listeners.SlimeListener;
 import com.caindonaghey.commandbin.listeners.SmokeListener;
 import com.caindonaghey.commandbin.listeners.VanishListener;
 
@@ -105,6 +107,7 @@ public class CommandBin extends JavaPlugin {
 		setupLapis();
 		setupLoader();
 		setupAxe();
+		classicHurt();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
 		System.out.println("Language currently set to: " + getConfig().get("settings.language"));
@@ -135,6 +138,9 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new AxeListener(), this);
 		getServer().getPluginManager().registerEvents(new CarpetListener(), this);
 		getServer().getPluginManager().registerEvents(new PlayerTargetListener(), this);
+		if(getConfig().getBoolean("settings.aether-slimes")) {
+			getServer().getPluginManager().registerEvents(new SlimeListener(), this);
+		}
 	}
 	
 	public void registerCommands() {
@@ -202,6 +208,9 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("map").setExecutor(new MapCommand());
 		getServer().getPluginCommand("sparta").setExecutor(new SpartaCommand());
 		getServer().getPluginCommand("notarget").setExecutor(new NotargetCommand());
+		getServer().getPluginCommand("ender").setExecutor(new EnderCommand());
+		getServer().getPluginCommand("textpack").setExecutor(new TextpackCommand());
+		getServer().getPluginCommand("effect").setExecutor(new EffectCommand());
 	}
 	
 	public void registerTimeLock() {
@@ -218,6 +227,10 @@ public class CommandBin extends JavaPlugin {
 	public void setupConfig() {
 		if(getConfig().get("settings.language") == null) {
 			getConfig().set("settings.language", "english");
+			saveConfig();
+		}
+		if(getConfig().get("settings.aether-slimes") == null) {
+			getConfig().set("settings.aether-slimes", true);
 			saveConfig();
 		}
 		if(getConfig().get("settings.healthtags") == null) {
@@ -287,6 +300,13 @@ public class CommandBin extends JavaPlugin {
 		}
 	}
 	
+	public void classicHurt() {
+		if(getConfig().get("settings.classichurt") == null) {
+			getConfig().set("settings.classichurt", true);
+			saveConfig();
+		}
+	}
+	
 	// v5.09
 	// /map now works in console
 	// Added -l argument to /killmobs, will kill with lightning
@@ -297,6 +317,10 @@ public class CommandBin extends JavaPlugin {
 	// Added non-buggy in-built /spawn command from Bukkit, now relys on CommandBin and has pitch * yaw support.
 	// ^ Please note, if you do not have a spawn set already then it will default to the world, so be sure to set your spawns.
 	// Disabled chunk loaded messages
+	// Added /firework console support
+	// Added /ender chest support to open other peoples ender chests.
+	// Added /textpack command, set everyones texture pack
+	// Added classic damage sound (Enabled true by default)
 	
 
 }

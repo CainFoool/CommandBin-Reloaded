@@ -24,22 +24,28 @@ public class NickCommand implements CommandExecutor {
 					return true;
 				}
 				player.setDisplayName(args[0]);
+				player.setCustomName(args[0]);
 				System.out.println(Phrases.get("name-changed"));
 				return true;
 			}
 			
 			Player player = (Player) s;
 			
-			if(args.length == 0) {
+			if(args.length < 1) {
+				player.sendMessage(Phrases.get("invalid-arguments"));
+				return false;
+			}
+			if(args.length == 1) {
 				if(!player.hasPermission("CommandBin.nick")) {
 					player.sendMessage(Phrases.get("no-permission"));
 					return true;
 				}
 				
 				player.setDisplayName(args[0]);
+				player.setCustomName(args[0]);
 				return true;
 			}
-			if(args.length == 1) {
+			if(args.length == 2) {
 				if(!player.hasPermission("CommandBin.nick.others")) {
 					player.sendMessage(Phrases.get("no-permission"));
 					return true;
@@ -50,6 +56,9 @@ public class NickCommand implements CommandExecutor {
 					return true;
 				}
 				otherPlayer.setDisplayName(args[1]);
+				otherPlayer.setCustomName(args[1]);
+				otherPlayer.setCustomNameVisible(true);
+				player.setCustomNameVisible(true);
 				return true;
 			}
 			return false;

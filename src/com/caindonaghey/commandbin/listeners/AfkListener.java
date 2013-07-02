@@ -1,5 +1,6 @@
 package com.caindonaghey.commandbin.listeners;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,7 +19,7 @@ public class AfkListener implements Listener {
 		
 		if(AfkCommand.AFKPlayers.contains(playerName)) {
 			AfkCommand.AFKPlayers.remove(playerName);
-			player.sendMessage(Phrases.get("no-afk"));
+			Bukkit.getServer().broadcastMessage(Phrases.get("afk-announce-off").replace("{PLAYER}", player.getName()));
 		}
 	}
 

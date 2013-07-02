@@ -30,7 +30,7 @@ public class WarpCommand implements CommandExecutor {
 				player.sendMessage(Phrases.get("invalid-arguments"));
 				return false;
 			}
-
+			
 			if(args[0].equalsIgnoreCase("list")) {
 				if(player.hasPermission("CommandBin.warp.list")) {
 					Set<String> warpList = CommandBin.plugin.getConfig().getConfigurationSection("warp").getKeys(false);

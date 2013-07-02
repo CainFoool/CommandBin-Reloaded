@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.08'
+version: '5.10'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
@@ -195,3 +195,12 @@ commands:
    notarget:
        description: 'Enable/Disable mobs targeting you'
        usage: /<command>
+   ender:
+       description: 'Open yours or someone elses ender chest'
+       usage: /<command> <player>
+   textpack:
+       description: 'Set a server-wide texture pack'
+       usage: /<command> <url>
+   effect:
+       description: 'Add an effect to yourself'
+       usage: /<command> (list) <effect> <amplifier> <time> [*hold*]

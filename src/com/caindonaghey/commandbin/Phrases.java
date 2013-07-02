@@ -294,6 +294,9 @@ public class Phrases {
 			if(string == "vote-tied") return prefix + ChatColor.YELLOW + "The vote tied!";
 			if(string == "carpet-on") return prefix + "Carpet Mode now enabled.";
 			if(string == "carpet-off") return prefix + "Carpet Mode now disabled.";
+			if(string == "sparta") return prefix + "DIT.. IS.. SPARTA!";
+			if(string == "target-on") return prefix + "Mobs zullen je niet meer aanvallen";
+			if(string == "target-off") return prefix  + "Mobs gaan je aanvallen";
 		}
 		return prefix + "Invalid language specified. Report at http://dev.bukkit.org/server-mods/CommandBin";
 	}
