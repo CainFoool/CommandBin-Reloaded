@@ -30,6 +30,13 @@
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
+      <resource>
+      <targetPath>.</targetPath>
+      <directory>${basedir}/src/main/resources/</directory>
+      <includes>
+      <include>*.yml</include>
+      </includes>
+      </resource>
     </resources>
     <plugins>
       <plugin>
