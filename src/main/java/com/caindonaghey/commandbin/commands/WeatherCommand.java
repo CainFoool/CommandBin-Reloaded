@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import com.caindonaghey.commandbin.CommandBin;
 import com.caindonaghey.commandbin.Phrases;
 
 public class WeatherCommand implements CommandExecutor {
@@ -86,10 +87,13 @@ public class WeatherCommand implements CommandExecutor {
 			}
 			
 			if(args[0].equalsIgnoreCase("rain")) {
-				player.getWorld().setStorm(true);
-				player.getWorld().setThundering(true);
-				player.sendMessage(Phrases.get("rain-start"));
-				return true;
+				if(CommandBin.plugin.getConfig().getBoolean("settings.enable-downfall")) {
+					player.getWorld().setStorm(true);
+					player.getWorld().setThundering(true);
+					player.sendMessage(Phrases.get("rain-start"));
+					return true;
+				}
+				player.sendMessage(Phrases.prefix + "Your server administrator has disabled raining.");
 			}
 		}
 		return true;

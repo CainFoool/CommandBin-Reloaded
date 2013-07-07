@@ -27,6 +27,7 @@ public class CommandBin extends JavaPlugin {
 		setupAxe();
 		classicHurt();
 		timeLock();
+		downfallSetup();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
 		plugin = this;
@@ -59,6 +60,7 @@ public class CommandBin extends JavaPlugin {
 			getServer().getPluginManager().registerEvents(new SlimeListener(), this);
 		}
 		getServer().getPluginManager().registerEvents(new LockdownListener(), this);
+		getServer().getPluginManager().registerEvents(new WeatherListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -235,6 +237,13 @@ public class CommandBin extends JavaPlugin {
 		
 		if(getConfig().getBoolean("settings.time-lock")) {
 			TimeCommand.isLockRunning = true;
+		}
+	}
+	
+	public void downfallSetup() {
+		if(getConfig().get("settings.enable-downfall") == null) {
+			getConfig().set("settings.enable-downfall", true);
+			saveConfig();
 		}
 	}
 	
