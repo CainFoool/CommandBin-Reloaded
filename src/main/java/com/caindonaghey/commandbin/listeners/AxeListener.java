@@ -28,7 +28,7 @@ public class AxeListener implements Listener {
 								if(block.getRelative(0, i, 0).getType() == Material.LOG) {
 									block.getRelative(0, i, 0).getWorld().playEffect(block.getRelative(0, i, 0).getLocation(), Effect.SMOKE, 5);
 									block.getRelative(0, i, 0).getWorld().playEffect(block.getRelative(0, i, 0).getLocation(), Effect.MOBSPAWNER_FLAMES, 5);
-									block.getRelative(0, i, 0).breakNaturally(new ItemStack(Material.LOG, 1));
+									block.getRelative(0, i, 0).breakNaturally(new ItemStack(block.getRelative(0, i, 0).getType(), 1));
 								}
 							}
 						}
