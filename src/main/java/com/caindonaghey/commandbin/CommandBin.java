@@ -130,6 +130,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("textpack").setExecutor(new TextpackCommand());
 		getServer().getPluginCommand("effect").setExecutor(new EffectCommand());
 		getServer().getPluginCommand("who").setExecutor(new WhoCommand());
+		getServer().getPluginCommand("lockdown").setExecutor(new LockdownCommand());
 	}
 	
 	public void registerTimeLock() {

@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import com.caindonaghey.commandbin.Phrases;
+import com.caindonaghey.commandbin.commands.LockdownCommand;
 import com.caindonaghey.commandbin.commands.MuteCommand;
 
 public class MuteListener implements Listener {
@@ -18,6 +19,12 @@ public class MuteListener implements Listener {
 		if(MuteCommand.mutedPlayers.contains(playerName)) {
 			e.setCancelled(true);
 			player.sendMessage(Phrases.get("you-are-muted"));
+		}
+		
+		if(!player.hasPermission("CommandBin.lockdownexempt")) {
+			if(LockdownCommand.serverLockdown) {
+				e.setCancelled(true);
+			}
 		}
 	}
 
