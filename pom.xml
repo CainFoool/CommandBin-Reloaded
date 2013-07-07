@@ -27,7 +27,7 @@
       <resource>
         <directory>src</directory>
         <excludes>
-          <exclude>**/*.java</exclude>
+          <exclude>**/*.class</exclude>
         </excludes>
       </resource>
       <resource>
