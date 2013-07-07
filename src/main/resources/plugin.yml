@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.10'
+version: '5.11'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
