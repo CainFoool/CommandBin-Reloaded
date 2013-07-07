@@ -129,6 +129,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("ender").setExecutor(new EnderCommand());
 		getServer().getPluginCommand("textpack").setExecutor(new TextpackCommand());
 		getServer().getPluginCommand("effect").setExecutor(new EffectCommand());
+		getServer().getPluginCommand("who").setExecutor(new WhoCommand());
 	}
 	
 	public void registerTimeLock() {

@@ -204,3 +204,6 @@ commands:
    effect:
        description: 'Add an effect to yourself'
        usage: /<command> (list) <effect> <amplifier> <time> [*hold*]
+   who:
+       description: 'Get detailed information on a player'
+       usage: /<command> <player>
