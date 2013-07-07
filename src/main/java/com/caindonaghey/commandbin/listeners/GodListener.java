@@ -52,6 +52,7 @@ public class GodListener implements Listener {
 		*/
 	}
 	
+	
 	@EventHandler
 	public void onEntityDamage(EntityDamageEvent e) {
 		if(e.getEntity() instanceof Player) {
