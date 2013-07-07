@@ -1,6 +1,7 @@
 package com.caindonaghey.commandbin.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,6 +26,7 @@ public class EnderCommand implements CommandExecutor {
 					return true;
 				}
 				player.openInventory(player.getEnderChest());
+				player.playSound(player.getLocation(), Sound.CHEST_OPEN, 1, 1);
 			}
 			
 			if(args.length == 1) {
@@ -38,6 +40,7 @@ public class EnderCommand implements CommandExecutor {
 					return true;
 				}
 				player.openInventory(otherPlayer.getEnderChest());
+				player.playSound(player.getLocation(), Sound.CHEST_OPEN, 1, 1);
 			}
 		}
 		return true;

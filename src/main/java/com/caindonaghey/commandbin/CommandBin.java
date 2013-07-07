@@ -59,6 +59,7 @@ public class CommandBin extends JavaPlugin {
 		if(getConfig().getBoolean("settings.aether-slimes")) {
 			getServer().getPluginManager().registerEvents(new SlimeListener(), this);
 		}
+		getServer().getPluginManager().registerEvents(new LockdownListener(), this);
 	}
 	
 	public void registerCommands() {
