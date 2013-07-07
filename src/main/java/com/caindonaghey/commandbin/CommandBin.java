@@ -61,6 +61,7 @@ public class CommandBin extends JavaPlugin {
 		}
 		getServer().getPluginManager().registerEvents(new LockdownListener(), this);
 		getServer().getPluginManager().registerEvents(new WeatherListener(), this);
+		getServer().getPluginManager().registerEvents(new WarpSignListener(), this);
 	}
 	
 	public void registerCommands() {
