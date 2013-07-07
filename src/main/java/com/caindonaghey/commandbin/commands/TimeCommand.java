@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.caindonaghey.commandbin.CommandBin;
 import com.caindonaghey.commandbin.Phrases;
 
 public class TimeCommand implements CommandExecutor {
@@ -46,10 +47,16 @@ public class TimeCommand implements CommandExecutor {
 						isLockRunning = true;
 						worldName = world.getName();
 						worldTime = world.getTime();
+						CommandBin.plugin.getConfig().set("settings.time-lock", true);
+						CommandBin.plugin.getConfig().set("settings.time-lock-time", worldTime);
+						CommandBin.plugin.getConfig().set("settings.time-lock-world", worldName);
+						CommandBin.plugin.saveConfig();
 						System.out.println(Phrases.get("time-locked"));
 						return true;
 					}
 					isLockRunning = false;
+					CommandBin.plugin.getConfig().set("settings.time-lock", false);
+					CommandBin.plugin.saveConfig();
 					System.out.println(Phrases.get("time-unlocked"));
 					return true;
 				}
@@ -84,10 +91,16 @@ public class TimeCommand implements CommandExecutor {
 					isLockRunning = true;
 					worldName = player.getWorld().getName();
 					worldTime = player.getWorld().getTime();
+					CommandBin.plugin.getConfig().set("settings.time-lock", true);
+					CommandBin.plugin.getConfig().set("settings.time-lock-time", worldTime);
+					CommandBin.plugin.getConfig().set("settings.time-lock-world", worldName);
+					CommandBin.plugin.saveConfig();
 					player.sendMessage(Phrases.get("time-locked"));
 					return true;
 				}
 				isLockRunning = false;
+				CommandBin.plugin.getConfig().set("settings.time-lock", false);
+				CommandBin.plugin.saveConfig();
 				player.sendMessage(Phrases.get("time-unlocked"));
 				return true;
 			}

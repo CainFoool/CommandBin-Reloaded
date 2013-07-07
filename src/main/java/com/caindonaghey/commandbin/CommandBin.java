@@ -26,10 +26,9 @@ public class CommandBin extends JavaPlugin {
 		setupLoader();
 		setupAxe();
 		classicHurt();
+		timeLock();
 		System.out.println(Phrases.get("enabled"));
 		System.out.println("CommandBin is sponsored by VPSCraft.net!");
-		System.out.println("Language currently set to: " + getConfig().get("settings.language"));
-		System.out.println("Health Tags currently set to: " + getConfig().get("settings.healthtags"));
 		plugin = this;
 	}
 	
@@ -138,7 +137,7 @@ public class CommandBin extends JavaPlugin {
 	    getServer().getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
 	        public void run() {
 	        	if(TimeCommand.isLockRunning) {
-	        		Bukkit.getServer().getWorld(TimeCommand.worldName).setTime(TimeCommand.worldTime); // to do. Test
+	        		Bukkit.getServer().getWorld(getConfig().getString("settings.time-lock-world")).setTime(getConfig().getLong("settings.time-lock-time")); // to do. Test
 	        	}
 	        }
 	      }
@@ -225,6 +224,17 @@ public class CommandBin extends JavaPlugin {
 		if(getConfig().get("settings.classichurt") == null) {
 			getConfig().set("settings.classichurt", true);
 			saveConfig();
+		}
+	}
+	
+	public void timeLock() {
+		if(getConfig().get("settings.time-lock") == null) {
+			getConfig().set("settings.time-lock", false);
+			saveConfig();
+		}
+		
+		if(getConfig().getBoolean("settings.time-lock")) {
+			TimeCommand.isLockRunning = true;
 		}
 	}
 	
