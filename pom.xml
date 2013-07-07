@@ -28,6 +28,7 @@
         <directory>src</directory>
         <excludes>
           <exclude>**/*.class</exclude>
+        <exclude>resources</exclude>
         </excludes>
       </resource>
       <resource>
