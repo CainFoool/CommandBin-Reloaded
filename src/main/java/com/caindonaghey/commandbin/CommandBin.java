@@ -3,6 +3,7 @@ package com.caindonaghey.commandbin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.caindonaghey.commandbin.Phrases;
 import com.caindonaghey.commandbin.commands.AfkCommand;
 import com.caindonaghey.commandbin.commands.BindstickCommand;
 import com.caindonaghey.commandbin.commands.BlockCommand;
