@@ -23,22 +23,13 @@
     </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <resources>
-      <resource>
-        <directory>src</directory>
-        <excludes>
-          <exclude>**/*.class</exclude>
-        <exclude>resources</exclude>
-        </excludes>
-      </resource>
-      <resource>
-      <targetPath>.</targetPath>
-      <directory>${basedir}/src/main/java/resources/</directory>
-      <includes>
-      <include>*.yml</include>
-      </includes>
-      </resource>
-    </resources>
+		<resources>
+			<resource>
+				<targetPath>.</targetPath>
+				<filtering>false</filtering>
+				<directory>${basedir}/resources</directory>
+			</resource>
+		</resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
