@@ -209,4 +209,4 @@ commands:
        usage: /<command> <player>
    lockdown:
        description: 'Lock your server, stop all players placing blocks and talking unless exempt by CommandBin.lockdownexempt'
-       usage: /<command>
+       usage: /<command> [-k]
