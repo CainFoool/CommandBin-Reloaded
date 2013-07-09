@@ -29,6 +29,7 @@ public class ChunkCommand implements CommandExecutor {
 			}
 			
 			player.getLocation().getChunk().load(true);
+			player.getLocation().getChunk().load();
 			player.sendMessage(Phrases.get("chunk-reloaded"));
 		}
 		return true;
