@@ -8,7 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Monster;
+import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Wolf;
 
 import com.caindonaghey.commandbin.Phrases;
 
@@ -44,13 +46,28 @@ public class KillmobsCommand implements CommandExecutor {
 			}
 			
 			for(Entity entities : player.getWorld().getEntities()) {
-				if(entities instanceof Creature || entities instanceof Monster) {
-					if(args.length == 1) {
-						if(args[0].equalsIgnoreCase("-l")) {
-							entities.getWorld().strikeLightning(entities.getLocation());
-						}
+				if(entities instanceof Wolf) {
+					Wolf wolf = (Wolf) entities;
+					if(! wolf.isTamed()) {
+						entities.remove();
 					}
-					entities.remove();
+				}
+				if(entities instanceof Ocelot) {
+					Ocelot ocelot = (Ocelot) entities;
+					if(! ocelot.isTamed()) {
+						entities.remove();
+					}
+				}
+				
+				if(entities instanceof Creature || entities instanceof Monster) {
+					if(!((entities instanceof Ocelot) || ((entities instanceof Wolf)))) {
+						if(args.length == 1) {
+							if(args[0].equalsIgnoreCase("-l")) {
+								entities.getWorld().strikeLightning(entities.getLocation());
+							}
+						}
+						entities.remove();
+					}
 				}
 			}
 			player.sendMessage(Phrases.get("removed-mobs"));
