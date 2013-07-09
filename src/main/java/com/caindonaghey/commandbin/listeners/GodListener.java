@@ -20,37 +20,21 @@ public class GodListener implements Listener {
 			Player player = (Player) e.getEntity();
 			
 			if(player.getGameMode() != GameMode.CREATIVE) {
-					double damage = e.getDamage();
-					e.setCancelled(true);
-					player.damage(damage);
-					if(CommandBin.plugin.getConfig().getBoolean("settings.classichurt")) {
-						player.playSound(player.getLocation(), Sound.HURT, 5, 1);
-					}
-			
-			}
-		}
-		
-
-		if(e.getDamager() instanceof Player) {
-			if(e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				Player damager = (Player) e.getDamager();
-					double damage = e.getDamage();
-					e.setCancelled(true);
-					player.damage(damage);
-					if(CommandBin.plugin.getConfig().getBoolean("settings.classichurt")) {
-						player.playSound(player.getLocation(), Sound.HURT, 5, 1);
-						damager.playSound(damager.getLocation(), Sound.HURT, 5, 1);
-					}
+				double damage = e.getDamage();
+				e.setCancelled(true);
+				player.damage(damage);
+				if(CommandBin.plugin.getConfig().getBoolean("settings.classichurt")) {
+					player.playSound(player.getLocation(), Sound.HURT, 5, 1);
 				}
 			}
-		
-		/*
-		if(e.getCause() == DamageCause.FALL) {
-			e.setCancelled(true);
 		}
-		// Was testing stuff here.
-		*/
+		
+		if(e.getEntity() instanceof Player) {
+			if(GodCommand.godPlayers.contains(((Player) e.getEntity()).getName())) {
+				((Player) e.getEntity()).setHealth(20);
+				// ((Player) e.getEntity()).sendMessage("Atempted to stop");
+			}
+		}
 	}
 	
 	
@@ -58,6 +42,7 @@ public class GodListener implements Listener {
 	public void onEntityDamage(EntityDamageEvent e) {
 		if(e.getEntity() instanceof Player) {
 			Player player = (Player) e.getEntity();
+			// player.sendMessage("Ow.");
 			if(GodCommand.godPlayers.contains(player.getName())) {
 				e.setCancelled(true);
 			}
