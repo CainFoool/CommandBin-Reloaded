@@ -3,7 +3,6 @@ package com.caindonaghey.commandbin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.caindonaghey.commandbin.Phrases;
 import com.caindonaghey.commandbin.commands.*;
 import com.caindonaghey.commandbin.listeners.*;
 
@@ -133,7 +132,9 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("textpack").setExecutor(new TextpackCommand());
 		getServer().getPluginCommand("effect").setExecutor(new EffectCommand());
 		getServer().getPluginCommand("who").setExecutor(new WhoCommand());
-		getServer().getPluginCommand("lockdown").setExecutor(new LockdownCommand());
+		getServer().getPluginCommand("lockdown").setExecutor(new LockdownCommand());	
+		getServer().getPluginCommand("wither").setExecutor(new WitherCommand());
+		getServer().getPluginCommand("fireball").setExecutor(new FireballCommand());
 	}
 	
 	public void registerTimeLock() {

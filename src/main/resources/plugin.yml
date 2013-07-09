@@ -210,3 +210,9 @@ commands:
    lockdown:
        description: 'Lock your server, stop all players placing blocks and talking unless exempt by CommandBin.lockdownexempt'
        usage: /<command> [-k]
+   wither:
+       description: 'Spawn 5 wither heads where you look at.'
+       usage: /<command>
+   fireball:
+       description: 'Spawn a fireball where you look at'
+       usage: /<command>
