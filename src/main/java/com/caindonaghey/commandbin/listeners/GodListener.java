@@ -31,6 +31,7 @@ public class GodListener implements Listener {
 		
 		if(e.getEntity() instanceof Player) {
 			if(GodCommand.godPlayers.contains(((Player) e.getEntity()).getName())) {
+				e.setCancelled(true);
 				((Player) e.getEntity()).setHealth(20);
 				// ((Player) e.getEntity()).sendMessage("Atempted to stop");
 			}
