@@ -34,7 +34,7 @@ public class NearbyCommand implements CommandExecutor {
 			}
 			
 			player.sendMessage(Phrases.prefix + "Players near you (" + count + "): ");
-			player.sendMessage(Phrases.prefix + x.toString().trim());
+			if(count != 0) player.sendMessage(Phrases.prefix + x.toString().trim());
 		}
 		return true;
 	}
