@@ -216,3 +216,6 @@ commands:
    fireball:
        description: 'Spawn a fireball where you look at'
        usage: /<command>
+   nearby:
+       description: 'Get players within 100 blocks of you'
+       usage: /<command>
