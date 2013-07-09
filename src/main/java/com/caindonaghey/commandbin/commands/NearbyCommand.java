@@ -28,7 +28,7 @@ public class NearbyCommand implements CommandExecutor {
 			int count = 0;
 			for(Entity nearbyEntities : player.getNearbyEntities(100, 100, 100)) {
 				if(nearbyEntities instanceof Player) {
-					x.append(((Player) nearbyEntities).getName() + ", ");
+					x.append(((Player) nearbyEntities).getName() + "(" + nearbyEntities.getLocation().getX() + ", " + nearbyEntities.getLocation().getY() + ", " + nearbyEntities.getLocation().getY() + "), ");
 					count++;
 				}
 			}
