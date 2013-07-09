@@ -219,3 +219,6 @@ commands:
    nearby:
        description: 'Get players within 100 blocks of you'
        usage: /<command>
+   up:
+       description: 'Teleport x number of blocks above you'
+       usage: /<command> <height>

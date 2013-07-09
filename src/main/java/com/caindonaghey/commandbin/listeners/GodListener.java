@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 
 import com.caindonaghey.commandbin.CommandBin;
 import com.caindonaghey.commandbin.commands.GodCommand;
@@ -40,9 +41,9 @@ public class GodListener implements Listener {
 					if(CommandBin.plugin.getConfig().getBoolean("settings.classichurt")) {
 						player.playSound(player.getLocation(), Sound.HURT, 5, 1);
 						damager.playSound(damager.getLocation(), Sound.HURT, 5, 1);
+					}
 				}
 			}
-		}
 		
 		/*
 		if(e.getCause() == DamageCause.FALL) {
