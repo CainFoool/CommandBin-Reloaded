@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.11'
+version: '5.13'
 author: 'Cain Donaghey'
 main: com.caindonaghey.commandbin.CommandBin
 commands:
@@ -219,6 +219,3 @@ commands:
    nearby:
        description: 'Get players within 100 blocks of you'
        usage: /<command>
-   up:
-       description: 'Teleport x number of blocks above you'
-       usage: /<command> <height>
