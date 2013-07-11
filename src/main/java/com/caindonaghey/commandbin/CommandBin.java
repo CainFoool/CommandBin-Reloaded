@@ -235,7 +235,7 @@ public class CommandBin extends JavaPlugin {
 	    getServer().getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
 	        public void run() {
 	        	if(TimeCommand.isLockRunning) {
-	        		Bukkit.getServer().getWorld(getConfig().getString("settings.time-lock-world")).setTime(getConfig().getLong("settings.time-lock-time")); // to do. Test
+	        		Bukkit.getServer().getWorld(getConfig().getString("settings.time-lock-world")).setTime(getConfig().getLong("settings.time-lock-time"));
 	        	}
 	        }
 	      }
