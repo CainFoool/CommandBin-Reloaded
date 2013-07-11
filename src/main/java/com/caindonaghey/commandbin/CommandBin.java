@@ -228,7 +228,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("wither").setExecutor(new WitherCommand());
 		getServer().getPluginCommand("fireball").setExecutor(new FireballCommand());
 		getServer().getPluginCommand("nearby").setExecutor(new NearbyCommand());
-		// getServer().getPluginCommand("up").setExecutor(new UpCommand());
+		// getServer().getPluginCommand("up").setExecutor(new UpCommand()); //
 	}
 	
 	public void registerTimeLock() {
