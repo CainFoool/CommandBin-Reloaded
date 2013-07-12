@@ -228,3 +228,6 @@ commands:
    maxhealth:
        description: 'Set a players max health'
        usage: /<command> [player] <health>
+   hole:
+       description: 'Dig a 3x3 hole below a player'
+       usage: /<command> <player>

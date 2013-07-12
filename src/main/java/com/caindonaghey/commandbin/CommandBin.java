@@ -33,6 +33,7 @@ import com.caindonaghey.commandbin.commands.GmCommand;
 import com.caindonaghey.commandbin.commands.GodCommand;
 import com.caindonaghey.commandbin.commands.HatCommand;
 import com.caindonaghey.commandbin.commands.HealCommand;
+import com.caindonaghey.commandbin.commands.HoleCommand;
 import com.caindonaghey.commandbin.commands.HomeCommand;
 import com.caindonaghey.commandbin.commands.IPCommand;
 import com.caindonaghey.commandbin.commands.ItemdescCommand;
@@ -234,6 +235,8 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("up").setExecutor(new UpCommand());
 		getServer().getPluginCommand("bjail").setExecutor(new BjailCommand());
 		getServer().getPluginCommand("maxhealth").setExecutor(new MaxhealthCommand());
+		getServer().getPluginCommand("hole").setExecutor(new HoleCommand());
+		
 	}
 	
 	public void registerTimeLock() {

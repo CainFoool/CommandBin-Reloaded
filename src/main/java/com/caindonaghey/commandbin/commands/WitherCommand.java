@@ -3,6 +3,7 @@ package com.caindonaghey.commandbin.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
 
@@ -25,7 +26,7 @@ public class WitherCommand implements CommandExecutor {
 			}
 			
 			for(int i = 0; i < 5; i++) {
-				player.launchProjectile(WitherSkull.class).setVelocity(player.getVelocity());
+				 player.launchProjectile(WitherSkull.class).setVelocity(player.getVelocity());
 			}
 		}
 		return true;
