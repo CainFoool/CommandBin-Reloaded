@@ -33,7 +33,7 @@ public class HealCommand implements CommandExecutor {
 			
 			if(args.length == 0) {
 				if(player.hasPermission("CommandBin.heal.self")) {
-					player.setHealth(20);
+					player.setHealth(player.getMaxHealth());
 					player.sendMessage(Phrases.get("heal-self"));
 					return true;
 				}
@@ -48,7 +48,7 @@ public class HealCommand implements CommandExecutor {
 						player.sendMessage(Phrases.get("player-invalid"));
 						return true;
 					}
-					otherPlayer.setHealth(20);
+					otherPlayer.setHealth(otherPlayer.getMaxHealth());
 					player.sendMessage(Phrases.get("heal-other"));
 					return true;
 				}

@@ -225,3 +225,6 @@ commands:
    up:
        description: 'Added /up command'
        usage: /<command>
+   maxhealth:
+       description: 'Set a players max health'
+       usage: /<command> [player] <health>

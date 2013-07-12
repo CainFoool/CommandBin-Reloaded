@@ -41,6 +41,7 @@ import com.caindonaghey.commandbin.commands.KillCommand;
 import com.caindonaghey.commandbin.commands.KillmobsCommand;
 import com.caindonaghey.commandbin.commands.LockdownCommand;
 import com.caindonaghey.commandbin.commands.MapCommand;
+import com.caindonaghey.commandbin.commands.MaxhealthCommand;
 import com.caindonaghey.commandbin.commands.MsgCommand;
 import com.caindonaghey.commandbin.commands.MuteCommand;
 import com.caindonaghey.commandbin.commands.NearbyCommand;
@@ -232,6 +233,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("nearby").setExecutor(new NearbyCommand());
 		getServer().getPluginCommand("up").setExecutor(new UpCommand());
 		getServer().getPluginCommand("bjail").setExecutor(new BjailCommand());
+		getServer().getPluginCommand("maxhealth").setExecutor(new MaxhealthCommand());
 	}
 	
 	public void registerTimeLock() {
