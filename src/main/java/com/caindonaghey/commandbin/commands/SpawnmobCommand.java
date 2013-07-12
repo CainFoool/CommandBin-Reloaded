@@ -1,11 +1,15 @@
 package com.caindonaghey.commandbin.commands;
 
+import java.util.Random;
+
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
+import org.bukkit.entity.Villager.Profession;
 
 import com.caindonaghey.commandbin.Phrases;
 
@@ -36,8 +40,16 @@ public class SpawnmobCommand implements CommandExecutor {
 			
 			if(args.length == 1) {
 				EntityType theMob = EntityType.valueOf(args[0].toUpperCase());
+				Location cursorPos = player.getTargetBlock(null, 0).getRelative(0, 1, 0).getLocation();
 				if(theMob != null) {
-					Location cursorPos = player.getTargetBlock(null, 0).getRelative(0, 1, 0).getLocation();
+					
+					if(theMob == EntityType.VILLAGER) {
+						Villager villager = (Villager) player.getWorld().spawn(cursorPos, theMob.getEntityClass());
+						villager.setProfession(chooseRandom());
+						player.sendMessage(Phrases.get("mob-spawned"));
+						return true;
+					}
+
 					player.getWorld().spawnEntity(cursorPos, theMob);
 					player.sendMessage(Phrases.get("mob-spawned"));
 					return true;
@@ -52,7 +64,13 @@ public class SpawnmobCommand implements CommandExecutor {
 				if(theMob != null) {
 					Location cursorPos = player.getTargetBlock(null, 0).getRelative(0, 1, 0).getLocation();
 					for(int i = 0; i < Integer.parseInt(args[1]); i++) {
+						
+						if(theMob == EntityType.VILLAGER) {
+							Villager villager = (Villager) player.getWorld().spawn(cursorPos, theMob.getEntityClass());
+							villager.setProfession(chooseRandom());
+						} else {
 						player.getWorld().spawnEntity(cursorPos, theMob);
+						}
 					}
 					player.sendMessage(Phrases.get("mob-spawned"));
 					return true;
@@ -70,6 +88,27 @@ public class SpawnmobCommand implements CommandExecutor {
 			
 		}
 		return true;
+	}
+	
+	public Profession chooseRandom() {
+		Random r = new Random();
+		
+		if(r.nextInt(5) == 1) {
+			return Profession.BLACKSMITH;
+		}
+		if(r.nextInt(5) == 2) {
+			return Profession.BUTCHER;
+		}
+		if(r.nextInt(5) == 3) {
+			return Profession.FARMER;
+		}
+		if(r.nextInt(5) == 4) {
+			return Profession.LIBRARIAN;
+		}
+		if(r.nextInt(5) == 5) {
+			return Profession.PRIEST;
+		}
+		return Profession.BLACKSMITH;
 	}
 
 }

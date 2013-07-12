@@ -219,3 +219,9 @@ commands:
    nearby:
        description: 'Get players within 100 blocks of you'
        usage: /<command>
+   bjail:
+       description: 'Test'
+       usage: /<command>
+   up:
+       description: 'Added /up command'
+       usage: /<command>

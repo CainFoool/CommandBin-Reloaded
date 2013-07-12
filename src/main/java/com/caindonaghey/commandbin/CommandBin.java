@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.caindonaghey.commandbin.commands.AfkCommand;
 import com.caindonaghey.commandbin.commands.BindstickCommand;
+import com.caindonaghey.commandbin.commands.BjailCommand;
 import com.caindonaghey.commandbin.commands.BlockCommand;
 import com.caindonaghey.commandbin.commands.BlockplaceCommand;
 import com.caindonaghey.commandbin.commands.BoltCommand;
@@ -67,6 +68,7 @@ import com.caindonaghey.commandbin.commands.TpDenyCommand;
 import com.caindonaghey.commandbin.commands.TpaCommand;
 import com.caindonaghey.commandbin.commands.TpallCommand;
 import com.caindonaghey.commandbin.commands.TphereCommand;
+import com.caindonaghey.commandbin.commands.UpCommand;
 // import com.caindonaghey.commandbin.commands.UpCommand;
 import com.caindonaghey.commandbin.commands.VanishCommand;
 import com.caindonaghey.commandbin.commands.VoteCommand;
@@ -228,7 +230,8 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("wither").setExecutor(new WitherCommand());
 		getServer().getPluginCommand("fireball").setExecutor(new FireballCommand());
 		getServer().getPluginCommand("nearby").setExecutor(new NearbyCommand());
-		// getServer().getPluginCommand("up").setExecutor(new UpCommand()); //
+		getServer().getPluginCommand("up").setExecutor(new UpCommand());
+		getServer().getPluginCommand("bjail").setExecutor(new BjailCommand());
 	}
 	
 	public void registerTimeLock() {
