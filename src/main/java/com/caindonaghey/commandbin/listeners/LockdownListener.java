@@ -1,13 +1,14 @@
 package com.caindonaghey.commandbin.listeners;
 
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Entity;
+import org.bukkit.entity.EnderDragon;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
-import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.util.Vector;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import com.caindonaghey.commandbin.commands.LockdownCommand;
 
