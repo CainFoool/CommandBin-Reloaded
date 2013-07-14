@@ -70,7 +70,7 @@ import com.caindonaghey.commandbin.commands.TpDenyCommand;
 import com.caindonaghey.commandbin.commands.TpaCommand;
 import com.caindonaghey.commandbin.commands.TpallCommand;
 import com.caindonaghey.commandbin.commands.TphereCommand;
-import com.caindonaghey.commandbin.commands.UpCommand;
+import com.caindonaghey.commandbin.commands.GoUpCommand;
 // import com.caindonaghey.commandbin.commands.UpCommand;
 import com.caindonaghey.commandbin.commands.VanishCommand;
 import com.caindonaghey.commandbin.commands.VoteCommand;
@@ -232,7 +232,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("wither").setExecutor(new WitherCommand());
 		getServer().getPluginCommand("fireball").setExecutor(new FireballCommand());
 		getServer().getPluginCommand("nearby").setExecutor(new NearbyCommand());
-		getServer().getPluginCommand("up").setExecutor(new UpCommand());
+		getServer().getPluginCommand("goup").setExecutor(new GoUpCommand());
 		getServer().getPluginCommand("bjail").setExecutor(new BjailCommand());
 		getServer().getPluginCommand("maxhealth").setExecutor(new MaxhealthCommand());
 		getServer().getPluginCommand("hole").setExecutor(new HoleCommand());

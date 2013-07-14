@@ -222,9 +222,9 @@ commands:
    bjail:
        description: 'Test'
        usage: /<command>
-   up:
-       description: 'Added /up command'
-       usage: /<command>
+   goup:
+       description: 'Added /goup command'
+       usage: /<command> <height>
    maxhealth:
        description: 'Set a players max health'
        usage: /<command> [player] <health>

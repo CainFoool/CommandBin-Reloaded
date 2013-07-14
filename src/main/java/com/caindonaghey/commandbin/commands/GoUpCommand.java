@@ -9,17 +9,17 @@ import org.bukkit.entity.Player;
 
 import com.caindonaghey.commandbin.Phrases;
 
-public class UpCommand implements CommandExecutor {
+public class GoUpCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
-		if(l.equalsIgnoreCase("up")) {
+		if(l.equalsIgnoreCase("goup")) {
 			if(!(s instanceof Player)) {
 				System.out.println(Phrases.get("no-console"));
 				return true;
 			}
 			Player player = (Player) s;
 			
-			if(!player.hasPermission("CommandBin.up")) {
+			if(!player.hasPermission("CommandBin.goup")) {
 				player.sendMessage(Phrases.get("no-permission"));
 				return true;
 			}
