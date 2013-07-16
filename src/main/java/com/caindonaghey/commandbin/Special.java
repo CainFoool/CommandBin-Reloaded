@@ -19,6 +19,22 @@ public class Special {
 			stick.setItemMeta(m);
 			player.getInventory().addItem(stick);
 		}
+		
+		if(special.equalsIgnoreCase("superbow")) {
+			ItemStack bow = new ItemStack(Material.BOW, 1);
+			bow.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 100);
+			bow.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 100);
+			bow.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 100);
+			bow.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 10);
+			bow.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 100);
+			bow.addUnsafeEnchantment(Enchantment.DIG_SPEED, 100);
+			
+			ItemMeta m = bow.getItemMeta();
+			m.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "The Super Bow");
+			bow.setItemMeta(m);
+			player.getInventory().addItem(bow);
+			player.getInventory().addItem(new ItemStack(Material.ARROW, 1));
+		}
 	}
 
 }

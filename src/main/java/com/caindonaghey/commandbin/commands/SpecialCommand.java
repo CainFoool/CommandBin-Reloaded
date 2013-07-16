@@ -10,7 +10,7 @@ import com.caindonaghey.commandbin.Special;
 
 public class SpecialCommand implements CommandExecutor {
 	
-	String[] specials = { "kbstick" };
+	String[] specials = { "kbstick", "superbow" };
 	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		if(l.equalsIgnoreCase("special")) {
@@ -36,6 +36,15 @@ public class SpecialCommand implements CommandExecutor {
 						return true;
 					}
 					Special.giveSpecial(player, "kbstick");
+					return true;
+				}
+				
+				if(args[0].equalsIgnoreCase("superbow")) {
+					if(!player.hasPermission("CommandBin.special.superbow")) {
+						player.sendMessage(Phrases.get("no-permission"));
+						return true;
+					}
+					Special.giveSpecial(player, "superbow");
 					return true;
 				}
 				player.sendMessage(Phrases.badPrefix + "Invalid special entered.");
