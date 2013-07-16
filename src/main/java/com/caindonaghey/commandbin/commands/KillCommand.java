@@ -5,8 +5,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 import com.caindonaghey.commandbin.Phrases;
+import com.caindonaghey.commandbin.listeners.KillListener;
 
 public class KillCommand implements CommandExecutor {
 	
@@ -24,7 +26,7 @@ public class KillCommand implements CommandExecutor {
 					return true;
 				}
 				
-				player.setHealth(0);
+				player.damage(player.getMaxHealth());
 				System.out.println(Phrases.get("kill-player"));
 				return true;
 			}
@@ -37,7 +39,11 @@ public class KillCommand implements CommandExecutor {
 					return true;
 				}
 				
-				player.setHealth(0);
+				// player.setHealth(0);
+//				EntityDamageEvent e = player.getLastDamageCause();
+//				player.setHealth(0);
+				player.damage(player.getMaxHealth(), player.getLastDamageCause().getEntity());
+//				player.setLastDamageCause(e);
 				player.sendMessage(Phrases.get("kill-self"));
 				return true;
 			}
@@ -54,7 +60,7 @@ public class KillCommand implements CommandExecutor {
 					return true;
 				}
 				
-				otherPlayer.setHealth(0);
+				otherPlayer.damage(otherPlayer.getMaxHealth());
 				player.sendMessage(Phrases.get("kill-player"));
 				return true;
 			}

@@ -231,3 +231,6 @@ commands:
    hole:
        description: 'Dig a 3x3 hole below a player'
        usage: /<command> <player>
+   special:
+       description: 'Give yourself a special weapon, no arguments for a list.'
+       usage: /<command> <special>

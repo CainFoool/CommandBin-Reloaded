@@ -30,6 +30,7 @@ import com.caindonaghey.commandbin.commands.FlyCommand;
 import com.caindonaghey.commandbin.commands.FreezeCommand;
 import com.caindonaghey.commandbin.commands.FsayCommand;
 import com.caindonaghey.commandbin.commands.GmCommand;
+import com.caindonaghey.commandbin.commands.GoUpCommand;
 import com.caindonaghey.commandbin.commands.GodCommand;
 import com.caindonaghey.commandbin.commands.HatCommand;
 import com.caindonaghey.commandbin.commands.HealCommand;
@@ -60,6 +61,7 @@ import com.caindonaghey.commandbin.commands.SmokeCommand;
 import com.caindonaghey.commandbin.commands.SpartaCommand;
 import com.caindonaghey.commandbin.commands.SpawnCommand;
 import com.caindonaghey.commandbin.commands.SpawnmobCommand;
+import com.caindonaghey.commandbin.commands.SpecialCommand;
 import com.caindonaghey.commandbin.commands.SpyCommand;
 import com.caindonaghey.commandbin.commands.StarveCommand;
 import com.caindonaghey.commandbin.commands.TextpackCommand;
@@ -70,7 +72,6 @@ import com.caindonaghey.commandbin.commands.TpDenyCommand;
 import com.caindonaghey.commandbin.commands.TpaCommand;
 import com.caindonaghey.commandbin.commands.TpallCommand;
 import com.caindonaghey.commandbin.commands.TphereCommand;
-import com.caindonaghey.commandbin.commands.GoUpCommand;
 // import com.caindonaghey.commandbin.commands.UpCommand;
 import com.caindonaghey.commandbin.commands.VanishCommand;
 import com.caindonaghey.commandbin.commands.VoteCommand;
@@ -236,6 +237,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginCommand("bjail").setExecutor(new BjailCommand());
 		getServer().getPluginCommand("maxhealth").setExecutor(new MaxhealthCommand());
 		getServer().getPluginCommand("hole").setExecutor(new HoleCommand());
+		getServer().getPluginCommand("special").setExecutor(new SpecialCommand());
 		
 	}
 	
