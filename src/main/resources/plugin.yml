@@ -1,7 +1,7 @@
 name: 'CommandBin'
 version: '5.13'
-author: 'Cain Donaghey'
-main: com.caindonaghey.commandbin.CommandBin
+author: 'Cain Kilgore'
+main: com.cainkilgore.commandbin.CommandBin
 commands:
    afk:
        description: 'Set yourself as AFK'
