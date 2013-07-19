@@ -1,6 +1,7 @@
 package com.cainkilgore.commandbin;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 // import com.caindonaghey.commandbin.commands.UpCommand;
@@ -161,83 +162,83 @@ public class CommandBin extends JavaPlugin {
 	}
 	
 	public void registerCommands() {
-		getServer().getPluginCommand("afk").setExecutor(new AfkCommand());
-		getServer().getPluginCommand("block").setExecutor(new BlockCommand());
-		getServer().getPluginCommand("bolt").setExecutor(new BoltCommand());
-		getServer().getPluginCommand("broadcast").setExecutor(new BroadcastCommand());
-		getServer().getPluginCommand("clear").setExecutor(new ClearCommand());
-		getServer().getPluginCommand("explode").setExecutor(new ExplodeCommand());
-		getServer().getPluginCommand("feed").setExecutor(new FeedCommand());
-		getServer().getPluginCommand("freeze").setExecutor(new FreezeCommand());
-		getServer().getPluginCommand("fsay").setExecutor(new FsayCommand());
-		getServer().getPluginCommand("gm").setExecutor(new GmCommand());
-		getServer().getPluginCommand("god").setExecutor(new GodCommand());
-		getServer().getPluginCommand("heal").setExecutor(new HealCommand());
-		getServer().getPluginCommand("kill").setExecutor(new KillCommand());
-		getServer().getPluginCommand("mute").setExecutor(new MuteCommand());
-		getServer().getPluginCommand("time").setExecutor(new TimeCommand());
-		getServer().getPluginCommand("tpaccept").setExecutor(new TpAcceptCommand());
-		getServer().getPluginCommand("tpa").setExecutor(new TpaCommand());
-		getServer().getPluginCommand("tpdeny").setExecutor(new TpDenyCommand());
-		getServer().getPluginCommand("spawn").setExecutor(new SpawnCommand());
-		getServer().getPluginCommand("setspawn").setExecutor(new SetspawnCommand());
-		getServer().getPluginCommand("starve").setExecutor(new StarveCommand());
-		getServer().getPluginCommand("tpall").setExecutor (new TpallCommand());
-		getServer().getPluginCommand("tp").setExecutor (new TpCommand());
-		getServer().getPluginCommand("vanish").setExecutor(new VanishCommand());
-		getServer().getPluginCommand("weather").setExecutor(new WeatherCommand());
-		getServer().getPluginCommand("openinv").setExecutor(new OpeninvCommand());
-		getServer().getPluginCommand("killmobs").setExecutor(new KillmobsCommand());
-		getServer().getPluginCommand("fly").setExecutor(new FlyCommand());
-		getServer().getPluginCommand("chunk").setExecutor(new ChunkCommand());
-		getServer().getPluginCommand("commandbin").setExecutor(new CommandBinCommand());
-		getServer().getPluginCommand("hat").setExecutor(new HatCommand());
-		getServer().getPluginCommand("ip").setExecutor (new IPCommand());
-		getServer().getPluginCommand("tphere").setExecutor(new TphereCommand());
-		getServer().getPluginCommand("explosionbow").setExecutor (new ExplosionbowCommand());
-		getServer().getPluginCommand("nick").setExecutor(new NickCommand());
-		getServer().getPluginCommand("craft").setExecutor(new CraftCommand());
-		getServer().getPluginCommand("clearchat").setExecutor(new ClearChatCommand());
-		getServer().getPluginCommand("home").setExecutor(new HomeCommand());
-		getServer().getPluginCommand("sethome").setExecutor(new SethomeCommand());
-		getServer().getPluginCommand("setwarp").setExecutor(new SetwarpCommand());
-		getServer().getPluginCommand("warp").setExecutor(new WarpCommand());
-		getServer().getPluginCommand("ptime").setExecutor(new PtimeCommand());
-		getServer().getPluginCommand("itemname").setExecutor(new ItemnameCommand());
-		getServer().getPluginCommand("itemdesc").setExecutor(new ItemdescCommand());
-		getServer().getPluginCommand("smoke").setExecutor(new SmokeCommand());
-		getServer().getPluginCommand("delwarp").setExecutor(new DelwarpCommand());
-		getServer().getPluginCommand("spawnmob").setExecutor(new SpawnmobCommand());
-		getServer().getPluginCommand("firework").setExecutor(new FireworkCommand());
-		getServer().getPluginCommand("bindstick").setExecutor(new BindstickCommand());
-		getServer().getPluginCommand("put").setExecutor (new PutCommand());
-		getServer().getPluginCommand("fixlag").setExecutor (new FixlagCommand());
-		getServer().getPluginCommand("creeper").setExecutor(new CreeperCommand());
-		getServer().getPluginCommand("msg").setExecutor(new MsgCommand());
-		getServer().getPluginCommand("shoot").setExecutor(new ShootCommand());
-		getServer().getPluginCommand("openenc").setExecutor(new OpenEncCommand());
-		getServer().getPluginCommand("blockplace").setExecutor(new BlockplaceCommand());
-		getServer().getPluginCommand("spy").setExecutor(new SpyCommand());
-		getServer().getPluginCommand("vote").setExecutor(new VoteCommand());
-		getServer().getPluginCommand("voteyes").setExecutor(new VoteYesCommand());
-		getServer().getPluginCommand("voteno").setExecutor(new VoteNoCommand());
-		getServer().getPluginCommand("carpet").setExecutor(new CarpetCommand());
-		getServer().getPluginCommand("map").setExecutor(new MapCommand());
-		getServer().getPluginCommand("sparta").setExecutor(new SpartaCommand());
-		getServer().getPluginCommand("notarget").setExecutor(new NotargetCommand());
-		getServer().getPluginCommand("ender").setExecutor(new EnderCommand());
-		getServer().getPluginCommand("textpack").setExecutor(new TextpackCommand());
-		getServer().getPluginCommand("effect").setExecutor(new EffectCommand());
-		getServer().getPluginCommand("who").setExecutor(new WhoCommand());
-		getServer().getPluginCommand("lockdown").setExecutor(new LockdownCommand());	
-		getServer().getPluginCommand("wither").setExecutor(new WitherCommand());
-		getServer().getPluginCommand("fireball").setExecutor(new FireballCommand());
-		getServer().getPluginCommand("nearby").setExecutor(new NearbyCommand());
-		getServer().getPluginCommand("goup").setExecutor(new GoUpCommand());
-		getServer().getPluginCommand("bjail").setExecutor(new BjailCommand());
-		getServer().getPluginCommand("maxhealth").setExecutor(new MaxhealthCommand());
-		getServer().getPluginCommand("hole").setExecutor(new HoleCommand());
-		getServer().getPluginCommand("special").setExecutor(new SpecialCommand());
+		registerFlexibleCommand("afk", new AfkCommand());
+		registerFlexibleCommand("block", new BlockCommand());
+		registerFlexibleCommand("bolt", new BoltCommand());
+		registerFlexibleCommand("broadcast", new BroadcastCommand());
+		registerFlexibleCommand("clear", new ClearCommand());
+		registerFlexibleCommand("explode", new ExplodeCommand());
+		registerFlexibleCommand("feed", new FeedCommand());
+		registerFlexibleCommand("freeze", new FreezeCommand());
+		registerFlexibleCommand("fsay", new FsayCommand());
+		registerFlexibleCommand("gm", new GmCommand());
+		registerFlexibleCommand("god", new GodCommand());
+		registerFlexibleCommand("heal", new HealCommand());
+		registerFlexibleCommand("kill", new KillCommand());
+		registerFlexibleCommand("mute", new MuteCommand());
+		registerFlexibleCommand("time", new TimeCommand());
+		registerFlexibleCommand("tpaccept", new TpAcceptCommand());
+		registerFlexibleCommand("tpa", new TpaCommand());
+		registerFlexibleCommand("tpdeny", new TpDenyCommand());
+		registerFlexibleCommand("spawn", new SpawnCommand());
+		registerFlexibleCommand("setspawn", new SetspawnCommand());
+		registerFlexibleCommand("starve", new StarveCommand());
+		registerFlexibleCommand("tpall", new TpallCommand());
+		registerFlexibleCommand("tp", new TpCommand());
+		registerFlexibleCommand("vanish", new VanishCommand());
+		registerFlexibleCommand("weather", new WeatherCommand());
+		registerFlexibleCommand("openinv", new OpeninvCommand());
+		registerFlexibleCommand("killmobs", new KillmobsCommand());
+		registerFlexibleCommand("fly", new FlyCommand());
+		registerFlexibleCommand("chunk", new ChunkCommand());
+		registerFlexibleCommand("commandbin", new CommandBinCommand());
+		registerFlexibleCommand("hat", new HatCommand());
+		registerFlexibleCommand("ip", new IPCommand());
+		registerFlexibleCommand("tphere", new TphereCommand());
+		registerFlexibleCommand("explosionbow", new ExplosionbowCommand());
+		registerFlexibleCommand("nick", new NickCommand());
+		registerFlexibleCommand("craft", new CraftCommand());
+		registerFlexibleCommand("clearchat", new ClearChatCommand());
+		registerFlexibleCommand("home", new HomeCommand());
+		registerFlexibleCommand("sethome", new SethomeCommand());
+		registerFlexibleCommand("setwarp", new SetwarpCommand());
+		registerFlexibleCommand("warp", new WarpCommand());
+		registerFlexibleCommand("ptime", new PtimeCommand());
+		registerFlexibleCommand("itemname", new ItemnameCommand());
+		registerFlexibleCommand("itemdesc", new ItemdescCommand());
+		registerFlexibleCommand("smoke", new SmokeCommand());
+		registerFlexibleCommand("delwarp", new DelwarpCommand());
+		registerFlexibleCommand("spawnmob", new SpawnmobCommand());
+		registerFlexibleCommand("firework", new FireworkCommand());
+		registerFlexibleCommand("bindstick", new BindstickCommand());
+		registerFlexibleCommand("put", new PutCommand());
+		registerFlexibleCommand("fixlag", new FixlagCommand());
+		registerFlexibleCommand("creeper", new CreeperCommand());
+		registerFlexibleCommand("msg", new MsgCommand());
+		registerFlexibleCommand("shoot", new ShootCommand());
+		registerFlexibleCommand("openenc", new OpenEncCommand());
+		registerFlexibleCommand("blockplace", new BlockplaceCommand());
+		registerFlexibleCommand("spy", new SpyCommand());
+		registerFlexibleCommand("vote", new VoteCommand());
+		registerFlexibleCommand("voteyes", new VoteYesCommand());
+		registerFlexibleCommand("voteno", new VoteNoCommand());
+		registerFlexibleCommand("carpet", new CarpetCommand());
+		registerFlexibleCommand("map", new MapCommand());
+		registerFlexibleCommand("sparta", new SpartaCommand());
+		registerFlexibleCommand("notarget", new NotargetCommand());
+		registerFlexibleCommand("ender", new EnderCommand());
+		registerFlexibleCommand("textpack", new TextpackCommand());
+		registerFlexibleCommand("effect", new EffectCommand());
+		registerFlexibleCommand("who", new WhoCommand());
+		registerFlexibleCommand("lockdown", new LockdownCommand());	
+		registerFlexibleCommand("wither", new WitherCommand());
+		registerFlexibleCommand("fireball", new FireballCommand());
+		registerFlexibleCommand("nearby", new NearbyCommand());
+		registerFlexibleCommand("goup", new GoUpCommand());
+		registerFlexibleCommand("bjail", new BjailCommand());
+		registerFlexibleCommand("maxhealth", new MaxhealthCommand());
+		registerFlexibleCommand("hole", new HoleCommand());
+		registerFlexibleCommand("special", new SpecialCommand());
 		
 	}
 	
@@ -350,6 +351,12 @@ public class CommandBin extends JavaPlugin {
 		if(getConfig().get("settings.enable-downfall") == null) {
 			getConfig().set("settings.enable-downfall", true);
 			saveConfig();
+		}
+	}
+	
+	public void registerFlexibleCommand(String command, CommandExecutor executor) {
+		if(this.getDescription().getCommands().containsKey(command)) {
+			this.getServer().getPluginCommand(command).setExecutor(executor);
 		}
 	}
 	
