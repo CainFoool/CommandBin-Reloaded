@@ -234,3 +234,6 @@ commands:
    special:
        description: 'Give yourself a special weapon, no arguments for a list.'
        usage: /<command> <special>
+   ice:
+       description: 'Walk on water'
+       usage: /<command>

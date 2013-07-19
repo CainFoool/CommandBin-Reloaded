@@ -39,6 +39,7 @@ import com.cainkilgore.commandbin.commands.HealCommand;
 import com.cainkilgore.commandbin.commands.HoleCommand;
 import com.cainkilgore.commandbin.commands.HomeCommand;
 import com.cainkilgore.commandbin.commands.IPCommand;
+import com.cainkilgore.commandbin.commands.IceCommand;
 import com.cainkilgore.commandbin.commands.ItemdescCommand;
 import com.cainkilgore.commandbin.commands.ItemnameCommand;
 import com.cainkilgore.commandbin.commands.KillCommand;
@@ -94,6 +95,7 @@ import com.cainkilgore.commandbin.listeners.DebugListener;
 import com.cainkilgore.commandbin.listeners.FreezeListener;
 import com.cainkilgore.commandbin.listeners.GodListener;
 import com.cainkilgore.commandbin.listeners.HealthListener;
+import com.cainkilgore.commandbin.listeners.IceListener;
 import com.cainkilgore.commandbin.listeners.LapisListener;
 import com.cainkilgore.commandbin.listeners.LockdownListener;
 import com.cainkilgore.commandbin.listeners.MuteListener;
@@ -159,6 +161,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new LockdownListener(), this);
 		getServer().getPluginManager().registerEvents(new WeatherListener(), this);
 		getServer().getPluginManager().registerEvents(new WarpSignListener(), this);
+		getServer().getPluginManager().registerEvents(new IceListener(), this);
 	}
 	
 	public void registerCommands() {
@@ -239,6 +242,7 @@ public class CommandBin extends JavaPlugin {
 		registerFlexibleCommand("maxhealth", new MaxhealthCommand());
 		registerFlexibleCommand("hole", new HoleCommand());
 		registerFlexibleCommand("special", new SpecialCommand());
+		registerFlexibleCommand("ice", new IceCommand());
 		
 	}
 	
