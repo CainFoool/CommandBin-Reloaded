@@ -10,5 +10,4 @@ public class MapEnchantment extends EnchantmentWrapper {
 		// TODO Auto-generated constructor stub
 	}
 	
-
 }

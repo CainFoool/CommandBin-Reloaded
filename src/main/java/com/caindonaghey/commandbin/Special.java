@@ -32,6 +32,7 @@ public class Special {
 			ItemMeta m = bow.getItemMeta();
 			m.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "The Super Bow");
 			bow.setItemMeta(m);
+			Inventory.setItemDescription(bow, ChatColor.YELLOW + "can kill a Wither in two shots!");
 			player.getInventory().addItem(bow);
 			player.getInventory().addItem(new ItemStack(Material.ARROW, 1));
 		}
