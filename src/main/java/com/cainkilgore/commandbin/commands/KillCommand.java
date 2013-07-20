@@ -5,10 +5,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.entity.EntityDamageEvent;
 
 import com.cainkilgore.commandbin.Phrases;
-import com.cainkilgore.commandbin.listeners.KillListener;
 
 public class KillCommand implements CommandExecutor {
 	
@@ -42,7 +40,7 @@ public class KillCommand implements CommandExecutor {
 				// player.setHealth(0);
 //				EntityDamageEvent e = player.getLastDamageCause();
 //				player.setHealth(0);
-				player.damage(player.getMaxHealth(), player.getLastDamageCause().getEntity());
+				player.damage(player.getMaxHealth());
 //				player.setLastDamageCause(e);
 				player.sendMessage(Phrases.get("kill-self"));
 				return true;
