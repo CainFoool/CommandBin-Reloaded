@@ -70,10 +70,11 @@ public class HealthListener implements Listener {
 	public void simonTheSheep(Entity entity) {
 		Random random = new Random();
 		if(entity instanceof Sheep) {
-			if(random.nextInt(10000) == 20) {
+			if(random.nextInt(1000) == 20) {
 				Sheep sheep = (Sheep) entity;
 				sheep.setCustomName("Simon The Sheep");
 				sheep.setColor(DyeColor.PINK);
+				sheep.setCustomNameVisible(true);
 			}
 		}
 	}

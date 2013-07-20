@@ -8,10 +8,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Sheep;
 import org.bukkit.entity.Villager;
 import org.bukkit.entity.Villager.Profession;
 
 import com.cainkilgore.commandbin.Phrases;
+import com.cainkilgore.commandbin.RandomColor;
 
 public class SpawnmobCommand implements CommandExecutor {
 	
@@ -49,6 +51,12 @@ public class SpawnmobCommand implements CommandExecutor {
 						player.sendMessage(Phrases.get("mob-spawned"));
 						return true;
 					}
+					if(theMob == EntityType.SHEEP) {
+						Sheep sheep = (Sheep) player.getWorld().spawn(cursorPos, theMob.getEntityClass());
+						sheep.setColor(RandomColor.returnRandomColor());
+						player.sendMessage(Phrases.get("mob-spawned"));
+						return true;
+					}
 
 					player.getWorld().spawnEntity(cursorPos, theMob);
 					player.sendMessage(Phrases.get("mob-spawned"));
@@ -68,7 +76,10 @@ public class SpawnmobCommand implements CommandExecutor {
 						if(theMob == EntityType.VILLAGER) {
 							Villager villager = (Villager) player.getWorld().spawn(cursorPos, theMob.getEntityClass());
 							villager.setProfession(chooseRandom());
-						} else {
+						} else if(theMob == EntityType.SHEEP){
+								Sheep sheep = (Sheep) player.getWorld().spawn(cursorPos, theMob.getEntityClass());
+								sheep.setColor(RandomColor.returnRandomColor());
+							} else {
 						player.getWorld().spawnEntity(cursorPos, theMob);
 						}
 					}
