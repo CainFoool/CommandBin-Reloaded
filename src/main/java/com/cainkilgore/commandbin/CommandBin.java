@@ -52,6 +52,7 @@ import com.cainkilgore.commandbin.commands.MuteCommand;
 import com.cainkilgore.commandbin.commands.NearbyCommand;
 import com.cainkilgore.commandbin.commands.NickCommand;
 import com.cainkilgore.commandbin.commands.NotargetCommand;
+import com.cainkilgore.commandbin.commands.NukeCommand;
 import com.cainkilgore.commandbin.commands.OpenEncCommand;
 import com.cainkilgore.commandbin.commands.OpeninvCommand;
 import com.cainkilgore.commandbin.commands.PtimeCommand;
@@ -243,6 +244,7 @@ public class CommandBin extends JavaPlugin {
 		registerFlexibleCommand("hole", new HoleCommand());
 		registerFlexibleCommand("special", new SpecialCommand());
 		registerFlexibleCommand("ice", new IceCommand());
+		registerFlexibleCommand("nuke", new NukeCommand());
 		
 	}
 	

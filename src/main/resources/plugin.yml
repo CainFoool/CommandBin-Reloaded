@@ -237,3 +237,6 @@ commands:
    ice:
        description: 'Walk on water'
        usage: /<command>
+   nuke:
+       description: 'Spawn a crapton of TNT above a player'
+       usage: /<command> <player>
