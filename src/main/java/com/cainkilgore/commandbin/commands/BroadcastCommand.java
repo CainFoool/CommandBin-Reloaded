@@ -46,7 +46,8 @@ public class BroadcastCommand implements CommandExecutor {
 			}
 			
 			String message = ChatColor.GOLD + x.toString().trim();
-			Bukkit.getServer().broadcastMessage(message.replace("&", "§"));
+			String formattedMessage = message.replace("&", "§");
+			Bukkit.getServer().broadcastMessage(formattedMessage);
 		}
 		return true;
 	}
