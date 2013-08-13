@@ -74,6 +74,22 @@ public class TimeCommand implements CommandExecutor {
 				return false;
 			}
 			
+			if(args[0].equalsIgnoreCase("set")) {
+				if(args.length < 2) {
+					player.sendMessage(Phrases.get("invalid-arguments"));
+					return false;
+				}
+				
+				try {
+				Integer timeSet = Integer.parseInt(args[1]);
+				player.getWorld().setTime(timeSet);
+				player.sendMessage(Phrases.get("time-set") + timeSet);
+				} catch (NumberFormatException e) {
+					player.sendMessage(Phrases.get("invalid-number"));
+				}
+				return true;
+			}
+			
 			if(args[0].equalsIgnoreCase("day")) {
 				player.getWorld().setTime(0);
 				player.sendMessage(Phrases.get("time-set") + args[0].toLowerCase());

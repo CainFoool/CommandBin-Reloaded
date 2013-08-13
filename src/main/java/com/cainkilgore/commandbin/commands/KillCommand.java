@@ -1,6 +1,7 @@
 package com.cainkilgore.commandbin.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -37,6 +38,10 @@ public class KillCommand implements CommandExecutor {
 					return true;
 				}
 				
+				if(player.getGameMode() == GameMode.CREATIVE) {
+					player.sendMessage(Phrases.prefix + "You must be in survival/adventure mode to kill yourself.");
+					return true;
+				}
 				// player.setHealth(0);
 //				EntityDamageEvent e = player.getLastDamageCause();
 //				player.setHealth(0);

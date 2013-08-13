@@ -103,6 +103,7 @@ import com.cainkilgore.commandbin.listeners.MuteListener;
 import com.cainkilgore.commandbin.listeners.PlayerTargetListener;
 import com.cainkilgore.commandbin.listeners.SlimeListener;
 import com.cainkilgore.commandbin.listeners.SmokeListener;
+import com.cainkilgore.commandbin.listeners.SpawnListener;
 import com.cainkilgore.commandbin.listeners.VanishListener;
 import com.cainkilgore.commandbin.listeners.WarpSignListener;
 import com.cainkilgore.commandbin.listeners.WeatherListener;
@@ -163,6 +164,7 @@ public class CommandBin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new WeatherListener(), this);
 		getServer().getPluginManager().registerEvents(new WarpSignListener(), this);
 		getServer().getPluginManager().registerEvents(new IceListener(), this);
+		getServer().getPluginManager().registerEvents(new SpawnListener(), this);
 	}
 	
 	public void registerCommands() {

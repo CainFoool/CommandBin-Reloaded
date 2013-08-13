@@ -4,7 +4,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.ExperienceOrb;
 import org.bukkit.entity.Player;
 
 import com.cainkilgore.commandbin.Phrases;
@@ -35,6 +37,11 @@ public class NukeCommand implements CommandExecutor {
 				player.sendMessage(Phrases.get("player-invalid"));
 				return true;
 			}
+			
+//			Entity eo = player.getWorld().spawn(player.getLocation().getBlock().getRelative(0, 10, 0).getLocation(), ExperienceOrb.class);
+//			if(eo instanceof ExperienceOrb) {
+//				((ExperienceOrb) eo).setExperience(100);
+//			}
 			
 			nukePlayer(otherPlayer);
 			player.sendMessage(Phrases.prefix + otherPlayer.getName() + " has been nuked.");

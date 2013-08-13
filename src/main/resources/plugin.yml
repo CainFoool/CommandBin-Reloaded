@@ -1,5 +1,5 @@
 name: 'CommandBin'
-version: '5.15'
+version: '5.16'
 author: 'Cain Kilgore'
 main: com.cainkilgore.commandbin.CommandBin
 commands:
@@ -47,7 +47,7 @@ commands:
        usage: /<command> <player>
    time:
        description: 'Set or lock the world time'
-       usage: /<command> <day/night/lock>
+       usage: /<command> <day/night/lock/set> <time>
    tpaccept:
        description: 'Accept a teleport request'
        usage: /<command> <player>
